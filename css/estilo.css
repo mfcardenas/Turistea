@@ -1,0 +1,52 @@
+.logo{
+	width: 100px;
+	height: 50px;
+}
+.container .contenido{
+	margin-top: 100px;
+}
+.ruta{
+	font-size: 12px;
+}
+.subtitulo{
+	font-style: italic;
+	text-decoration: underline;
+	font-size: 18px;
+}
+.auxtd1{
+    padding: 6px;
+}
+.img-visita{
+	width: 500px;
+	height: 500px;
+}
+.img-emotion{
+	width: 80px;
+	height: 50px;
+}
+.enMedio {
+	position: relative; 
+	float: left; 
+	width: 70%; 
+	margin-left: 15%; 
+	margin-right: 15%;
+}
+.bordeado{
+	position: relative; 
+	float: left; 
+	width: 70%; 
+	margin-left: 15%; 
+	margin-right: 15%;
+
+	border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+
+    border-spacing: 15px;
+}
+
+td-aux {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
