@@ -85,12 +85,13 @@
 					<p> Deleítate con la mejor gastronomía que nuestra ciudad ofrece con maravillosos e increíbles platos que nuestro chefs madrileños preparan con amor y entusiasmos. ¿A que estás esperando para probarlos?</p>
 					<p></p>
 					<p> A continuación podrás deleitarte con nuestro top 3 de los mejores restaurantes de Madrid de todos los estilos. </p>
+					<hr class="featurette-divider">
 					<div class="row">
-						<div class="col-lg-6">
-	                		<a href="lambuzo.php"> <img class="img-circle" src= "img/lambuzo.jpg" alt="Lambuzo"> </a>              
-	                	</div>
-	                	<div class="col-lg-6">
-							<a href="lambuzo.php"> <h2 class="featurette-heading"> Lambuzo </h2> </a>
+						<div class="col-lg-3">
+							<a href="lambuzo.php"> <h2> Lambuzo </h2> </a>
+							<a href="lambuzo.php"> <img src= "img/lambuzo.jpg" alt="Lambuzo"> </a> 
+						</div>
+						<div class="col-lg-9">
 							<p class="subtitulo"> Localización: </p>
 					          	Calle Azcona, 46 <br>
 					          	28028 Madrid Madrid <br>
@@ -98,12 +99,55 @@
 				        	<p class="subtitulo"> Teléfono: </p>
 				          		913552786 <br>
 				          	<p class="subtitulo"> Plato estrella: </p>
-				          		Espuda de Yogurt <br>
+				          		Espuma de Yogurt <br>
 				          	<p class=" subtitulo"> Reseñas: </p>
 				          		BRUH <br> <!--ESTO FALTA POR IMPLEMENTAR-->
 				        </div>
 				    </div>
 
+				    <hr class="featurette-divider">
+					<div class="row">
+						<div class="col-lg-6"></div>
+						<div class="col-lg-3"> 
+							<p class="subtitulo"> Localización: </p>
+					          	Calle Colón, 5<br>
+								28040 Madrid Madrid<br>
+								España<br><br>
+				        	<p class="subtitulo"> Teléfono: </p>
+				          		915316255 <br>
+				          	<p class="subtitulo"> Plato estrella: </p>
+				          		Calamares con cebolla confitada y alioli <br>
+				          	<p class=" subtitulo"> Reseñas: </p>
+				          		BRUH <br> <!--ESTO FALTA POR IMPLEMENTAR-->
+				         </div>
+						<div class="col-lg-3">
+							<a href="elMandil.php"> <h2> El Mandil </h2> </a>
+							<a href="elMandil.php"> <img src= "img/elMandil.jpg" alt="Mandil"> </a> 
+						</div>
+						<div class="col-lg-9">
+							
+				        </div>
+				    </div>
+
+				    <hr class="featurette-divider">
+					<div class="row">
+						<div class="col-lg-3">
+							<a href="montesDeGalicia.php"> <h2> Los Montes de Galicia </h2> </a>
+							<a href="montesDeGalicia.php"> <img src= "img/losMontesDeGalicia.jpg" alt="Los Montes de Galicia"> </a> 
+						</div>
+						<div class="col-lg-9">
+							<p class="subtitulo"> Localización: </p>
+					          	Calle Azcona, 46 <br>
+					          	28028 Madrid Madrid <br>
+					          	España <br><br>
+				        	<p class="subtitulo"> Teléfono: </p>
+				          		913552786 <br>
+				          	<p class="subtitulo"> Plato estrella: </p>
+				          		Espuma de Yogurt <br>
+				          	<p class=" subtitulo"> Reseñas: </p>
+				          		BRUH <br> <!--ESTO FALTA POR IMPLEMENTAR-->
+				        </div>
+				    </div>
 	            </div>
 	            
 	            <hr class="featurette-divider">
@@ -132,40 +176,4 @@
 <!--b class="clar.."-->
 
 
-<!DOCTYPE html>
-
-	<body>
 		
-			Deleítate con la mejor gastronomía que nuestra ciudad ofrece con maravillosos e increíbles platos que nuestro chefs madrileños preparan con amor y entusiasmos. ¿A que estás esperando para probarlos?<br><br>
-
-			A continuación podrás deleitarte con nuestro top 10 de los mejores restaurantes de Madrid de todos los estilos.
-
-			
-			
-
-			<hr>
-
-			<h2>El Mandil</h2>
-			<img src="aw/Elmandil.jpg"><br>
-			<p1 class="negrita">Localización</p1><br>
-			Calle Colón, 5<br>
-			28040 Madrid Madrid<br>
-			España<br>
-			<p1 class="negrita">Teléfono:</p1> 915316255<br>
-			<p1 class="negrita">Plato estrella:</p1> Calamares con Cebolla Confitada y Alioli<br>
-			<p1 class="negrita">Reseñas:</p1> BRUH<br>
-
-			<hr>
-
-			<h2>Los Montes de Galicia</h2>
-			<img src="aw/Losmontesdegalicia.jpg"><br>
-			<p1 class="negrita">Localización</p1><br>
-			Calle Azcona, 46<br>
-			28028 Madrid Madrid<br>
-			España<br>
-			<p1 class="negrita">Teléfono:</p1> 913552786<br>
-			<p1 class="negrita">Plato estrella:</p1> Espuma de Yogurt<br>
-			<p1 class="negrita">Reseñas:</p1> BRUH<br>
-		</div>
-	</body>
-</html>

@@ -42,10 +42,10 @@
 	            <hr class="featurette-divider">
 	            <div class="row">
 	                <div class="col-lg-6">
-	                	<a href="cines/cinemoralejaGreen.php"> <img class="img-circle" src= "img/cinemoralejaGreen.jpg" alt="cinemoralejaGreen"> </a>
+	                	<a href="cinemoralejaGreen.php"> <img class="img-circle" src= "img/cinemoralejaGreen.jpg" alt="cinemoralejaGreen"> </a>
 	                </div>
 	                <div class="col-lg-6">
-						<a href="cines/cinemoralejaGreen.php"> <h2> Cine Moraleja Green </h2> </a>
+						<a href="cinemoralejaGreen.php"> <h2> Cine Moraleja Green </h2> </a>
 						<p class="subtitulo"> Dirección: </p>
 						Av. de Europa 13, Alcobendas <br>
 						28108 Madrid Madrid <br>
@@ -61,7 +61,7 @@
 	            <hr class="featurette-divider">
 	            <div class="row">
 	                <div class="col-lg-6">
-	                	<a href="cines/cineCoslada.php"> <h2> Cine Coslada </h2> </a>
+	                	<a href="cineCoslada.php"> <h2> Cine Coslada </h2> </a>
 	                    <p class="subtitulo"> Dirección: </p>
 	                   		Av. de los Principes de España 0<br>
 							28821 Madrid Madrid <br>
@@ -73,16 +73,16 @@
 						Esto es un botón de agregar a la cesta <br>
 	                </div>
 	                <div class="col-lg-6">
-						<a href="cines/cineCoslada.php"> <img class="img-circle" src= "img/cinesCoslada.jpg" alt="cineCoslada"> </a>
+						<a href="cineCoslada.php"> <img class="img-circle" src= "img/cinesCoslada.jpg" alt="cineCoslada"> </a>
 	                </div>
 	            </div>
 	            <hr class="featurette-divider">
 	            <div class="row">
 	                <div class="col-lg-6">
-	                   <a href="cines/cinesaPricipePio.php"> <img class="img-circle" src= "img/cinesaPrincipePio.jpg" alt="cinesaPricipePio"> </a>
+	                   <a href="cinesaPrincipePio.php"> <img class="img-circle" src= "img/cinesaPrincipePio.jpg" alt="cinesaPricipePio"> </a>
 	                </div>
 	                <div class="col-lg-6">
-						<a href="cines/cinesaPricipePio.php"> <h2> Cinesa Principe Pío </h2> </a>
+						<a href="cinesaPrincipePio.php"> <h2> Cinesa Principe Pío </h2> </a>
 						<p class="subtitulo"> Dirección: </p>
 							Centro Comercial Príncipe Pío, Estación Príncipe Pío, Paseo de la Florida, 2<br>
 							28008 Madrid Madrid <br>

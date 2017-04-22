@@ -9,15 +9,15 @@
 	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
-	    <link rel="stylesheet" href="../css/bootstrap.min.css" crossorigin="anonymous">
-	    <link rel="stylesheet" href="../css/bootstrap-theme.min.css" crossorigin="anonymous">
+	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+	    <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous">
 
 	    <!-- Custom styles for this template -->
-	    <link href="../css/carousel.css" rel="stylesheet">
+	    <link href="css/carousel.css" rel="stylesheet">
 
-	    <link href="../css/estilo.css" rel="stylesheet" type="text/css">
+	    <link href="css/estilo.css" rel="stylesheet" type="text/css">
 
-	    <script src="../js/bootstrap.min.js" crossorigin="anonymous"></script>
+	    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -26,7 +26,7 @@
     </head> 
     <body> 
         <?php 
-            include("../navbar.html");
+            include("navbar.html");
         ?>
         <div class="container">
             <div class="contenido"> 
@@ -34,8 +34,8 @@
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 					<nav class="ruta">
-						<a href="../index.php"> Inicio </a>
-						 >> <a href="../museos.php"> Museos </a>
+						<a href="index.php"> Inicio </a>
+						 >> <a href="museos.php"> Museos </a>
 						 >> Museo Thyssen
 					</nav>
 	            </div>
@@ -43,7 +43,7 @@
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL MUSEO -->
 	            <div class="row">
 	            	<nav class="text-center">
-						<img src= "../img/museoThyssen.jpg" alt="museoThyssen"><br><br>
+						<img src= "img/museoThyssen.jpg" alt="museoThyssen"><br><br>
 						<p> El Museo Thyssen – Bornemisza se nutre de la antigua colección de los Barones Thyssen que pasó a manos del patrimonio del estado. Nos encontramos pinturas que van desde los primitivos flamencos o italianos hasta el siglo XX, destacando retratos del Renacimiento, Impresionismo, Expresionismo y de los grandes movimientos culturales del siglo XX. </p>
 						<p>El Museo Thyssen cuenta con una colección permanente y exposiciones temporales </p><br>
 					</nav>
@@ -124,7 +124,7 @@
 			 	</div>
 				<div class="row">
 					<div class="text-center">
-			 			<p> <img src="../img/entrada.jpg" alt="entrada"> </p>
+			 			<p> <img src="img/entrada.jpg" alt="entrada"> </p>
 			 			<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
 						<p> Selección de entrada:</p>
 							<select name="entrada">
@@ -142,7 +142,7 @@
 	            <hr class="featurette-divider">
 	            <!-- FOOTER -->
 	            <?php
-	                include("../footer.html");
+	                include("footer.html");
 	            ?>
 	        </div>
         </div>
@@ -154,7 +154,7 @@
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
-	    <script src="../js/bootstrap.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
 	    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 	    <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

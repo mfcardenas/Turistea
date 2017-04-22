@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous">
 
         <!-- Custom styles for this template -->
-        <!--<link href="css/carousel.css" rel="stylesheet">-->
+        <link href="css/carousel.css" rel="stylesheet">
 
         <link href="css/estilo.css" rel="stylesheet" type="text/css">
 
@@ -41,7 +41,7 @@
                             <li><a href="#David"> David Hervás Rodríguez </a></li>
                             <li><a href="#Gema"> Gema Eugercios Suárez </a></li>
                             <li><a href="#Jorge"> Jorge Díez Sánchez-Caballero </a></li>
-                            <li><a href="Paloma"> Paloma Gutiérrez Merino </a></li>
+                            <li><a href="#Paloma"> Paloma Gutiérrez Merino </a></li>
                         </ul>
                     </div>
                 </div>

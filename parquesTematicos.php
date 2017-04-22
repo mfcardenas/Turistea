@@ -13,7 +13,7 @@
 	    <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous">
 
 	    <!-- Custom styles for this template -->
-	    <!--<link href="css/carousel.css" rel="stylesheet">-->
+	    <link href="css/carousel.css" rel="stylesheet">
 
 	    <link href="css/estilo.css" rel="stylesheet" type="text/css">
 

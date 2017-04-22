@@ -50,10 +50,10 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading"> Noticias de interés</h2>
-          <p class="lead">Entérate de los acontecimientos más importantes de Madrid; festivales, desfiles, manifestaciones..</p> <p class="lead"> <a href="#"> Todo al alacance de un click </a></p>
+          <p class="lead">Entérate de los acontecimientos más importantes de Madrid; festivales, desfiles, manifestaciones..</p> <p class="lead"> <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> Todo al alacance de un click </a></p>
         </div>
         <div class="col-md-5">
-          <a href="#"> <img class="featurette-image img-responsive center-block" src="img/noticias.jpg" alt="noticias"> </a>
+          <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> <img class="featurette-image img-responsive center-block" src="img/noticias.jpg" alt="noticias"> </a>
         </div>
       </div>
 
@@ -63,10 +63,10 @@
         <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading">Galería</h2>
           <p class="lead">En esta sección encontrarás imágenes de los sitios más bonitos de Madrid...</p>
-          <p class="lead"> <a href="#"> ¿Qué esperas para conocerlos? </a> </p>
+          <p class="lead"> <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> ¿Qué esperas para conocerlos? </a> </p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <a href="#"> <img class="featurette-image img-responsive center-block" src="img/galeria.jpg" alt="galeria"> </a>
+          <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> <img class="featurette-image img-responsive center-block" src="img/galeria.jpg" alt="galeria"> </a>
         </div>
       </div>
 
@@ -74,6 +74,25 @@
 
       <!-- /END THE FEATURETTES -->
 
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">X</button>
+              <h4 class="modal-title">¡Lo siento!</h4>
+            </div>
+            <div class="modal-body">
+              <p><img src="img/caritallorando.png"></p>
+              <p> Lo sentimos, esto aún no está disponible </p>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
 
       <!-- FOOTER -->
       <?php
