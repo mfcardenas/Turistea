@@ -93,7 +93,7 @@
                         <h4><a id="Jorge">Jorge Díez Sánchez-Caballero</a></h4>
                             <p>jorgedie@ucm.es</p>
                             <p> Le gusta jugar al LOL, es un futuro pro player.</p>
-                            <p> Aunque sea el que siempre la picia, la foto de arriba no le hace justicia. </p>
+                            <p> Aunque sea el que siempre la pifia, esta foto no le hace justicia. </p>
                     </div>
                 </div>
                 <hr class="featurette-divider">
