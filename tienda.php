@@ -38,6 +38,13 @@
 					  	<li class="active">Nuestra tienda</li>
 					</ol>
 	            </div>
+                 <div class="row">
+                    <div class="aniadir">
+                        <a href="" onClick="$('#formularioTienda').modal()" data-toggle="modal">
+                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+                        <div class="limpiar"></div> 
+                    </div>
+	            </div>
 	            <div class="row enMedio">
 	                <form>
 			    		<ul class="nav nav-pills" role="tablist">
@@ -199,6 +206,52 @@
 	            </div>
 	            
 	            <hr class="featurette-divider">
+                 <!-- Modal -->
+        <div class="modal fade" id="formularioTienda" role="dialog">
+            <div class="modal-dialog">
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h4 class="modal-title text-center">Introduce un nuevo producto</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post">
+				      	     <p> Introduce el tipo de producto: </p>
+                            <select class="form-control" id="tipoProducto" style="width: 150px">
+									    <option> Souvenir </option>
+									    <option> Entrada</option>
+				            </select>
+                            <br>
+                            <p> Introduce el nombre del producto:</p>
+                             <input type="text" class="form-control" placeholder="Nombre del producto" name="nombreproducto" aria-describedby="basic-addon2">
+                            <br>
+                             <p> Introduce el tipo del tipo del producto:</p>
+                            <select class="form-control" id="tipoTipoProducto" style="width: 150px">
+								    <option> - Cualquiera - </option>
+								    <option> Parque temático</option>
+								    <option> Museo </option>
+								    <option> Teatro</option>
+								    <option> Estadios </option>
+								    <option> Cine </option>
+								</select>
+                            <br>
+                            <p>Introduce una imagen: </p>
+                            <input type="file" name="imagenProducto">
+                            <br>
+				      	     <p> Introduce el precio: </p>
+				      	      <input type="text" class="form-control" placeholder="Precio del producto €" name="precioProducto" aria-describedby="basic-addon2">
+						      <br>
+				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
+						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+                     
+                    </div>
+
+                </div>
+
+            </div>
+        </div> 
 	            <!-- FOOTER -->
 	            <?php
 	                include("footer.html");

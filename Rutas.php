@@ -46,9 +46,16 @@
 						Así, podrás recorrer las enormes y largas <span class="cursiva">calles de Madrid</span>, pasando por los mejores puntos de interés que nuestra ciudad ofrece como palacios, cines de éxito o museos que te harán pasar uno de los mejores días de tu vida. 
 						Y como no, no olvidarnos de la posibilidad de degustar la mejor gastronomía madrileña en restaurantes económicos e incluso con <span class="negrita">estrellas michelin!!!</span></p>
 					<p>Porque recuerda...</p>
-					<div><blockquote>De Madrid al Cielo.</blockquote></div><br>
+					<div><blockquote>De Madrid al Cielo.</blockquote></div>
 				</article>
-
+			   <div class="row">
+			   	<hr class="featurette-divider">
+                    <div class="aniadir">
+                        <a href="" onClick="$('#formularioRutas').modal()" data-toggle="modal">
+                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+                        <div class="limpiar"></div> 
+                    </div>
+	            </div>
 				<!--Ruta1-->	 
 	            <div class="row">
 	                <div class="col-lg-6">
@@ -211,6 +218,56 @@
 		    	include("footer.html");
 		    ?>
 		</div>
+
+     <!-- Modal -->
+        <div class="modal fade" id="formularioRutas" role="dialog">
+            <div class="modal-dialog">
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h4 class="modal-title text-center">Añadir Nueva Ruta</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post">
+				      	    <p>Nombre de la ruta: </p>
+                            <input type="text" class="form-control" placeholder="Nombre de la ruta" name="nombreruta" aria-describedby="basic-addon2">
+                            <br>
+                            <p>Mapa: </p>
+                            <input type="file" name="imagenMapa">
+                            <br>
+                        	<p>Duración </p>
+                            <input type="number" min="0" class="form-control" placeholder="Horas" name="duracion" aria-describedby="basic-addon2">
+                            <br>
+                            <p>Punto de partida </p>
+                            <input type="text" class="form-control" placeholder="Punto de partida" name="inicio" aria-describedby="basic-addon2">
+                            <br>
+                            <p>Punto de destino </p>
+                            <input type="text" class="form-control" placeholder="Punto de destino" name="destino" aria-describedby="basic-addon2">
+                            <br>
+				      	    <p>Descripción: </p>
+				      	    <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+						    <br>
+						    <p>Fotos: </p>
+                            <input type="file" name="imagenes">
+                            <br>
+                            <p>Contenido: </p>
+				      	    <textarea class="form-control" name="contenido" rows="10" placeholder="Escriba aquí el contenido"></textarea>
+						    <br>
+				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
+						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+                     
+                    </div>
+
+                </div>
+
+            </div>
+        </div> 
+        
+
+
+
 
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
