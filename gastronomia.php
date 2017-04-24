@@ -42,6 +42,15 @@
 	            <div class="row">
 	                <h4>¡¡Conoce cuáles son los tres restaurantes y bares más valorados de Madrid!!</h4>
 	            </div>
+
+	            <div class="row">
+                    <div class="aniadir">
+                        <a href="" onClick="$('#formularioGastronomia').modal()" data-toggle="modal">
+                        <span class="glyphicon glyphicon-cutlery"></span><h4>Añadir</h4> </a>
+                        <div class="limpiar"></div> 
+                    </div>
+	            </div>
+
 	            <div class="row">
 	            	<!--LAS RESEÑAS FUNCIONARÁN MÁS ADELANTE -->
 	            	<table class="table table-hover">  	
@@ -156,6 +165,53 @@
 	            ?>
 	        </div>
         </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="formularioGastronomia" role="dialog">
+            <div class="modal-dialog">
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h4 class="modal-title text-center">Introduce un nuevo lugar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post">
+				      	     <p> Introduce el nombre: </p>
+                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrebar" aria-describedby="basic-addon2" required>
+                            <br>
+                            <p>Introduce una imagen: </p>
+                            <input type="file" name="imagenGastronomia" required>
+                            <br>
+				      	     <p> Introduzca una descripción acerca del mismo: </p>
+				      	     <textarea class="form-control" name="descripcionbar" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+						    <br>
+						     <p> Introduce la dirección: </p>
+						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionbar1" aria-describedby="basic-addon2" required>
+							 <input type="text" class="form-control" placeholder="Localidad, Provincia" name="localizacionbar2" aria-describedby="basic-addon2" required>
+							 <input type="text" class="form-control" placeholder="País" name="localizacionbar3" aria-describedby="basic-addon2" required>
+							<br>
+							 <p> Introduce el teléfono de contacto: </p>
+							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonobar" aria-describedby="basic-addon2">
+							<br>
+							 <p> Introduce el plato estrella: </p>
+						     <input type="text" class="form-control" placeholder="Plato estrella" name="platoestrellabar" aria-describedby="basic-addon2">
+
+							<br>
+
+
+
+				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
+						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+                     
+                    </div>
+
+                </div>
+
+            </div>
+        </div> 
     
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
