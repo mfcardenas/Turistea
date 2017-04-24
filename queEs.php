@@ -28,8 +28,14 @@
             include("navbar.html");
         ?>
         <div class="container">
-            <div class="contenido">      
+            <div class="contenido"> 
                 <h1 class="text-center">¿Qué es Turistea?</h1>
+                <div class="row">
+                    <ol class="breadcrumb">
+                        <li><a href="index.php">Inicio</a></li>
+                        <li class="active">¿Qué es Turistea?</li>
+                    </ol>   
+                </div>
                 <br>
                 <table border=8>
                     <tr>

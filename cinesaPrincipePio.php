@@ -29,13 +29,12 @@
 	            <h1 class="text-center">Cinesa Príncipe Pío</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="cines.php"> Cines </a>
-						 >> Cinesa Príncipe Pío
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="cines.php">Cines</a></li>
+					  	<li class="active">Cinesa Príncipe Pío</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL CINE -->
 	            <div class="row">
 	            	<nav class="text-center">

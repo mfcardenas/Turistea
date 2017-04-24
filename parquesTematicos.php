@@ -35,12 +35,11 @@
 	            <h1 class="text-center">Parques temáticos</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> Parques temáticos
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li class="active">Parques temáticos</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row">
 	                <div class="col-lg-6">
 	                	<a href="zoodeMadrid.php"> <img class="img-circle" src= "img/zoodeMadrid.jpg" alt="zoodeMadrid"> </a>

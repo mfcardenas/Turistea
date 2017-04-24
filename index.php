@@ -76,10 +76,10 @@
         <div class="col-md-7">
           <h2 class="featurette-heading"> Nuestra tienda </h2>
           <p class="lead">Compra de manera rápida entradas para acceder a los distintos sitios, así como una serie de souvenirs relacionados con Madrid.</p> 
-          <p class="lead"> <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> Accede de manera rápida, cómoda y sencilla </a></p>
+          <p class="lead"> <a href="tienda.php"> Accede de manera rápida, cómoda y sencilla </a></p>
         </div>
         <div class="col-md-5">
-          <a href="tienda.php" onClick="$('#myModal').modal()" data-toggle="modal"> <img class="featurette-image img-responsive center-block" src="img/tienda.jpg" alt="tienda"> </a>
+          <a href="tienda.php"> <img class="featurette-image img-responsive center-block" src="img/tienda.jpg" alt="tienda"> </a>
         </div>
       </div>
 

@@ -31,6 +31,12 @@
             <div class="contenido">           
                 <h1 class="text-center">¿Quiénes somos?</h1>
                 <div class="row">
+                    <ol class="breadcrumb">
+                        <li><a href="index.php">Inicio</a></li>
+                        <li class="active">¿Quiénes somos?</li>
+                    </ol>
+                </div>
+                <div class="row">
                     <hr>
                     <div class="col-lg-3">
                         <h4> ¿A quién quiere conocer? </h4>

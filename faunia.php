@@ -33,13 +33,12 @@
 	            <h1 class="text-center">Faunia</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="parquesTematicos.php"> Parques temáticos </a>
-						 >> Faunia
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="parquesTematicos.php">Parques Temáticos</a></li>
+					  	<li class="active">Faunia</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL PARQUE -->
 	            <div class="row">
 	            	<nav class="text-center">

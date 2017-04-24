@@ -33,12 +33,11 @@
 	            <h1 class="text-center">Teatros</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> Teatros
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li class="active">Teatros</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row">
 	                <div class="col-lg-6">
 	                   <a href="teatroNuevoAlcala.php"> <img class="img-circle" src= "img/teatroNuevoAlcala.jpg" alt="teatroNuevoAlcala"> </a>                 

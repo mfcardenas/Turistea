@@ -33,13 +33,12 @@
 	            <h1 class="text-center">Cine Coslada</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="cines.php"> Cines </a>
-						 >> Cine Coslada
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="cines.php">Cines</a></li>
+					  	<li class="active">Cine Coslada</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL PARQUE -->
 	            <div class="row">
 	            	<nav class="text-center">

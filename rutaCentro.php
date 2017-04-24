@@ -33,13 +33,12 @@
 	            <h1 class="text-center">Una ruta por las calles del centro de Madrid</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="Rutas.php"> Rutas turísticas </a>
-						 >> Una ruta por las calles del centro de Madrid
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="Rutas.php">Rutas turísticas</a></li>
+					  	<li class="active">Una ruta por las calles del centro de Madrid</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DE LA RUTA -->
 	            <div class="row">
 	            	<nav class="text-center">

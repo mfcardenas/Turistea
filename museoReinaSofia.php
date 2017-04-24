@@ -33,13 +33,12 @@
 	            <h1 class="text-center">Museo Reina Sofía</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="museos.php"> Museos </a>
-						 >> Museo Reina Sofía
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="museos.php">Museos</a></li>
+					  	<li class="active">Museo Reina Sofía</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL MUSEO -->
 	            <div class="row">
 	            	<nav class="text-center">

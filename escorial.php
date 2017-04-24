@@ -32,13 +32,12 @@
             <div class="contenido">      
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="visitas.php"> Visita Madrid </a>
-						 >> Monasterio del Escorial
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="visitas.php">Visita Madrid</a></li>
+					  	<li class="active">Monasterio del Escorial</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row">
 	                <h1>Monasterio del Escorial</h1>
 	            </div>

@@ -32,13 +32,12 @@
             <div class="contenido">      
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="visitas.php"> Visita Madrid </a>
-						 >> Puerta del Sol
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="visitas.php">Visita Madrid</a></li>
+					  	<li class="active">Puerta del Sol</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row">
 	                <h1>La Puerta del Sol</h1>
 	            </div>

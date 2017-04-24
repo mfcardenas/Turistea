@@ -32,14 +32,12 @@
             <div class="contenido">
 	            <h1 class="text-center">Aquopolis Villanueva de la Cañada</h1>
 	            <div class="row">
-	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="parquesTematicos.php"> Parques temáticos </a>
-						 >> Aquopolis Villanueva
-					</nav>
+					<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="parquesTematicos.php">Parques Temáticos</a></li>
+					  	<li class="active">Aquopolis Villanueva</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL PARQUE -->
 	            <div class="row">
 	            	<nav class="text-center">

@@ -34,12 +34,11 @@
 	            <h3 class="text-center"> ¿A qué estás esperando? ¡A visitar Madrid! </h3>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> Visitas
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li class="active">Visitas</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row">
 	                <h4>¡¡No olvides visitar, estos maravillosos lugares de Madrid!! :) </h4>
 	            </div>

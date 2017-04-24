@@ -32,14 +32,12 @@
             <div class="contenido">
 	            <h1 class="text-center">Un día por los Jardines del Retiro</h1>
 	            <div class="row">
-	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="Rutas.php"> Rutas turísticas </a>
-						 >> Un día por los Jardines del Retiro
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="Rutas.php">Rutas turísticas</a></li>
+					  	<li class="active">Un día por los Jardines del Retiro</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DE LA RUTA -->
 	            <div class="row">
 	            	<nav class="text-center">

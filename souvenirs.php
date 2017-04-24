@@ -33,12 +33,11 @@
 	            <h5 class="text-center">  Aquí podrás encontrar una amplia gama de productos que te podrán gustar</h5>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> Nuestros souvenirs
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li class="active">Nuestros souvenirs</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row enMedio">
 	               <form>
 		    		<p> Ordenar por: </p>

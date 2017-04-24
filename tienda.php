@@ -33,12 +33,11 @@
 	            <h5 class="text-center"> ¡¡ Encuentra todo tipo de souvenirs relacionado con los lugares que visites!! </h5>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> Nuestra tienda
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li class="active">Nuestra tienda</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row enMedio">
 	                <form>
 			    		<ul class="nav nav-pills" role="tablist">

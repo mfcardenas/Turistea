@@ -32,12 +32,11 @@
 	            <h5 class="text-center">  Encuentra ya la entrada a tu lugar de ocio favorito </h5>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> Nuestras entradas
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li class="active">Nuestras entradas</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row enMedio">
 	               <form>
 		    		<h5> Visita ya... </h5>

@@ -32,13 +32,12 @@
             <div class="contenido">      
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="visitas.php"> Visita Madrid </a>
-						 >> Círculo de Bellas Artes
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="visitas.php">Visita Madrid</a></li>
+					  	<li class="active">Círculo de Bellas Artes</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row">
 	                <h1>Círculo de Bellas Artes</h1>
 	            </div>

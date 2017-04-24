@@ -33,13 +33,12 @@
 	            <h1 class="text-center">Teatro Nuevo Alcalá</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="teatros.php"> Teatros </a>
-						 >> Teatro Nuevo Alcalá
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="teatros.php">Teatros</a></li>
+					  	<li class="active">Teatro Nuevo Alcalá</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL TEATRO -->
 	            <div class="row">
 	            	<nav class="text-center">

@@ -34,13 +34,12 @@
 	            <h1 class="text-center">Restaurante Los Montes de Galicia</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="gastronomia.php"> Gastronomía </a>
-						 >> Restaurante Los Montes de Galicia
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="gastronomia.php">Gastronomía</a></li>
+					  	<li class="active">Restaurante Los Montes de Galicia</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL PARQUE -->
 	            <div class="row">
 	            	<nav class="text-center">

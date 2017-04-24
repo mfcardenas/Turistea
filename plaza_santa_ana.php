@@ -32,13 +32,12 @@
             <div class="contenido">      
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
-					<nav class="ruta">
-						<a href="index.php"> Inicio </a>
-						 >> <a href="visitas.php"> Visita Madrid </a>
-						 >> Plaza de Santa Ana
-					</nav>
+	            	<ol class="breadcrumb">
+					  	<li><a href="index.php">Inicio</a></li>
+					  	<li><a href="visitas.php">Visita Madrid</a></li>
+					  	<li class="active">Plaza de Santa Ana</li>
+					</ol>
 	            </div>
-	            <hr class="featurette-divider">
 	            <div class="row">
 	                <h1>Plaza de Santa Ana</h1>
 	            </div>
