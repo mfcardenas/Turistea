@@ -62,11 +62,11 @@
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading">Galería</h2>
-          <p class="lead">En esta sección encontrarás imágenes de los sitios más bonitos de Madrid...</p>
-          <p class="lead"> <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> ¿Qué esperas para conocerlos? </a> </p>
+          <p class="lead">En esta sección encontrarás imágenes de las experiencias de otras personas, anímate a ver qué tal se lo han pasado otros y sus sitios favoritos...</p>
+          <p class="lead"> <a href="galeria.php"> ¿Qué esperas para verlos? </a> </p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> <img class="featurette-image img-responsive center-block" src="img/galeria.jpg" alt="galeria"> </a>
+          <a href="galeria.php"> <img class="featurette-image img-responsive center-block" src="img/galeria.jpg" alt="galeria"> </a>
         </div>
       </div>
 
