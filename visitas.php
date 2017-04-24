@@ -40,7 +40,14 @@
 					</ol>
 	            </div>
 	            <div class="row">
-	                <h4>¡¡No olvides visitar, estos maravillosos lugares de Madrid!! :) </h4>
+	               <h4 class="tituloVisita">¡¡No olvides visitar, estos maravillosos lugares de Madrid!! :) </h4>
+                </div>
+                <div class="row">
+                    <div class="aniadir">
+                        <a href="" onClick="$('#formularioVisitas').modal()" data-toggle="modal">
+                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+                        <div class="limpiar"></div> 
+                    </div>
 	            </div>
 	            <div class="row">
 	        	    <table class="enMedio">  	
@@ -93,6 +100,37 @@
 	        </div>
         </div>
     
+        <!-- Modal -->
+        <div class="modal fade" id="formularioVisitas" role="dialog">
+            <div class="modal-dialog">
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h4 class="modal-title text-center">Introduce un nuevo lugar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post">
+				      	     <p> Introduce el nombre: </p>
+                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrelugar" aria-describedby="basic-addon2">
+                            <br>
+                            <p>Introduce una imagen: </p>
+                            <input type="file" name="imagenVisita">
+                            <br>
+				      	     <p> Introduzca una descripción acerca del mismo: </p>
+				      	     <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+						      <br>
+				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
+						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+                     
+                    </div>
+
+                </div>
+
+            </div>
+        </div> 
+        
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
 	    <!-- Placed at the end of the document so the pages load faster -->
