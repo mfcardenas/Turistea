@@ -7,17 +7,22 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <!--<link rel="icon" href="../../favicon.ico">-->
 
-    <title>Formulario de Registro</title>
+    <title>Turistea | Formulario de login</title>
 
 
+    
+    <link href="css/estilo.css" rel="stylesheet">
+    <link href="css/estiloLogin.css" rel="stylesheet">
+    
     <!-- Custom styles for this template -->
-    <link href="estiloAndrea.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-   
+    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -27,91 +32,81 @@
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script type="text/javascript">
-       
-            
-        
-    </script>
-
-  </head>
-
-  <body class="letra">
-    <div id="bg"><img src="img/bg_login.jpg"></div>
-    
-    <!-- <?php 
-        include("navbar.html");
-    ?> -->
-
-    <div class="container">
-        
-      <form class="form-signin" name="registerForm" action="registro_aw.php" method="post" style="margin-top: 22px;">
-
-        <h2 class="form-signin-heading login">¡¡Unete a nosotros :D!!</h2>
-
-        <div class="sidebar-module sidebar-module-inset bloqueFondoRegistro" style="color: black;">
-             
-
-             <div <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="si"){ ?> class="panel panel-danger auxbloq1">
-                    <div class="panel-heading">El usuario introducido ya existe prueba con otro.</div>
-                    <?php }else{ ?> > 
-                    <?php } ?>
-            </div>
-
-            <label for="inputNombre" class="nameLogin">Nombre:</label>
-            <div class="input-group auxbloq1">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-piggy-bank"></i></span>
-                <input type="text" id="inputNombre" class="form-control" name="inputNombre" placeholder="Tu nombre" required autofocus>
-            </div>
-            <br>
-
-            <label for="inputUsu" class="nameLogin">Usuario:</label>
-            <div class="input-group auxbloq1">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input type="text" id="inputUsu" class="form-control" name="inputUsu" placeholder="Tu id usuario" required autofocus>
-            </div>
-            <br>
-
-            <label for="inputPassword" class="nameLogin">Contraseña:</label>
-            <div class="input-group auxbloq1">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="Password" required>
-            </div>
-            <br>
-
-            <label for="inputPassword2" class="nameLogin">Escribe de nuevo la contraseña:</label>
-            <div class="input-group auxbloq1">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input type="password" id="inputPassword2" class="form-control" name="inputPassword2" placeholder="Verifique la contraseña" required>
-            </div>
-            <div class="auximg5">
-                <img id="error_cont2" class="hidden" src="img/error.png" alt="Error" title="Error" width="20px" height="20px">
-                <img id="ok_cont2" class="hidden" src="img/ok.png" alt="Ok" title="Ok" width="20px" height="20px">
-            </div>
-            
-            <br>
-
-            <label for="inputEmail" class="nameLogin">Email:</label>
-            <div class="input-group auxbloq1">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="Tu correo electrónico" required autofocus>
-            </div>
-            <br>
-
-            <div id="botonEnviar" class="hidden"><button class="btn btn-lg btn-primary btn-block auxbloq1" type="submit" style="width: 280px; margin-top: 14px;">Enviar</button></div>
-            <div class="auxbloq"></div>
-          </form>
-        </div>
-    </div> <!-- /container -->
-
-
+    </head>
    
-  </body>
+
+    <body class="idbody">
+        <div id="bg"><img src="img/bg_login.jpg"></div>
+    
+        <?php 
+            include("navbar.html");
+        ?>
+
+        <div class="container">
+            
+          <form class="form-signin" name="registerForm" action="registro_aw.php" method="post">
+
+            <div class="sidebar-module sidebar-module-inset bloqueFondoRegistro">
+                 
+
+                 <div <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="si"){ ?> class="panel panel-danger auxbloq1">
+                        <div class="panel-heading">El usuario introducido ya existe prueba con otro.</div>
+                        <?php }else{ ?> > 
+                        <?php } ?>
+                </div>
+
+                <label for="inputNombre" class="nameLogin">Nombre:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-piggy-bank"></i></span>
+                    <input type="text" id="inputNombre" class="form-control" name="inputNombre" placeholder="Tu nombre" required autofocus>
+                </div>
+                <br>
+
+                <label for="inputUsu" class="nameLogin">Usuario:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" id="inputUsu" class="form-control" name="inputUsu" placeholder="Tu id usuario" required autofocus>
+                </div>
+                <br>
+
+                <label for="inputPassword" class="nameLogin">Contraseña:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="Password" required>
+                </div>
+                <br>
+
+                <label for="inputPassword2" class="nameLogin">Escribe de nuevo la contraseña:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" id="inputPassword2" class="form-control" name="inputPassword2" placeholder="Verifique la contraseña" required>
+                </div>
+                <div class="auximg5">
+                    <img id="error_cont2" class="hidden" src="img/error.png" alt="Error" title="Error" width="20px" height="20px">
+                    <img id="ok_cont2" class="hidden" src="img/ok.png" alt="Ok" title="Ok" width="20px" height="20px">
+                </div>
+                
+                <br>
+
+                <label for="inputEmail" class="nameLogin">Email:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="Tu correo electrónico" required autofocus>
+                </div>
+                <br>
+
+                <div id="botonEnviar" class="hidden"><button class="btn btn-lg btn-primary btn-block auxbloq1" type="submit" style="width: 280px; margin-top: 14px;">Enviar</button></div>
+                <div class="auxbloq"></div>
+              </form>
+            </div>
+        </div> <!-- /container -->
+     </body>
 
     <script type="application/javascript">
 

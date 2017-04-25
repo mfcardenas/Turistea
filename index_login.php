@@ -7,13 +7,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <!--<link rel="icon" href="../../favicon.ico">-->
 
-    <title>Formulario de login</title>
+    <title>Turistea | Formulario de login</title>
 
 
+    
+    <link href="css/estilo.css" rel="stylesheet">
+    <link href="css/estiloLogin.css" rel="stylesheet">
+    
     <!-- Custom styles for this template -->
-    <link href="estiloAndrea.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -35,18 +40,17 @@
     <![endif]-->
   </head>
 
-  <body class="letra">
+  <body class="idbody">
     <div id="bg"><img src="img/bg_login.jpg"></div>
     
-
-                                              <!-- Poner aquí el menú de navegación -->
+    <?php 
+      include("navbar.html");
+    ?>
 
     <div class="container">
 
-      <form class="form-signin" action="login.php" method="POST" style="margin-top: 22px;">
-        <h2 class="form-signin-heading login">¡¡Loguéate!!</h2>
-          <div class="sidebar-module sidebar-module-inset bloqueFondo" >
-
+      <form class="form-signin" action="login.php" method="POST">
+          <div class="sidebar-module sidebar-module-inset bloqueFondo " >
 
                   <!-- Si el php de validacion dectecta algun error saltará este bloque de advertencia -->
             
@@ -66,7 +70,7 @@
             <label for="inputPassword" class="nameLogin">Contraseña:</label>
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="Contraseña" required>
             </div>
 
             <div class="checkbox">
@@ -74,10 +78,10 @@
                 <input type="checkbox" value="remember-me"> Recuerdame
               </label>
             </div>
-            <input class="btn btn-lg btn-primary btn-block" name="Enviar" type="submit" value="Enviar">
+            <input class="btn btn-lg btn-primary btn-block" name="Enviar" type="submit" value="Entrar">
           </div>
       </form>
-
+      
     </div> <!-- /container -->
 
   </body>
