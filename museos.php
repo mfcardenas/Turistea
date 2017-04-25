@@ -40,6 +40,13 @@
 					</ol>
 	            </div>
 	            <div class="row">
+                    <div class="aniadir">
+                        <a href="" onClick="$('#formularioMuseo').modal()" data-toggle="modal">
+                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+                        <div class="limpiar"></div> 
+                    </div>
+	            </div>
+	            <div class="row">
 	                <div class="col-lg-6">
 	                	<a href="museoDelPrado.php"> <img class="img-circle" src= "img/museoDelPrado.jpg" alt="museoDelPrado"> </a>
 	                </div>
@@ -120,6 +127,59 @@
 	            ?>
 	        </div>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="formularioMuseo" role="dialog">
+            <div class="modal-dialog">
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h4 class="modal-title text-center">Introduce un nuevo museo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post">
+				      	     <p> Introduce el nombre*: </p>
+                             <input type="text" class="form-control" placeholder="Nombre del museo" name="nombremuseo" aria-describedby="basic-addon2" required>
+                            <br>
+                            <p>Introduce una imagen*: </p>
+                            <input type="file" name="imagenmuseo" required>
+                            <br>
+				      	     <p> Introduzca una descripción acerca del mismo: </p>
+				      	     <textarea class="form-control" name="descripcionmuseo" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+						    <br>
+						     <p> Introduce la dirección*: </p>
+						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionmuseo1" aria-describedby="basic-addon2" required>
+							 <input type="text" class="form-control" placeholder="Localidad, Provincia" name="localizacionmuseo2" aria-describedby="basic-addon2" required>
+							 <input type="text" class="form-control" placeholder="País" name="localizacionmuseo3" aria-describedby="basic-addon2" required>
+							<br>
+							 <p> Introduce el teléfono de contacto: </p>
+							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonomuseo" aria-describedby="basic-addon2">
+							<br>
+							<p> Introduce el horario*: </p>
+								<ul>
+								    <li><label> Lunes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required></li>
+								    <li> <label> Martes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    <li><label> Miércoles: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    <li><label> Jueves: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    <li><label> Viernes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    <li><label> Sábado: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    <li><label> Domingo: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								</ul>
+							<p> Introduce cómo llegar: </p>
+							<textarea class="form-control" name="comoLlegarmuseo" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>
+							<p> Precio entradas: </p>
+							<textarea class="form-control" name="entradas" rows="3" placeholder="Escriba aquí la el tipo de entradas y sus respectivs precios"></textarea>
+
+					      	<button type="submit" class="btn btn-default centrado">Añadir</button>
+							<button type="reset" class="btn btn-default ">Borrar</button></center>
+						</form>
+						<p class="ruta"> *Campos obligatorios </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
     
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
