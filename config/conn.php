@@ -1,0 +1,1 @@
+//Aquí se realiza la conexión a la base de datos y se deja abierta (la conexion se hace en una varibale llamada conn = mysqli)

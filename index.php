@@ -28,20 +28,20 @@
     <!-- NAVBAR
     ================================================== -->
     <?php
-      include("navbar.html");
+      include("codigo/navbar.html");
     ?>
 
     <!-- Carousel
     ================================================== -->
     <!-- /.carousel -->
     <?php 
-      include("carousel.html");
+      include("codigo/carousel.html");
     ?>
 
     <!-- Circulitos
     =================================================== -->
     <?php
-      include("circulos.html");
+      include("codigo/circulos.html");
     ?>
     <!-- START THE FEATURETTES -->
 
@@ -109,7 +109,7 @@
 
       <!-- FOOTER -->
       <?php
-        include("footer.html");
+        include("codigo/footer.html");
       ?>
 
     </div><!-- /.container -->
