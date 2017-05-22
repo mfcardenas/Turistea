@@ -1,3 +1,16 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['usuLogeado'])){
+    $_SESSION['usuLogeado'] = '';
+  }
+  if(!isset($_SESSION['autentificado'])){
+    $_SESSION['autentificado'] = 'NO';
+  }
+  if(!isset($_SESSION["tipoUsuarioLog"])){
+    $_SESSION["tipoUsuarioLog"] = '';
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +41,7 @@
     <!-- NAVBAR
     ================================================== -->
     <?php
-      include("navbar.html");
+      include("navbar.php");
     ?>
 
     <!-- Carousel
