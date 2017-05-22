@@ -15,7 +15,7 @@
 				
 				if($_POST['titulonoticia'] != "" AND $_POST['subtitulonoticia'] != "" AND $_POST['resumennoticia'] != "" AND $_POST['descripcionnoticia'] != ""  AND $_POST['fuentenoticia']) {
 
-					$target_dir = "../Turiste/imgNoticias/";  										//ruta
+					$target_dir = "../Turistea/imgNoticias/";  										//ruta
 					$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);			//ruta completa (path + nombre de la img)
 					$file_name = basename($_FILES["fileToUpload"]["name"]);
 					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);						//tipo de la img

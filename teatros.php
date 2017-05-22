@@ -56,9 +56,8 @@
 						28009 Madrid Madrid <br>
 						España <br>
 						<br>
-						<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						Precio: 15,00€ <br>
-						Selección de entrada: <br>
+						<!--ESTO SE QUITA YA QUE QUITAMOS LA VENTA DE ENTRADAS-->
+						<!--Selección de entrada: <br>
 							<select name="entrada">
 								<option selected>Normal</option>
 								<option>Niño</option>
@@ -66,7 +65,7 @@
 							</select>
 						<br><br><br><br>
 						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>
+						Esto es un botón de agregar a la cesta <br>-->
 	                </div>
 	            </div>
 	            <hr class="featurette-divider">
@@ -78,8 +77,8 @@
 						28012 Madrid Madrid <br>
 						España <br>
 						<br>
-						<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						Precio: 15,00€ <br>
+						<!--ESTO SE QUITA YA QUE QUITAMOS LA VENTA DE ENTRADAS-->
+						<!--Precio: 15,00€ <br>
 						Selección de entrada: <br>
 							<select name="entrada">
 								<option selected>Normal</option>
@@ -88,7 +87,7 @@
 							</select>
 						<br><br><br><br>
 						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>
+						Esto es un botón de agregar a la cesta <br>-->
 	                </div>
 	                <div class="col-lg-6">
 						<a href="teatroEspanol.php"> <img class="img-circle" src= "img/teatroEspanol.jpg" alt="teatroEspanol"> </a>
@@ -106,8 +105,8 @@
 						28004 Madrid Madrid <br>
 						España <br>
 						<br>
-						<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						Precio: 15,00€ <br>
+						<!--ESTO SE QUITA YA QUE QUITAMOS LA VENTA DE ENTRADAS-->
+						<!--Precio: 15,00€ <br>
 						Selección de entrada: <br>
 							<select name="entrada">
 								<option selected>Normal</option>
@@ -116,7 +115,7 @@
 							</select>
 						<br><br><br><br>
 						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>
+						Esto es un botón de agregar a la cesta <br>-->
 	                </div>
 	            </div>
 	            
@@ -139,36 +138,56 @@
                         <h4 class="modal-title text-center">Introduce un nuevo teatro</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="post">
+                        <form action="function/insertar_teatro.php?lugar=teatro" enctype="multipart/form-data" method="post" >
 				      	     <p> Introduce el nombre*: </p>
-                             <input type="text" class="form-control" placeholder="Nombre del teatro" name="nombreteatro" aria-describedby="basic-addon2" required>
+                             <input type="text" class="form-control" placeholder="Nombre del teatro" id ="nombre" name="nombre" aria-describedby="basic-addon2" required>
                             <br>
                             <p>Introduce una imagen*: </p>
-                            <input type="file" name="imagenteatro" required>
+                            <input type="file" id="imagen" name="imagen" required class="file-loading">
                             <br>
 				      	     <p> Introduzca una descripción acerca del mismo: </p>
-				      	     <textarea class="form-control" name="descripcionteatro" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+				      	     <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
 						    <br>
 						     <p> Introduce la dirección*: </p>
-						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionteatro1" aria-describedby="basic-addon2" required>
-							 <input type="text" class="form-control" placeholder="Localidad, Provincia" name="localizacionteatro2" aria-describedby="basic-addon2" required>
-							 <input type="text" class="form-control" placeholder="País" name="localizacionteatro3" aria-describedby="basic-addon2" required>
+						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacion1" aria-describedby="basic-addon2" required>
+							 <input type="text" class="form-control" placeholder="Localidad, Provincia" name="localizacion2" aria-describedby="basic-addon2" required>
+							 <input type="text" class="form-control" placeholder="País" name="localizacion3" aria-describedby="basic-addon2" required>
 							<br>
 							 <p> Introduce el teléfono de contacto: </p>
 							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonoteatro" aria-describedby="basic-addon2">
 							<br>
-							<p> Introduce el horario*: </p>
+							<p> Introduce el horario*: (Primero la hora de apertura y después la de cierre</p>
 								<ul>
-								    <li><label> Lunes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required></li>
-								    <li> <label> Martes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Miércoles: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Jueves: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Viernes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Sábado: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Domingo: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    <li><label> Lunes: </label> 
+								    	<input type="time" name="aperturaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="cierreLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    </li>
+								    <li> <label> Martes: </label> 
+								    	<input type="time" name="aperturaMartes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="cierreMartes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    </li>
+								    <li><label> Miércoles: </label> 
+								    	<input type="time" name="aperturaMiercoles" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="cierreMiercoles" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    </li>
+								    <li><label> Jueves: 
+								    	</label> <input type="time" name="aperturaJueves" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="cierreJueves" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    </li>
+								    <li><label> Viernes: </label> 
+								    	<input type="time" name="aperturaViernes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="cierreViernes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    </li>
+								    <li><label> Sábado: </label> 
+								    	<input type="time" name="aperturaSabado" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="cierreSabado" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    </li>
+								    <li><label> Domingo: </label> 
+								    	<input type="time" name="aperturaDomingo" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="cierreDomingo" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
 								</ul>
 							<p> Introduce cómo llegar: </p>
-							<textarea class="form-control" name="comoLlegarTeatro" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>
+							<textarea class="form-control" name="comoLlegar" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>
 							<p> Precio entradas: </p>
 							<textarea class="form-control" name="entradas" rows="3" placeholder="Escriba aquí la el tipo de entradas y sus respectivs precios"></textarea>
 
