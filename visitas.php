@@ -24,7 +24,7 @@
         <title>Turistea | Visitas</title>
         
     </head> 
-    <body> 
+    <body onload="muestraVisitas()"> 
         <?php 
             include("navbar.html");
         ?>
@@ -51,43 +51,7 @@
 	            </div>
 	            <div class="row">
 	        	    <table class="enMedio">  	
-						<tbody>
-							<tr>
-						        <td class="auxtd1">
-						        	<a href="puerta_sol.php"><img src="img/puertaDelSol.jpg" alt="Puerta del Sol" class="img-rounded auximg2" width="100%" height="180px">
-						        	<p class="tituloVisitas">Puerta del Sol</p></a>
-						        </td>
-						        <td class="auxtd1">
-									<a href="circulo_bellas_artes.php"><img src="img/circuloBellasArtes.jpg" alt="Círculo de Bellas Artes" class="img-rounded auximg2" width="100%" height="180px">
-									<p class="tituloVisitas">Círculo de Bellas Artes</p></a>
-								</td>
-						        <td class="auxtd1">
-									<a href="puerta_europa.php"><img src="img/puertaDeEuropa.jpg" alt="Puerta de Europa" class="img-rounded auximg2" width="100%" height="180px">
-									<p class="tituloVisitas">Puerta de Europa</p></a>
-								</td>
-						        <td class="auxtd1">
-									<a href="gran_via.php"><img src="img/granVia.jpg" alt="Gran Vía" class="img-rounded auximg2" width="100%" height="180px">
-									<p class="tituloVisitas">Gran Vía</p></a>
-								</td>
-					      	</tr>     
-					      	<tr>
-						        <td class="auxtd1">
-									<a href="plaza_santa_ana.php"><img src="img/plazaDeSantaAna.jpg" alt="Plaza de Santa Ana" class="img-rounded auximg2" width="100%" height="180px">
-									<p class="tituloVisitas">Plaza de Santa Ana</p></a>
-								</td>
-								<td class="auxtd1">
-									<a href="las_ventas.php"><img src="img/lasventas.jpg" alt="Las ventas" class="img-rounded auximg2" width="100%" height="180px">
-									<p class="tituloVisitas">Las ventas</p></a>
-								</td>
-								<td class="auxtd1">
-									<a href="escorial.php"><img src="img/monasterioEscorial.jpg" alt="Monasterio del Escorial" class="img-rounded auximg2" width="100%" height="180px">
-									<p class="tituloVisitas">Monasterio del Escorial</p></a>
-								</td>
-								<td class="auxtd1">
-									<a href="puerta_alcala.php"><img src="img/puertaDeAlcala.jpg" alt="Puerta de Alcalá" class="img-rounded auximg2" width="100%" height="180px">
-									<p class="tituloVisitas">Puerta de Alcalá</p></a>
-								</td>
-					      	</tr>  
+						<tbody id="cuerpoTabla">
 					    </tbody>
 					</table>
 	            </div>
@@ -99,6 +63,28 @@
 	            ?>
 	        </div>
         </div>
+        
+	            <!--                            Modal Visitas                              -->
+
+	            <div class="modal fade" id="modalVisita" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			        <div class="modal-dialog" role="document" style="color: black;">
+			          <div class="modal-content">
+			            <div class="modal-header">
+			            	<h4 class="tituloVisita centrado">Conoce este lugar un poco más.</h4>
+			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                <span aria-hidden="true" style="color: black;">&times;</span>
+			              </button>
+			            </div>
+			            
+			            <div class="modal-body">
+			            
+
+			            </div>
+			           
+			          </div>
+			        </div>
+			      </div>      
+	            
     
         <!-- Modal -->
         <div class="modal fade" id="formularioVisitas" role="dialog">
@@ -111,7 +97,7 @@
                         <h4 class="modal-title text-center">Introduce un nuevo lugar</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="post">
+                        <form action="validaVisita.php" enctype="multipart/form-data" method="post">
 				      	     <p> Introduce el nombre: </p>
                              <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrelugar" aria-describedby="basic-addon2">
                             <br>
@@ -143,5 +129,41 @@
 	    <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+        <script type="text/javascript">
+		
+            function muestraVisitas(){
+                $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: "ajax/sqlVisitas.php",
+                    data: {},
+                    success: function(data, textStatus) {
+                        $("#cuerpoTabla").html(data);
+                    }
+                }).done(function(msg) {
+
+
+                });
+
+            }
+
+            function muestraModalVisita(titulo_visita) {   //funcion ajax para enviar datos(usado en la modal)
+                // Send the value in PHP
+                
+                $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: "ajax/modalMostrarVisita.php",
+                    data: { "titulo": titulo_visita},
+                    success: function(data, textStatus) {
+                        $("#modalVisita .modal-body").html(data);
+                        $("#modalVisita").modal('show');    
+                    }
+                    }).done(function(msg) {
+
+
+                });
+            };
+        </script>
 	</body>
 </html>
