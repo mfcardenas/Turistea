@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2017 a las 21:26:25
+-- Tiempo de generación: 15-05-2017 a las 12:55:36
 -- Versión del servidor: 5.5.40
 -- Versión de PHP: 5.5.19
 
@@ -66,32 +66,15 @@ CREATE TABLE IF NOT EXISTS `gastronomia` (
 --
 
 CREATE TABLE IF NOT EXISTS `lugares` (
-`id` int(11) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
   `Tipo` enum('Teatro','Museo','Cine','Parque') NOT NULL,
-  `Imagen` varchar(100) NOT NULL,
+  `Nombre` varchar(30) NOT NULL,
+  `Imagen` varchar(20) NOT NULL,
   `Direccion` varchar(50) NOT NULL,
   `Telefono` int(9) NOT NULL,
   `Horario` text NOT NULL,
   `Llegada` text NOT NULL,
   `Precio` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `lugares`
---
-
-INSERT INTO `lugares` (`id`, `Nombre`, `Tipo`, `Imagen`, `Direccion`, `Telefono`, `Horario`, `Llegada`, `Precio`) VALUES
-(1, 'Nombre', 'Teatro', 'C:/Users/Paloma/Desk', 'Calle, Numero Localidad, Provincia PaÃ­s', 916666666, 'L 10:00:00 10:00:00 M 10:00:00 10:00:00 X 10:00:00 10:00:00 J 10:00:00 10:00:00 V 10:00:00 10:00:00 S 10:00:00 10:00:00 D 10:00:00 10:00:00', 'CÃ³mo llegar', 'Precio entradas'),
-(2, 'Teatro nuevo', 'Teatro', 'C:/Users/Paloma/Desk', 'hola hola hola hola hola hola', 2147483647, 'L 10:00:00 10:00:00 M 10:00:00 10:00:00 X 10:00:00 10:00:00 J 10:00:00 10:00:00 V 10:00:00 10:00:00 S 10:00:00 10:00:00 D 10:00:00 10:00:00', 'llegar', 'precio'),
-(3, 'Teatro Lara', 'Teatro', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/teatroLara.jpg', 'Calle Corredera Baja de San Pablo, 15 Madrid, Madr', 915239027, 'L 18:30 22:00 M 17:00 23:55 X 17:00 23:55 J 17:00 23:55 V 17:00 23:55 S 17:00 23:55 D 17:00 23:55', 'Metro: Las paradas mÃ¡s cercanas son Callao (lÃ­neas 3 y 5) y Tribunal (lÃ­neas 1 y 10)\r\nBus: 1, 22, 44, 46, 74, 75, 133, 147, 148\r\nEn coche: Si decides probar suerte y aparcar en la calle, recordamos que es zona verde. Los parkings mÃ¡s cercanos estÃ¡n en:\r\n- C/Tudescos s/n\r\n- Garaje Luna en la C/Pizarro nÂº7\r\n- Garaje Pizarro en la C/Pizarro nÂº16\r\n- Saba: Plaza de los Mostenses, s/n\r\n\r\n', 'El precio depende de la funciÃ³n. Desde 12,00 â‚¬'),
-(4, 'Teatro Nuevo AlcalÃ¡', 'Teatro', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/teatroNuevoAlcala.jpg', 'Calle de Jorge Juan, 62 Madrid, Madrid EspaÃ±a', 914353403, 'L 10:00 10:00 M 18:00 20:30 X 18:00 20:30 J 18:00 20:30 V 17:00 22:00 S 17:00 22:00 D 16:30 18:00', 'Metro: Parada PrÃ­ncipe de Vergara (lÃ­neas 2, 4 y 9)\r\nBus: 29, 5, 15, 152, 146 y C2', 'El precio depende de la funciÃ³n'),
-(5, 'Teatro EspaÃ±ol', 'Teatro', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdcos/test/imgLugares/teatroEspanol.jpg', 'Plaza Santa Ana. Calle PrÃ­ncipe, 25 Madrid, Madri', 913896335, 'L 10:00:00 10:00:00 M 10:00:00 10:00:00 X 10:00:00 10:00:00 J 10:00:00 10:00:00 V 10:00:00 10:00:00 S 10:00:00 10:00:00 D 10:00:00 10:00:00', 'Metro: AntÃ³n MartÃ­n (lÃ­nea 1), Sevilla (lÃ­nea 2) y Sol (lÃ­neas 1, 2 y 3)', 'Depende de la funciÃ³n.'),
-(6, 'Teatro Marquina', 'Teatro', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/teatroMarquina.jpg', 'Calle Prim, 11 Madrid, Madrid EspaÃ±a', 915323186, 'L 10:00:00 10:00:00 M 12:30 19:00 X 11:30 23:55 J 11:30 23:55 V 11:30 23:55 S 12:30 23:55 D 12:30 23:55', 'Metro: Banco de EspaÃ±a (lÃ­nea 2) o Chueca (lÃ­nea 5)\r\nCercanÃ­as: Recoletos\r\nCoche: Los parkings mÃ¡s cercanos estÃ¡n en Augusto Figueroa 32 y en Plaza del Rey (calle de las Infantas, 31)', 'Depende de la funciÃ³n.'),
-(7, 'Teatro Coliseum', 'Teatro', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/teatroColiseum.jpg', 'Calle Gran VÃ­a, 78 Madrid, Madrid EspaÃ±a', 915323186, 'L 13:00 20:30 M 13:00 20:30 X 13:00 20:30 J 13:00 20:30 V 13:00 22:00 S 13:00 22:00 D 13:00 18:00', 'Metro: Plaza de EspaÃ±a (lÃ­nea 2)\r\nBus: 1, 2, 44, 46, 74, 75\r\nCoche: Parking en Plaza de EspaÃ±a', 'Depende de la funciÃ³n'),
-(8, 'Museo del Prado', 'Museo', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/museoDelPrado.jpg', 'Paseo Prado, s/n Madrid, Madrid EspaÃ±a', 913302800, 'L 10:00:00 20:00 M 10:00:00 20:00 X 10:00:00 20:00 J 10:00:00 20:00 V 10:00:00 20:00 S 10:00:00 20:00 D 10:00:00 19:00', 'Metro: Banco de EspaÃ±a (lÃ­nea 2)', 'Entrada General: 15â‚¬\r\nEntrada Reducida para mayores de 65 aÃ±os, miembros de familias numerosas y carnet joven: 7,50â‚¬\r\nEntrada Gratuita para menores de 18 aÃ±os, parados, estudiantes hasta 25 aÃ±os, personas con discapacidad: 0â‚¬\r\nEntrada General + ejemplar de â€˜GuÃ­a del Pradoâ€™: 24â‚¬\r\n\r\nPublicaciÃ³n oficial del Museo, con mÃ¡s de 400 imÃ¡genes\r\n\r\nEntrada General 2 Visitas: 22â‚¬\r\n\r\nDos visitas al Museo del Prado con un precio reducido, en dÃ­as diferentes durante un aÃ±o\r\n\r\nEntrada Visita de 9 a 10H: 50â‚¬\r\n\r\nVisita el museo antes de su apertura al pÃºblico\r\n\r\nAbono "Paseo del Arte": 28â‚¬\r\n\r\nPermite una visita al Museo del Prado, al Museo Thyssen Bornemisza y al Museo Reina SofÃ­a en un aÃ±o desde su emisiÃ³n, con un 20% de descuento en el precio de las entradas\r\n\r\n*La entrada al Museo incluye acceso a la ColecciÃ³n permanente y a las exposiciones temporales del dÃ­a de la visita.\r\n\r\n**Para cualquier entrada (que no sea la general) se deberÃ¡ presentar un tÃ­tulo oficial que verifique la tarifa'),
-(9, 'Museo Thyssen', 'Museo', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/museoThyssen.jpg', 'Palacio de Villahermosa Madrid, Madrid EspaÃ±a', 913302800, 'L 12:00 16:00 M 10:00 19:00 X 10:00:00 19:00 J 10:00:00 19:00 V 10:00:00 19:00 S 10:00:00 19:00 D 10:00:00 19:00', 'Metro: Banco de EspaÃ±a (LÃ­nea 2)\r\nBuses lÃ­neas: 1, 2 5, 9, 10 14, 15, 20, 27, 34, 37, 41, 51, 52, 53, 74, 146, 150\r\nTren: EstaciÃ³n de Atocha, EstaciÃ³n de Recoletos', 'Entrada General: 12â‚¬\r\nEntrada Reducida: 7â‚¬ (pensionistas, miembros de familias numerosas, ciudadanos con discapacidad superior al 33%)\r\nEntrada Gratis para menores de 12 aÃ±os acompaÃ±ados de adutos y ciudadanos en situaciÃ³n de desempleo\r\n*Para cualquier entrada (que no sea la general) se deberÃ¡ presentar un tÃ­tulo oficial que verifique la tarifa'),
-(10, 'Museo Reina SofÃ­a', 'Museo', 'C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/museoReinaSofia.jpg', 'Calle Santa Isabel, 52 Madrid, Madrid EspaÃ±a', 917741000, 'L 10:00:00 21:00 M 10:00:00 10:00:00 X 10:00:00 21:00 J 10:00:00 21:00 V 10:00:00 21:00 S 10:00:00 21:00 D 10:00:00 14:30', 'Metro: Atocha (Linea 1)\r\nCercanÃ­as: Atocha-RENFE\r\nAparcamiento de bicicletas: En la entrada de la Plaza Nouvel y a ambos lados del edificio Sabatini\r\nAparcamiento para coches: EstaciÃ³n de Atocha Plaza Emperador Carlos V s/n.', 'Entrada General: 12â‚¬\r\nEntrada Reducida: 7â‚¬ (pensionistas, miembros de familias numerosas, ciudadanos con discapacidad superior al 33%)\r\nEntrada Gratis para menores de 12 aÃ±os acompaÃ±ados de adutos y ciudadanos en situaciÃ³n de desempleo\r\n*Para cualquier entrada (que no sea la general) se deberÃ¡ presentar un tÃ­tulo oficial que verifique la tarifa\r\n\r\n**La entrada para exposiciones temporales tendrÃ¡ un coste de 4â‚¬.');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -101,24 +84,10 @@ INSERT INTO `lugares` (`id`, `Nombre`, `Tipo`, `Imagen`, `Direccion`, `Telefono`
 
 CREATE TABLE IF NOT EXISTS `noticias` (
   `Titulo` varchar(25) NOT NULL,
-`ID` int(11) NOT NULL,
-  `Subtitulo` varchar(25) NOT NULL,
-  `Resumen` text NOT NULL,
-  `Descripcion` text NOT NULL,
-  `Fuente` varchar(50) NOT NULL,
-  `Fecha` datetime NOT NULL,
-  `Imagen` varchar(65) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `noticias`
---
-
-INSERT INTO `noticias` (`Titulo`, `ID`, `Subtitulo`, `Resumen`, `Descripcion`, `Fuente`, `Fecha`, `Imagen`) VALUES
-('Prueba 1', 1, 'este es un subtitulo', 'holaaaaaaaaaaaaaaaaaaa :D', 'esto es la descripcion de la noticia assssssssssssss   ssssssssssssssss   sssssssssssssssssssssssaa     sssssssssss ssssssssssss ssssssss aaaaaaaa aaaa', 'url cualquiera', '2017-04-06 18:00:00', '../turistea/imgNoticias/alcala.jpg'),
-('dsd', 2, 'dsd d', 'sd sdd', 'sd sd', 'sss ', '2017-05-17 19:43:10', '../Turiste/imgNoticias/p.jpg'),
-('prueba 2', 3, '1', '1', '234', '1', '2017-05-18 10:24:28', '../Turiste/imgNoticias/o.jpg'),
-('prueba 2', 4, '1', '1', '234', '1', '2017-05-18 20:09:50', '../Turiste/imgNoticias/ALBARICOQUE-buena.jpg');
+  `Imagen` varchar(25) NOT NULL,
+  `Contenido` text NOT NULL,
+  `Fuente` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -211,16 +180,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `Nombre` varchar(30) NOT NULL,
   `Id_usuario` varchar(25) NOT NULL,
   `Contrasenia` varchar(20) NOT NULL,
-  `Email` varchar(30) NOT NULL,
+  `E-mail` varchar(30) NOT NULL,
   `Tipo` enum('admin','normal') NOT NULL DEFAULT 'normal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`Nombre`, `Id_usuario`, `Contrasenia`, `Email`, `Tipo`) VALUES
-('Andrea', 'AndreaM', '123', 'andrea@gmail.com', 'normal');
 
 -- --------------------------------------------------------
 
@@ -275,13 +237,13 @@ ALTER TABLE `gastronomia`
 -- Indices de la tabla `lugares`
 --
 ALTER TABLE `lugares`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`Nombre`);
 
 --
 -- Indices de la tabla `noticias`
 --
 ALTER TABLE `noticias`
- ADD PRIMARY KEY (`ID`);
+ ADD PRIMARY KEY (`Titulo`);
 
 --
 -- Indices de la tabla `rutas`
@@ -299,7 +261,7 @@ ALTER TABLE `tienda`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
- ADD PRIMARY KEY (`Id_usuario`), ADD UNIQUE KEY `E-mail` (`Email`);
+ ADD PRIMARY KEY (`Id_usuario`), ADD UNIQUE KEY `E-mail` (`E-mail`);
 
 --
 -- Indices de la tabla `visitas`
@@ -316,16 +278,6 @@ ALTER TABLE `visitas`
 --
 ALTER TABLE `galeria`
 MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT de la tabla `lugares`
---
-ALTER TABLE `lugares`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT de la tabla `noticias`
---
-ALTER TABLE `noticias`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

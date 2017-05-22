@@ -138,7 +138,7 @@
                         <h4 class="modal-title text-center">Introduce un nuevo teatro</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="function/insertar_teatro.php?lugar=teatro" enctype="multipart/form-data" method="post" >
+                        <form action="function/insertar_lugar.php?lugar=teatro" enctype="multipart/form-data" method="post" >
 				      	     <p> Introduce el nombre*: </p>
                              <input type="text" class="form-control" placeholder="Nombre del teatro" id ="nombre" name="nombre" aria-describedby="basic-addon2" required>
                             <br>
