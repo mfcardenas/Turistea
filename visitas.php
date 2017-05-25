@@ -29,7 +29,7 @@
             include("navbar.html");
         ?>
         <div class="container">
-            <div class="contenido">     
+            <div class="contenido"> 
 	            <h1 class="text-center">Visitas</h1>
 	            <h3 class="text-center"> ¿A qué estás esperando? ¡A visitar Madrid! </h3>
 	            <div class="row">
@@ -52,6 +52,10 @@
 	            <div class="row">
 	        	    <table class="enMedio">  	
 						<tbody id="cuerpoTabla">
+                            <?php 
+                                include("function/funciones.php");
+                                mostrarVisitas() 
+                            ?>
 					    </tbody>
 					</table>
 	            </div>
@@ -97,7 +101,7 @@
                         <h4 class="modal-title text-center">Introduce un nuevo lugar</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="validaVisita.php" enctype="multipart/form-data" method="post">
+                        <form action="function/insertar_visita.php" enctype="multipart/form-data" method="post">
 				      	     <p> Introduce el nombre: </p>
                              <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrelugar" aria-describedby="basic-addon2">
                             <br>
@@ -130,23 +134,7 @@
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
         <script type="text/javascript">
-		
-            function muestraVisitas(){
-                $.ajax({
-                    type: "POST",
-                    dataType: "html",
-                    url: "ajax/sqlVisitas.php",
-                    data: {},
-                    success: function(data, textStatus) {
-                        $("#cuerpoTabla").html(data);
-                    }
-                }).done(function(msg) {
-
-
-                });
-
-            }
-
+	
             function muestraModalVisita(titulo_visita) {   //funcion ajax para enviar datos(usado en la modal)
                 // Send the value in PHP
                 
