@@ -14,7 +14,7 @@
           echo '<div class="row">';
 
           echo '<div class="col-lg-6">'; ?>
-          <a href="rutaDeportistas.php"> <img class="img-circle" src= "<?php echo $fila[3]; ?>" alt="Mapa Ruta" width="480" height="480"/> </a>
+          <a href=<?php echo '"ajax/MostrarRuta.php?id=';echo $fila[0].'"';?>> <img class="img-circle" src= "<?php echo $fila[3]; ?>" alt="Mapa Ruta" width="480" height="480"/> </a>
           <?php
           echo '</div>';
           echo '<div class="col-lg-6">';
@@ -43,7 +43,7 @@
             echo '</div>';
             
           echo '<div class="col-lg-6">'; ?>
-          <a href="rutaDeportistas.php"> <img class="img-circle" src= "<?php echo $fila[3]; ?>" alt="Mapa Ruta" width="480" height="480"/> </a>
+           <a href=<?php echo '"./ajax/MostrarRuta.php?id=';echo $fila[0].'"';?>> <img class="img-circle" src= "<?php echo $fila[3]; ?>" alt="Mapa Ruta" width="480" height="480"/> </a>
           <?php
           echo '</div>';
           echo '</div>';
