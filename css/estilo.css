@@ -234,7 +234,7 @@
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-  margin-top: 9%;
+  margin-top: 50px;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -316,4 +316,30 @@ div .jumbotron{
   margin: auto;
   margin-bottom: 20px;
 
+}
+
+.centrado{
+  text-align: center;
+}
+
+.textoNoticias{
+  font-family: 'Indie Flower', cursive;
+}
+
+.tituloNoticia{
+  font-family: 'Indie Flower', cursive;
+}
+
+#formularioNoticias .input-group{
+  margin-top: 8px;
+
+}
+
+.auxScroll{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.busqueda{
+  text-align: right;
 }

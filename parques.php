@@ -20,19 +20,19 @@
 	    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <title>Turistea | Parques temáticos</title>
         
-        <title>Turistea | Parques Temáticos</title>
-
-
-
     </head> 
     <body> 
         <?php 
-            include("navbar.html");
+            include("navbar.php");
+            include("function/funciones.php");
         ?>
         <div class="container">
-            <div class="contenido"> 
+            <div class="contenido">           
 	            <h1 class="text-center">Parques temáticos</h1>
+	            <h3 class="text-center"> Conoce los parques de Madrid </h3>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
@@ -41,101 +41,28 @@
 					</ol>
 	            </div>
 	            <div class="row">
+	            	<div>
+	            		<form action="buscar_lugar.php?tipo=parque" method="post" class="busqueda">
+		            		<input type="text" placeholder="Búsqueda" id="buscar" name="buscar">
+		            		<input type="submit" value="Buscar">
+		            	</form>
+	            	</div>
                     <div class="aniadir">
                         <a href="" onClick="$('#formularioParques').modal()" data-toggle="modal">
                         <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
                         <div class="limpiar"></div> 
                     </div>
 	            </div>
-	            <div class="row">
-	                <div class="col-lg-6">
-	                	<a href="zoodeMadrid.php"> <img class="img-circle" src= "img/zoodeMadrid.jpg" alt="zoodeMadrid"> </a>
-	                </div>
-	                <div class="col-lg-6">
-						<a href="zoodeMadrid.php"> <h2> Zoo de Madrid </h2> </a>
-						<p class="subtitulo"> Dirección: </p>
-						Casa de Campo s/n <br>
-						28011 Madrid Madrid <br>
-						España <br>
-						<br>
-						<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						Precio: 23,30€ <br>
-						Selección de entrada: <br>
-							<select name="entrada">
-								<option selected>General</option>
-								<option>Reducida</option>
-								<option>Familia Numerosa general(>65 años)</option>
-								<option>Familia Numerosa reducida </option>
-								<option>Persona discapacitada + acompañante gratis</option>
-								<option>Gratuita</option>
-							</select>
-						<br><br><br><br>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>
-	                </div>
-	            </div>
-	            <hr class="featurette-divider">
-	            <div class="row">
-	                <div class="col-lg-6">
-	                	<a href="faunia.php"> <h2> Faunia </h2> </a>
-	                    <p class="subtitulo"> Dirección: </p>
-	                   		Av. Comunidades, 28 <br>
-							28032 Madrid Madrid <br>
-							España <br>
-						<br>
-						Precio: 26,45€ <br>
-						Selección de entrada: <br>
-							<select name="entrada">
-								<option selected>General</option>
-								<option>Infantil</option>
-								<option>Senior</option>
-								<option>Persona Discapacidad + acompañante </option>
-								<option>Familia Numerosa Adulto </option>
-								<option>Familia Numerosa Infantil </option>
-								<option>Menores de 3 años</option>
-							</select>
-						<br><br><br><br>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>
-	                </div>
-	                <div class="col-lg-6">
-						<a href="faunia.php"> <img class="img-circle" src= "img/faunia_0.jpg" alt="faunia"> </a>
-	                </div>
-	            </div>
-	            <hr class="featurette-divider">
-	            <div class="row">
-	                <div class="col-lg-6">
-	                   <a href="aquopolisVillanueva.php"> <img class="img-circle" src= "img/aquopolis.jpg" alt="aquopolisVillanueva"> </a>
-	                </div>
-	                <div class="col-lg-6">
-						<a href="aquopolisVillanueva.php"> <h2> Aquopolis Villanueva </h2> </a>
-						<p class="subtitulo"> Dirección: </p>
-							Avenida de la Dehesa, s/n <br>
-							28691 Villanueva de la Cañada Madrid <br>
-							España <br>
-						<br>
-						<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						Precio: 25,95€ <br>
-						Selección de entrada: <br>
-							<select name="entrada">
-								<option selected>General (+140cm)</option>
-								<option>Infantil (90-140cm)</option>
-								<option>Senior (>65 años)</option>
-								<option>Persona Discapacidad </option>
-								<option>Gratis (< 90 cm) </option>
-							</select>
-						<br><br><br><br>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>
-	                </div>
-	            </div>
+	            <?php
+	            	$tipo = "Parque";
+	            	mostarLugares($tipo);
+	            ?>
 	            
-	            <hr class="featurette-divider">
 	            <!-- FOOTER -->
 	            <?php
 	                include("footer.html");
-            	?>
-           	</div>
+	            ?>
+	        </div>
         </div>
 
         <!-- Modal -->
@@ -169,13 +96,13 @@
 							<br>
 							<p> Introduce el horario*: </p>
 								<ul>
-								    <li><label> Lunes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required></li>
-								    <li> <label> Martes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Miércoles: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Jueves: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Viernes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Sábado: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
-								    <li><label> Domingo: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    <li><label> Lunes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required></li>
+								    <li> <label> Martes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
+								    <li><label> Miércoles: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
+								    <li><label> Jueves: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
+								    <li><label> Viernes: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
+								    <li><label> Sábado: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
+								    <li><label> Domingo: </label> <input type="time" name="horaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
 								</ul>
 							<p> Introduce cómo llegar: </p>
 							<textarea class="form-control" name="comoLlegarparque" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>
