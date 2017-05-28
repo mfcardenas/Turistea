@@ -10,28 +10,40 @@
       $consulta = mysqli_query($db, $sql);
       $fila = mysqli_fetch_row($consulta);
 
-      echo '<div class="row">';
-        echo '<div class="col-md-6">';
-          ?>
-          <img id="image-gallery-image" src="<?php echo $fila[5]; ?>" alt="Imagen Noticia" class="img-responsive">
-          <?php
-        echo '</div>';
-        echo '<div class="col-md-6">';
-          echo '<div class="cuerpoNoticia auxScroll">';
-            echo '<h2>' .$fila[0]. '</h2>';
-            echo '<h4>' .$fila[1]. '</h4>';
-            echo '<br>';
-            echo '<div class="textoNoticias">';
-              echo '<p>' .$fila[2]. '</p>';
-            echo '</div>';
-            echo '<br>';
-            echo '<p>Fuente de la noticia: <span style="color: blue;">' .$fila[4]. '</span></p>';
-            echo '<p>' .$fila[3]. '</p>';
-          echo '</div>';
-        echo '</div>';
-      echo '</div>';      
+      ?>
+
+      <div class="row">
+        <div class="col-sd-8 col-md-8">
+            <img id="image-modal" class="img-responsive" src="<?php echo $fila[5]; ?>"/>
+        </div>
+        <div class="col-sd-4 col-md-4">
+            <div class="row">
+                <div class="col-sd-11 col-md-11">
+                    <div class="page-header default">
+                        <h1><?php echo $fila[0]; ?></h1>
+                        <h2>- <?php echo $fila[1]; ?></h2>
+
+                    </div>
+                    <div class="comments-list pre-scrollable default">
+                        <div class="media">
+                           <p class="pull-right"><small><?php echo $fila[3]; ?></small></p>
+                            
+                           <div class="media-body">
+                              <p class="media-heading user_name subtituloN"><?php echo $fila[2]; ?></p>
+                              <p><small>Fuente: <?php echo $fila[4]; ?></small></p>
+                           </div>
+
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <?php 
       
       mysqli_close($db);
     }
   ?>
 
+ 

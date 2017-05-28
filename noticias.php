@@ -3,25 +3,23 @@
     <head> 
         
         <meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	    <!-- Bootstrap core CSS-->
-	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
-	    <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous">
+    <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
-	    <!-- Custom styles for this template -->
-	    <link href="css/carousel.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
 
-	    <link href="css/estilo.css" rel="stylesheet" type="text/css">
+    <link href="css/estilo.css" rel="stylesheet" type="text/css">
 
-	    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-
-	    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <title>Turistea | Noticias</title>
 
@@ -43,38 +41,43 @@
 					</ol>
 	            </div>
 
-	            <div class="row">
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioNoticias').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
-	            </div>
+	            <!-- Si eres admin puedes añadir una noticia -->
+
+	            <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+		            <div class="row">
+	                    <div class="aniadir">
+	                        <a href="" onClick="$('#formularioNoticias').modal()" data-toggle="modal">
+	                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+	                        <div class="limpiar"></div> 
+	                    </div>
+		            </div>
+		         <?php } ?>
 
 	            <!-- div que se mostrará solo cuando haya algun error relativo a la img en el formulario de crear una noticia  -->
 
 	            <div class="row">	            	
-	            	<div <?php if(isset($_GET["errorDatos"]) && $_GET["errorDatos"]=="si"){ ?> class="panel panel-danger">
-			            <div class="panel-heading">La imagen que has intentado subir para la noticia no cumple con alguno de los siguientes requisitos:
-			            	<ul>
-			            		<li>La imagen no puede superar los 5KB permitidos.</li>
-			            		<li>Debe ser una imagen que no exista.</li>
-			            		<li>Debe ser extrictamente una imagen de tipo PNG o JPG.</li>
-			            	</ul>
-			            </div>
-			            <?php }else{ ?> > 
-			            <?php } ?>
-			        </div>
+	            	<?php if(isset($_GET["errorDatos"]) && $_GET["errorDatos"]=="si"){ ?>
+	            		<div class="panel panel-danger">
+			            	<div class="panel-heading">La imagen que has intentado subir para la noticia no cumple con alguno de los siguientes requisitos:
+				            	<ul>
+				            		<li>La imagen no puede superar los 5KB permitidos.</li>
+				            		<li>La imagen debe tiner un nombre que ya existe en nuestra base de datos.</li>
+				            		<li>Debe ser extrictamente una imagen de tipo PNG o JPG.</li>
+				            	</ul>
+			           		</div>
+			            </div> 
+			        <?php } ?>
 	            </div>
 
 	            <!-- div que se mostrará solo cuando haya algun error en los datos en el formulario de crear una noticia -->
 
 	            <div class="row">	            	
-	            	<div <?php if(isset($_GET["errorForm"]) && $_GET["errorForm"]=="si"){ ?> class="panel panel-danger">
-			            <div class="panel-heading">Los campos del formulario no son corretos.</div>
-			            <?php }else{ ?> > 
-			            <?php } ?>
-			        </div>
+	            	<?php if(isset($_GET["errorForm"]) && $_GET["errorForm"]=="si"){ ?>
+	            		<div class="panel panel-danger">
+			            	<div class="panel-heading">Los campos del formulario no son corretos.</div>
+			            </div>
+			        <?php } ?>
+			        
 	            </div>
 
 	            <!--                         Contenido de la página                         -->
@@ -86,24 +89,21 @@
 
 	            <!--                            Modal Noticias                              -->
 
-	            <div class="modal fade" id="modalNoticia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			        <div class="modal-dialog" role="document" style="color: black;">
-			          <div class="modal-content">
-			            <div class="modal-header">
-			            	<h4 class="tituloNoticia">Descubre más sobre la noticia.</h4>
-			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			                <span aria-hidden="true" style="color: black;">&times;</span>
-			              </button>
-			            </div>
-			            
-			            <div class="modal-body">
-			            
+	            
 
+			     <div class="row">
+			        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			             aria-hidden="true">
+			            <div class="modal-dialog long-size">
+			                <div class="modal-content img-container">
+			                    <div class="modal-body modal-instagram">
+			                       
+			                    </div>
+			                </div>
 			            </div>
-			           
-			          </div>
 			        </div>
-			      </div>      
+			    </div>
+    
 	            
 	            <!-- FOOTER -->
 	            <?php
@@ -198,6 +198,23 @@
 
 	}
 
+	function borraNoticia(id_noticia){
+
+		$.ajax({
+	        type: "POST",
+	        dataType: "html",
+	        url: "ajax/sqlBorraNoticia.php",
+	        data: { "id": id_noticia},
+	        success: function(data, textStatus) {
+	               location.reload();
+	        }
+	    }).done(function(msg) {
+	 
+	        
+	    });
+
+	}
+
 	function muestraModalNoticia(id_noticia) {   //funcion ajax para enviar datos(usado en la modal)
 	    // Send the value in PHP
 	    $.ajax({
@@ -206,10 +223,10 @@
 	        url: "ajax/modalMostrarNoticia.php",
 	        data: { "id": id_noticia},
 	        success: function(data, textStatus) {
-	            $("#modalNoticia .modal-body").html(data);
-	            $("#modalNoticia").modal('show');    
+	            $("#myModal2 .modal-body").html(data);
+	            $("#myModal2").modal('show');    
 	        }
-	    	}).done(function(msg) {
+	    }).done(function(msg) {
 	 
 	        
 	    });

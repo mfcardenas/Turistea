@@ -38,6 +38,38 @@
 			$entradas = isset($_POST['entradas'])?$_POST['entradas']:null;
 
 
+///////////////////////////////////////////////////
+			echo $nombre;
+			echo $descripcion;
+
+			echo $localizacion1 ;
+			echo $localizacion2 ;
+			echo $localizacion3 ;
+
+			echo $telefono;
+
+			echo $aLunes;
+			echo $aMartes;
+			echo $aMiercoles;
+			echo $aJueves;
+			echo $aViernes;
+			echo $aSabado;
+			echo $aDomingo;
+
+			echo $cLunes;
+			echo $cMartes;
+			echo $cMiercoles;
+			echo $cJueves;
+			echo $cViernes;
+			echo $cSabado;
+			echo $cDomingo;
+
+			echo $llegar;
+			echo $entradas;
+
+
+
+
 			if($nombre != null AND $descripcion != null AND $localizacion1 != null AND $localizacion2 != null AND $localizacion3 != null AND $aLunes != null AND $aMartes != null AND $aMiercoles != null AND $aJueves != null AND $aViernes != null AND $aSabado != null AND $aDomingo != null AND $cLunes != null AND $cMartes != null AND $cMiercoles != null AND $cJueves != null AND $cViernes != null AND $cSabado != null AND $cDomingo != null AND $llegar != null AND $entradas != null){
 
 				$direccion = $localizacion1 . " " . $localizacion2 . " " . $localizacion3;
@@ -52,7 +84,7 @@
 					exit('Fallo en la conexion');
 				}
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
-				$target_dir = "imgLugares/";  										//ruta
+				$target_dir = "../test/imgLugares/";  										//ruta
 				$target_file = $target_dir . basename($_FILES["imagen"]["name"]);			//ruta completa (path + nombre de la img)
 				$file_name = basename($_FILES["imagen"]["name"]);
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);						//tipo de la img
@@ -64,7 +96,7 @@
 
 					move_uploaded_file($_FILES['imagen']['tmp_name'], $target_dir.$file_name);  //subimos la imagen en el servidor
 				
-					$sql = "INSERT INTO lugares(Tipo, Nombre, Imagen, Direccion, Telefono, Horario, Llegada, Precio) VALUES ('$lugar', '$nombre', '$target_file', '$direccion' , '$telefono', '$horario', '$llegar', '$entradas')";
+					$sql = "INSERT INTO lugares(Tipo, Nombre, Imagen, Direccion, Telefono, Horario, Llegada, Precio, Descripcion) VALUES ('$lugar', '$nombre', '$target_file', '$direccion' , '$telefono', '$horario', '$llegar', '$entradas', '$descripcion')";
 					$consulta = mysqli_query($db, $sql);
 					if($consulta != null){
 						switch($lugar){

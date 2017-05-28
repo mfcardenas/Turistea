@@ -42,13 +42,18 @@
 	            <div class="row">
 	               <h4 class="tituloVisita">Comparte con tod@s tu experiencia en Madrid. Una imagen vale más que mil palabras </h4>
                 </div>
-                <div class="row">
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioGaleria').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-camera"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
-	            </div>
+
+                <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+		            <div class="row">
+		                <div class="aniadir">
+		                    <a href="" onClick="$('#formularioGaleria').modal()" data-toggle="modal">
+		                    <span class="glyphicon glyphicon-camera"></span><h4>Añadir</h4> </a>
+		                    <div class="limpiar"></div> 
+		                </div>
+		            </div>
+
+		        <?php } ?>
+		        
 	            <div class="row">
 				    <div class="col-xs-6 col-md-12 portfolio">
 				    	<a href="experiencia1.php"><img src="img/experiencia1.jpg" alt="exp1"></a>

@@ -18,18 +18,17 @@
 					$cont = $_POST['inputPassword'];
 					$sql = "SELECT Contrasenia, Id_usuario, Tipo FROM usuarios WHERE Email = '$usuEmail';";
 					$consulta = mysqli_query($db, $sql);
-					$fila= mysqli_fetch_row($consulta);
-					
+					$fila = mysqli_fetch_row($consulta);
+					//$contHash = password_hash($cont, PASSWORD_BCRYPT);
+
 					//Compruebo que el email introducido está asociado con la contraseña indicada
 					if($fila[0] == $cont){
 						mysqli_close($db);
 						session_start(); 
-						echo $usuEmail;
-						echo $cont;
 						$_SESSION["autentificado"]= "SI"; //varibale de sesion para saber si el suario está autenticado
 						$_SESSION["usuLogeado"]= $fila[1]; //variable de sesion que contiene el id del usuario logeado
 						$_SESSION["tipoUsuarioLog"] = $fila[2]; //variable de sesion que tiene el tipo del usuario logeado(para saber si es admin o no)
-						header('Location: ../Turistea');
+						header('Location: index.php');
 						
 					}else{
 						mysqli_close($db);

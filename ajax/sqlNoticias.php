@@ -1,6 +1,6 @@
 
   <?php
-   
+      session_start();
       $db = mysqli_connect('localhost','root','','turistea');
       if(!$db){
         exit('Error en la conexion.');
@@ -16,18 +16,22 @@
             echo '<div class="col-md-6">';
               //imagen
              ?>
-            <img id="image-gallery-image" class="img-circle img-responsive" src="<?php echo $fila[4]; ?>" alt="Imagen Noticia">
+            <img id="image-gallery-image" class="img-circle img-responsive" src="<?php echo $fila[4]; ?>" alt="Imagen Noticia" width="300px;">
             <?php
             echo '</div>';
             echo '<div class="col-md-6">';
               //contenido
-              echo '<h2>' .$fila[0]. '</h2>';
-              echo '<h4>' .$fila[1]. '</h4> <br>';
+              echo '<h3>' .$fila[0]. '</h3>';
+              echo '<h4>- ' .$fila[1]. '</h4> <br>';
               echo '<hr>';
               echo '<p class="textoNoticias">' .$fila[2]. '</p><br>';
-              echo '<p>' .$fila[3]. '</p>'; ?>
-              <button type="button" onclick="muestraModalNoticia('<?php echo $fila[5]; ?>')" class="btn btn-lg btn-primary">Leer Mas</button><?php
+              echo '<p>' .$fila[3]. '</p>';
+              ?> <button type="button" onclick="muestraModalNoticia('<?php echo $fila[5]; ?>')" class="btn btn-lg btn-primary">Leer Mas</button> <?php
+              if(isset($_SESSION["tipoUsuarioLog"]) && $_SESSION["tipoUsuarioLog"] == "admin"){  //si es admin puede eliminar noticias
+                ?><button type="button" onclick="borraNoticia('<?php echo $fila[5]; ?>')" class="btn btn-lg btn-primary">Eliminar</button><?php
+              }
             echo '</div>';
+
           echo '</div>';
           echo '<hr class="featurette-divider">';
         }
@@ -35,17 +39,20 @@
           echo '<div class="row">';
             echo '<div class="col-md-6">';
               //contenido
-              echo '<h2>' .$fila[0]. '</h2>';
+              echo '<h3>' .$fila[0]. '</h3>';
               echo '<h4>' .$fila[1]. '</h4> <br>';
               echo '<hr>';
               echo '<p class="textoNoticias">' .$fila[2]. '</p><br>';
-              echo '<p>' .$fila[3]. '</p>'; ?>
-              <button type="button" onclick="muestraModalNoticia('<?php echo $fila[5]; ?>')" class="btn btn-lg btn-primary">Leer Mas</button><?php
+              echo '<p>' .$fila[3]. '</p>'; 
+              ?> <button type="button" onclick="muestraModalNoticia('<?php echo $fila[5]; ?>')" class="btn btn-lg btn-primary">Leer Mas</button> <?php
+              if(isset($_SESSION["tipoUsuarioLog"]) && $_SESSION["tipoUsuarioLog"] == "admin"){  //si es admin puede eliminar noticias
+                ?><button type="button" onclick="borraNoticia('<?php echo $fila[5]; ?>')" class="btn btn-lg btn-primary">Eliminar</button><?php
+              }
             echo '</div>';
             echo '<div class="col-md-6">';
               //imagen
              ?>
-            <img id="image-gallery-image" class="img-circle img-responsive" src="<?php echo $fila[4]; ?>" alt="Imagen Noticia">
+            <img id="image-gallery-image" class="img-circle img-responsive" src="<?php echo $fila[4]; ?>" alt="Imagen Noticia" height="300px" width="340px">
             <?php
             echo '</div>';
           echo '</div>';
@@ -58,7 +65,5 @@
       mysqli_close($db);
     
   ?>
-
-                  
 
                 

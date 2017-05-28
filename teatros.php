@@ -47,11 +47,13 @@
 		            		<input type="submit" value="Buscar">
 		            	</form>
 	            	</div>
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioTeatro').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
+	            	<?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+	                    <div class="aniadir">
+	                        <a href="" onClick="$('#formularioTeatro').modal()" data-toggle="modal">
+	                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+	                        <div class="limpiar"></div> 
+	                    </div>
+	                <?php } ?>
 	            </div>
 	            <?php
 	            	$tipo = "Teatro";
@@ -92,7 +94,7 @@
 							 <input type="text" class="form-control" placeholder="País" name="localizacion3" aria-describedby="basic-addon2" required>
 							<br>
 							 <p> Introduce el teléfono de contacto: </p>
-							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonoteatro" aria-describedby="basic-addon2">
+							 <input type="text" class="form-control" placeholder="Teléfono" name="telefono" aria-describedby="basic-addon2">
 							<br>
 							<p> Introduce el horario*: (Primero la hora de apertura y después la de cierre</p>
 								<ul>

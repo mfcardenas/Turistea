@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Sigin</title>
+		<title>Valida Noticia</title>
 	</head>
 	<body>
 		<?php
@@ -37,7 +37,7 @@
 						//insertamos la nueva noticia en la base de datos
 						$sql = "INSERT INTO noticias VALUES ('$titulo', null , '$subtitulo','$resumen','$descp', '$fuente', '$fecha','$target_file');";
 						$consulta = mysqli_query($db, $sql);
-						header('Location: noticias.php')
+						header('Location: noticias.php');
 
 					}
 					else{

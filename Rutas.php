@@ -11,6 +11,7 @@
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
 	    <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous">
+	    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
 	    <!-- Custom styles for this template -->
 	    <link href="css/carousel.css" rel="stylesheet">
@@ -26,11 +27,12 @@
 
 
     </head> 
-    <body onload="muestraRutas()"> 
+    <body id="cuerpo" onload="muestraRutas()"> 
         <?php 
             include("navbar.php");
         ?>
         <div class="container">
+        	
         	<div class="contenido"> 
 	        	<h1 class="text-center">Rutas turísticas</h1>
 	            <div class="row">
@@ -48,14 +50,44 @@
 					<p>Porque recuerda...</p>
 					<div><blockquote>De Madrid al Cielo.</blockquote></div>
 				</article>
-			   <div class="row">
-			   	<hr class="featurette-divider">
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioRutas').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
+			   
+		        
+		         <!-- div que se mostrará solo cuando haya algun error relativo a la img en el formulario de crear una noticia  -->
+
+	            <div class="row">	            	
+	            	<?php if(isset($_GET["errorImg"]) && $_GET["errorImg"]=="si"){ ?>
+	            		<div class="panel panel-danger">
+			            	<div class="panel-heading">La imagen que has intentado subir para la ruta no cumple con alguno de los siguientes requisitos:
+				            	<ul>
+				            		<li>Las imagenes no puede superar los 8KB permitidos.</li>
+				            		<li>Las imagenes no deben tener un nombre que ya existe en nuestra base de datos.</li>
+				            		<li>Debe ser extrictamente una imagen de tipo PNG o JPG.</li>
+				            	</ul>
+			           		</div>
+			            </div> 
+			        <?php } ?>
 	            </div>
+
+	            <!-- div que se mostrará solo cuando haya algun error en los datos en el formulario de crear una noticia -->
+
+	            <div class="row">	            	
+	            	<?php if(isset($_GET["errorForm"]) && $_GET["errorForm"]=="si"){ ?>
+	            		<div class="panel panel-danger">
+			            	<div class="panel-heading">Los campos del formulario no son corretos.</div>
+			            </div>
+			        <?php } ?>
+			        
+	            </div>
+
+	            <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+		          <div class="row">
+		            <hr class="featurette-divider">
+		            <div class="aniadir">
+		              <a href="" onClick="$('#formularioRutas').modal()" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span><h4>Añadir Ruta</h4></a>
+		              <div class="limpiar"></div> 
+		            </div>
+		          </div>
+		        <?php } ?>
 
 
      <!--                         Contenido de la página                         -->
@@ -64,11 +96,14 @@
 
 	            </div>
 
+			</div> <!-- contenido -->
+
 			<!-- FOOTER -->
 		    <?php
 		    	include("footer.html");
 		    ?>
-		</div>
+
+		</div> <!-- contanier -->
 
      <!-- Modal -->
         <div class="modal fade" id="formularioRutas" role="dialog">
@@ -83,30 +118,30 @@
                     <div class="modal-body">
                         <form action="validaRuta.php" enctype="multipart/form-data" method="POST">
 				      	    <p>Nombre de la ruta: </p>
-                            <input type="text" class="form-control" placeholder="Nombre de la ruta" name="nombreruta" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Nombre de la ruta" name="nombreruta" aria-describedby="basic-addon2" required>
                             <br>
                             <p>Mapa: </p>
-                            <input type="file" name="imagenMapa">
+                            <input type="file" name="imagenmapa" required>
                             <br>
                         	<p>Duración </p>
-                            <input type="number" min="0" class="form-control" placeholder="Horas" name="duracion" aria-describedby="basic-addon2">
+                            <input type="number" min="0" class="form-control" placeholder="Horas" name="duracion" aria-describedby="basic-addon2" required>
                             <br>
                             <p>Punto de partida </p>
-                            <input type="text" class="form-control" placeholder="Punto de partida" name="inicio" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Punto de partida" name="inicio" aria-describedby="basic-addon2" required>
                             <br>
                             <p>Punto de destino </p>
-                            <input type="text" class="form-control" placeholder="Punto de destino" name="destino" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Punto de destino" name="destino" aria-describedby="basic-addon2" required>
                             <br>
 				      	    <p>Descripción: </p>
-				      	    <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+				      	    <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion" required></textarea>
 						    <br>
                             <?php
                             for ($i=1; $i <= 5; $i++) {
                                 echo '<p>Párrafo ' .$i. ': </p>'; ?>
-                                <textarea class="form-control" name="<?php echo 'parrafo' .$i; ?>" rows="10" placeholder="Escriba aquí el contenido"></textarea>
+                                <textarea class="form-control" name="<?php echo 'parrafo' .$i; ?>" rows="10" placeholder="Escriba aquí el contenido" required></textarea>
                                 <br>
                                 <?php echo '<p>Foto ' .$i. ': </p>'; ?>
-                                <input type="file" name="<?php echo 'imagen' .$i; ?>">
+                                <input type="file" name="<?php echo 'foto' .$i; ?>" required>
                                 <?php 
                                 echo '<br>';
                             }
@@ -156,6 +191,38 @@
 	        
 	    });
 	};
+
+	function muestraRuta(id_ruta){
+		$.ajax({
+	        type: "POST",
+	        dataType: "html",
+	        url: "ajax/MostrarRuta.php",
+	        data: {"id": id_ruta},
+	        success: function(data, textStatus) {
+	        	$(".contenido").html(data);
+	        	window.scrollTo(0,0);
+			}
+	    }).done(function(msg) {
+	 
+	        
+	    });
+	}
+
+	function borraRuta(id_ruta){
+		$.ajax({
+	        type: "POST",
+	        dataType: "html",
+	        url: "ajax/sqlBorraRuta.php",
+	        data: { "id": id_ruta},
+	        success: function(data, textStatus) {
+	               location.reload();
+	        }
+	    }).done(function(msg) {
+	 
+	        
+	    });
+
+	}
 	</script>
 
 </html>

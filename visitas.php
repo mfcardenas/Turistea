@@ -43,11 +43,13 @@
 	               <h4 class="tituloVisita">¡¡No olvides visitar, estos maravillosos lugares de Madrid!! :) </h4>
                 </div>
                 <div class="row">
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioVisitas').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
+                	<?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+	                    <div class="aniadir">
+	                        <a href="" onClick="$('#formularioVisitas').modal()" data-toggle="modal">
+	                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+	                        <div class="limpiar"></div> 
+	                    </div>
+	                <?php } ?>
 	            </div>
 	            <div class="row">
 	        	    <table class="enMedio">  	

@@ -17,29 +17,53 @@
 					$email = $_POST['inputEmail'];
 					$cont1 = $_POST['inputPassword'];
 					$cont2 = $_POST['inputPassword2'];
-					$nombre = $_POST['inputNombre'];
-					$usu = $_POST['inputUsu'];
-					
+					$nombre = htmlspecialchars(trim(strip_tags($_REQUEST["inputNombre"])));
+					$usu = htmlspecialchars(trim(strip_tags($_REQUEST["inputUsu"])));
+
 					if($cont1 != $cont2){													//compruebo que las contraseñas son iguales
 						header('Location: index_registro.php?errorusuario=cont');
 					}
 					else{
-						$sql = "SELECT usuario FROM usuarios WHERE usuario = '$usu';";      //compruebo que no existe ese usuario
-						$consulta = mysqli_query($db, $sql);
-						$fila= mysqli_fetch_row($consulta);
-						
-						
-						if(!$fila){															
-							$sql1 = "INSERT INTO usuarios VALUES ('$nombre','$usu','$cont1','$email','normal');";
-							$consulta1 = mysqli_query($db, $sql1);
+						$i = 0;
+						$noEspaciosN = false;
+						while($i<count($nombre) AND !$noEspaciosN){ 
+						    if($nombre[$i] == ""){
+						    	$noEspaciosN = true;
+						    }
+						    $i++;
+						}																	//comprobamos que el nombre y el usuario no tienen espacios
+						$i = 0;
+						$noEspaciosU = false;
+						while($i<count($usu) AND !$noEspaciosU){ 
+						    if($usu[$i] == ""){
+						    	$noEspaciosU = true;
+						    }
+						    $i++;
+						}
+
+						if($noEspaciosU || $noEspaciosN){
+							header('Location: index_registro.php?errorusuario=espacios');
+						}
+						else{
+
+							$sql = "SELECT Id_usuario FROM usuarios WHERE Id_usuario = '$usu';";      //compruebo que no existe ese usuario
+							$consulta = mysqli_query($db, $sql);
+							$fila= mysqli_fetch_row($consulta);
 							
-							mysqli_close($db);
-							header('Location: index_login.php');
 							
-						}else{
-							mysqli_close($db);
-							header('Location: index_registro.php?errorusuario=si');
-						
+							if(!$fila){			
+								//$contHash = password_hash($cont1, PASSWORD_BCRYPT);
+								$sql1 = "INSERT INTO usuarios VALUES ('$nombre','$usu','$cont1','$email','normal');";
+								$consulta1 = mysqli_query($db, $sql1);
+								
+								mysqli_close($db);
+								header('Location: index_login.php');
+								
+							}else{
+								mysqli_close($db);
+								header('Location: index_registro.php?errorusuario=si');
+							
+							}
 						}
 					}
 				}

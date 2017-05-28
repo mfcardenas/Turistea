@@ -9,7 +9,7 @@
 				$_SESSION["autentificado"]= "NO"; 
 				$_SESSION["usuLogeado"] = "";
 				$_SESSION["tipoUsuarioLog"] = "";
-			header('Location: ../Turistea');		
+			header('Location: index.php');		
 		?>
 	</body>
 </html>

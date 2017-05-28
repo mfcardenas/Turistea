@@ -1,16 +1,3 @@
-<?php
-  session_start();
-  if(!isset($_SESSION['usuLogeado'])){
-    $_SESSION['usuLogeado'] = '';
-  }
-  if(!isset($_SESSION['autentificado'])){
-    $_SESSION['autentificado'] = 'NO';
-  }
-  if(!isset($_SESSION["tipoUsuarioLog"])){
-    $_SESSION["tipoUsuarioLog"] = '';
-  }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -63,10 +50,10 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading"> Noticias de interés</h2>
-          <p class="lead">Entérate de los acontecimientos más importantes de Madrid; festivales, desfiles, manifestaciones..</p> <p class="lead"> <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> Todo al alacance de un click </a></p>
+          <p class="lead">Entérate de los acontecimientos más importantes de Madrid; festivales, desfiles, manifestaciones..</p> <p class="lead"> <a href="noticias.php"> Todo al alacance de un click </a></p>
         </div>
         <div class="col-md-5">
-          <a href="" onClick="$('#myModal').modal()" data-toggle="modal"> <img class="featurette-image img-responsive center-block" src="img/noticias.jpg" alt="noticias"> </a>
+          <a href="noticias.php"> <img class="featurette-image img-responsive center-block" src="img/noticias.jpg" alt="noticias"> </a>
         </div>
       </div>
 
