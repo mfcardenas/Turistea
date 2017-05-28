@@ -339,3 +339,7 @@ div .jumbotron{
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+.busqueda{
+  text-align: right;
+}

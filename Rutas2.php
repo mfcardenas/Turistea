@@ -28,7 +28,7 @@
     </head> 
     <body> 
         <?php 
-            include("../turistea/navbar.html");
+            include("../turistea/navbar.php");
         ?>
         <div class="container">
         	<div class="contenido"> 

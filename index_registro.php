@@ -45,7 +45,7 @@
         <div id="bg"><img src="img/bg_login.jpg"></div>
     
         <?php 
-            include("navbar.html");
+            include("navbar.php");
         ?>
 
         <div class="container">

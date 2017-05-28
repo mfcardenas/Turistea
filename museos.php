@@ -41,6 +41,12 @@
 					</ol>
 	            </div>
 	            <div class="row">
+	            	<div>
+	            		<form action="buscar_lugar.php?tipo=museo" method="post" class="busqueda">
+		            		<input type="text" placeholder="Búsqueda" id="buscar" name="buscar">
+		            		<input type="submit" value="Buscar">
+		            	</form>
+	            	</div>
                     <div class="aniadir">
                         <a href="" onClick="$('#formularioMuseo').modal()" data-toggle="modal">
                         <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
@@ -51,82 +57,7 @@
 	            	$tipo = "Museo";
 	            	mostarLugares($tipo);
 	            ?>
-	            <!--
-	            <div class="row">
-	                <div class="col-lg-6">
-	                	<a href="museoDelPrado.php"> <img class="img-circle" src= "img/museoDelPrado.jpg" alt="museoDelPrado"> </a>
-	                </div>
-	                <div class="col-lg-6">
-						<a href="museoDelPrado.php"> <h2> Museo del Prado </h2> </a>
-						<p class="subtitulo"> Dirección: </p>
-						Paseo del Prado s/n <br>
-						28014 Madrid Madrid <br>
-						España <br>
-						<br>
-						<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						<!--Precio: 16,00€ <br>
-						Selección de entrada: <br>
-							<select name="entrada">
-								<option selected>Normal</option>
-								<option>Niño</option>
-								<option>Otro tipo de entrada</option>
-							</select>
-						<br><br><br><br>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>-->
-	                </div>
-	            </div>
-	            <hr class="featurette-divider">
-	            <div class="row">
-	                <div class="col-lg-6">
-	                	<a href="museoThyssen.php"> <h2> Museo Thyssen </h2> </a>
-	                    <p class="subtitulo"> Dirección: </p>
-	                   		Palacio de Villahermosa<br>
-							28014 Madrid Madrid <br>
-							España <br>
-						<br>
-						<!--Precio: 12,00€ <br>
-						Selección de entrada: <br>
-							<select name="entrada">
-								<option selected>Normal</option>
-								<option>Niño</option>
-								<option>Otro tipo de entrada</option>
-							</select>
-						<br><br><br><br>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>-->
-	                </div>
-	                <div class="col-lg-6">
-						<a href="museoThyssen.php"> <img class="img-circle" src= "img/museoThyssen.jpg" alt="museoThyssen"> </a>
-	                </div>
-	            </div>
-	            <hr class="featurette-divider">
-	            <div class="row">
-	                <div class="col-lg-6">
-	                   <a href="museoReinaSofia.php"> <img class="img-circle" src= "img/museoReinaSofia.jpg" alt="museoReinaSofia"> </a>
-	                </div>
-	                <div class="col-lg-6">
-						<a href="museoReinaSofia.php"> <h2> Museo Reina Sofía </h2> </a>
-						<p class="subtitulo"> Dirección: </p>
-						Calla Santa Isabel, 52<br>
-						28012 Madrid Madrid <br>
-						España <br>
-						<br>
-						<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						<!--Precio: 8,00€ <br>
-						Selección de entrada: <br>
-							<select name="entrada">
-								<option selected>Normal</option>
-								<option>Niño</option>
-								<option>Otro tipo de entrada</option>
-							</select>
-						<br><br><br><br>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-						Esto es un botón de agregar a la cesta <br>-->
-	                </div>
-	            </div>
 	            
-	            <hr class="featurette-divider">
 	            <!-- FOOTER -->
 	            <?php
 	                include("footer.html");
@@ -166,32 +97,32 @@
 							<p> Introduce el horario*: (Primero la hora de apertura y después la de cierre</p>
 								<ul>
 								    <li><label> Lunes: </label> 
-								    	<input type="time" name="aperturaLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
-								    	<input type="time" name="cierreLunes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
+								    	<input type="time" name="aperturaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
 								    </li>
 								    <li> <label> Martes: </label> 
-								    	<input type="time" name="aperturaMartes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
-								    	<input type="time" name="cierreMartes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    	<input type="time" name="aperturaMartes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreMartes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Miércoles: </label> 
-								    	<input type="time" name="aperturaMiercoles" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
-								    	<input type="time" name="cierreMiercoles" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    	<input type="time" name="aperturaMiercoles" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreMiercoles" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Jueves: 
-								    	</label> <input type="time" name="aperturaJueves" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
-								    	<input type="time" name="cierreJueves" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    	</label> <input type="time" name="aperturaJueves" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreJueves" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Viernes: </label> 
-								    	<input type="time" name="aperturaViernes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
-								    	<input type="time" name="cierreViernes" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    	<input type="time" name="aperturaViernes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreViernes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Sábado: </label> 
-								    	<input type="time" name="aperturaSabado" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
-								    	<input type="time" name="cierreSabado" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> 
+								    	<input type="time" name="aperturaSabado" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreSabado" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Domingo: </label> 
-								    	<input type="time" name="aperturaDomingo" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required>
-								    	<input type="time" name="cierreDomingo" value="10:00:00" max="24:00:00" min="10:00:00" step="1" required> </li>
+								    	<input type="time" name="aperturaDomingo" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreDomingo" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
 								</ul>
 							<p> Introduce cómo llegar: </p>
 							<textarea class="form-control" name="comoLlegar" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2017 a las 12:55:36
--- Versión del servidor: 5.5.40
--- Versión de PHP: 5.5.19
+-- Tiempo de generación: 21-05-2017 a las 21:15:09
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `turistea`
@@ -26,14 +26,14 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `galeria`
 --
 
-CREATE TABLE IF NOT EXISTS `galeria` (
-`Id` int(11) NOT NULL,
+CREATE TABLE `galeria` (
+  `Id` int(11) NOT NULL,
   `Titulo` varchar(30) NOT NULL,
   `Imagen` varchar(30) NOT NULL,
   `Lugar` varchar(30) NOT NULL,
   `Autor` varchar(30) NOT NULL,
   `Anecdota` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `galeria`
@@ -49,7 +49,7 @@ INSERT INTO `galeria` (`Id`, `Titulo`, `Imagen`, `Lugar`, `Autor`, `Anecdota`) V
 -- Estructura de tabla para la tabla `gastronomia`
 --
 
-CREATE TABLE IF NOT EXISTS `gastronomia` (
+CREATE TABLE `gastronomia` (
   `Nombre` varchar(30) NOT NULL,
   `Imagen` varchar(20) NOT NULL,
   `Direccion` varchar(30) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `gastronomia` (
 -- Estructura de tabla para la tabla `lugares`
 --
 
-CREATE TABLE IF NOT EXISTS `lugares` (
+CREATE TABLE `lugares` (
   `Tipo` enum('Teatro','Museo','Cine','Parque') NOT NULL,
   `Nombre` varchar(30) NOT NULL,
   `Imagen` varchar(20) NOT NULL,
@@ -82,12 +82,26 @@ CREATE TABLE IF NOT EXISTS `lugares` (
 -- Estructura de tabla para la tabla `noticias`
 --
 
-CREATE TABLE IF NOT EXISTS `noticias` (
+CREATE TABLE `noticias` (
   `Titulo` varchar(25) NOT NULL,
-  `Imagen` varchar(25) NOT NULL,
-  `Contenido` text NOT NULL,
-  `Fuente` varchar(50) NOT NULL
+  `ID` int(11) NOT NULL,
+  `Subtitulo` varchar(25) NOT NULL,
+  `Resumen` text NOT NULL,
+  `Descripcion` text NOT NULL,
+  `Fuente` varchar(50) NOT NULL,
+  `Fecha` datetime NOT NULL,
+  `Imagen` varchar(65) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `noticias`
+--
+
+INSERT INTO `noticias` (`Titulo`, `ID`, `Subtitulo`, `Resumen`, `Descripcion`, `Fuente`, `Fecha`, `Imagen`) VALUES
+('Prueba 1', 1, 'este es un subtitulo', 'holaaaaaaaaaaaaaaaaaaa :D', 'esto es la descripcion de la noticia assssssssssssss   ssssssssssssssss   sssssssssssssssssssssssaa     sssssssssss ssssssssssss ssssssss aaaaaaaa aaaa', 'url cualquiera', '2017-04-06 18:00:00', '../turistea/imgNoticias/alcala.jpg'),
+('dsd', 2, 'dsd d', 'sd sdd', 'sd sd', 'sss ', '2017-05-17 19:43:10', '../Turiste/imgNoticias/p.jpg'),
+('prueba 2', 3, '1', '1', '234', '1', '2017-05-18 10:24:28', '../Turiste/imgNoticias/o.jpg'),
+('prueba 2', 4, '1', '1', '234', '1', '2017-05-18 20:09:50', '../Turiste/imgNoticias/ALBARICOQUE-buena.jpg');
 
 -- --------------------------------------------------------
 
@@ -95,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `noticias` (
 -- Estructura de tabla para la tabla `rutas`
 --
 
-CREATE TABLE IF NOT EXISTS `rutas` (
+CREATE TABLE `rutas` (
   `Nombre` varchar(60) NOT NULL,
   `Mapa` varchar(30) NOT NULL,
   `Duracion` int(5) NOT NULL,
@@ -129,7 +143,7 @@ INSERT INTO `rutas` (`Nombre`, `Mapa`, `Duracion`, `Punto_partida`, `Punto_desti
 -- Estructura de tabla para la tabla `tienda`
 --
 
-CREATE TABLE IF NOT EXISTS `tienda` (
+CREATE TABLE `tienda` (
   `Nombre` varchar(100) NOT NULL,
   `Imagen` varchar(70) NOT NULL,
   `Precio` decimal(4,2) NOT NULL
@@ -176,13 +190,20 @@ INSERT INTO `tienda` (`Nombre`, `Imagen`, `Precio`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
+CREATE TABLE `usuarios` (
   `Nombre` varchar(30) NOT NULL,
   `Id_usuario` varchar(25) NOT NULL,
   `Contrasenia` varchar(20) NOT NULL,
-  `E-mail` varchar(30) NOT NULL,
+  `Email` varchar(30) NOT NULL,
   `Tipo` enum('admin','normal') NOT NULL DEFAULT 'normal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`Nombre`, `Id_usuario`, `Contrasenia`, `Email`, `Tipo`) VALUES
+('Andrea', 'AndreaM', '123', 'andrea@gmail.com', 'normal');
 
 -- --------------------------------------------------------
 
@@ -190,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Estructura de tabla para la tabla `visitas`
 --
 
-CREATE TABLE IF NOT EXISTS `visitas` (
+CREATE TABLE `visitas` (
   `Nombre` varchar(30) NOT NULL,
   `Imagen` varchar(70) NOT NULL,
   `Descripcion` text NOT NULL
@@ -225,49 +246,50 @@ INSERT INTO `visitas` (`Nombre`, `Imagen`, `Descripcion`) VALUES
 -- Indices de la tabla `galeria`
 --
 ALTER TABLE `galeria`
- ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `gastronomia`
 --
 ALTER TABLE `gastronomia`
- ADD PRIMARY KEY (`Nombre`);
+  ADD PRIMARY KEY (`Nombre`);
 
 --
 -- Indices de la tabla `lugares`
 --
 ALTER TABLE `lugares`
- ADD PRIMARY KEY (`Nombre`);
+  ADD PRIMARY KEY (`Nombre`);
 
 --
 -- Indices de la tabla `noticias`
 --
 ALTER TABLE `noticias`
- ADD PRIMARY KEY (`Titulo`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `rutas`
 --
 ALTER TABLE `rutas`
- ADD PRIMARY KEY (`Nombre`);
+  ADD PRIMARY KEY (`Nombre`);
 
 --
 -- Indices de la tabla `tienda`
 --
 ALTER TABLE `tienda`
- ADD PRIMARY KEY (`Nombre`);
+  ADD PRIMARY KEY (`Nombre`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
- ADD PRIMARY KEY (`Id_usuario`), ADD UNIQUE KEY `E-mail` (`E-mail`);
+  ADD PRIMARY KEY (`Id_usuario`),
+  ADD UNIQUE KEY `E-mail` (`Email`);
 
 --
 -- Indices de la tabla `visitas`
 --
 ALTER TABLE `visitas`
- ADD PRIMARY KEY (`Nombre`);
+  ADD PRIMARY KEY (`Nombre`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -277,7 +299,12 @@ ALTER TABLE `visitas`
 -- AUTO_INCREMENT de la tabla `galeria`
 --
 ALTER TABLE `galeria`
-MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

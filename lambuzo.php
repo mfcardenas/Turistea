@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head> 
+	<head> 
         
         <meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,29 +21,30 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <title>Turistea | Faunia</title>
+        <title>Turistea | Bar Lambuzo</title>
         
     </head> 
+
     <body> 
         <?php 
             include("navbar.php");
         ?>
         <div class="container">
-            <div class="contenido">            
-	            <h1 class="text-center">Faunia</h1>
+            <div class="contenido">
+	            <h1 class="text-center">Bar Lambuzo</h1>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
 					  	<li><a href="index.php">Inicio</a></li>
-					  	<li><a href="parquesTematicos.php">Parques Temáticos</a></li>
-					  	<li class="active">Faunia</li>
+					  	<li><a href="gastronomia.php">Gastronomía</a></li>
+					  	<li class="active">Bar Lambuzo</li>
 					</ol>
 	            </div>
 	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL PARQUE -->
 	            <div class="row">
 	            	<nav class="text-center">
-						<img src= "img/faunia_0.jpg" alt="faunia"><br><br>
-						<p>Faunia es un jardín botánico y parque zoológico, de unas 14 ha de extensión ubicado en Madrid. Está organizado en áreas que representan diferentes ecosistemas como la jungla, los polos o bosque africano. Es propiedad de Parques Reunidos, SA</p><br>
+						<img src= "img/lambuzo.jpg" alt="barLambuzo"><br><br>
+						<p> El bar Lambuzo es uno de esos sitios que se nota que está montado con cariño. En Madrid existen dos locales de la misma compañía, uno en la calle Ponzano y otro en las Conchas. Para este post nos centraremos en el bar situado en la calle Ponzano que es el más concurrido en la ciudad. Este bar es ideal para ir de tapas con un toque andaluz. Podrás viajar directamente a Cadiz a través de las maravillosas tapas que este fantástico bar ofrece. </p><br>
 					</nav>
 				</div>
 				<div class="row">
@@ -54,104 +55,65 @@
 						<table> 
 							<tr>
 								<td> Lunes: </td>
-								<td> 10:30 a 20:00 </td>
+								<td> 16:00-22:00 </td>
 							</tr>
 							<tr>
 								<td> Martes: </td>
-								<td> 10:30 a 20:00 </td>
+								<td> 16:00-22:00 </td>
 							</tr>
 							<tr>
 								<td> Miércoles: </td>
-								<td> 10:30 a 20:00 </td>
+								<td> 16:00-22:00 </td>
 							</tr>
 							<tr>
 								<td> Jueves: </td>
-								<td> 10:30 a 20:00 </td>
+								<td> 16:00-22:00 </td>
 							</tr>
 							<tr>
 								<td> Viernes: </td>
-								<td> 10:30 a 20:00 </td>
+								<td> 16:00-24:00 </td>
 							</tr>
 							<tr>
-								<td> Sábado: </td30>
-								<td> 10:30 a 20:00 </td>
+								<td> Sábado: </td>
+								<td> 12:00-24:00 </td>
 							</tr>
 							<tr>
 								<td> Domingo: </td>
-								<td> 10:30 a 20:00 </td>
+								<td> 12:00-22:30 </td>
 							</tr>
 						</table>
 					</div>
 					<div class="col-lg-1">
-						<p class ="subtitulo"> Tarifas: </p>
-					</div>
-					<div class="col-lg-4">
-			 			<ul>
-			 				<li> Entrada General Adulto (8-64 años): 23,30€ </li>
-			 				<li> Entrada Infantil (3-7 años): 18,90€ </li>
-							<li> Entrada Senior (Mayores de 65 años): 18,90€ </li>
-							<li> Entrada persona con discapacidad + acompañanante gratis: 18,90€ </li>
-							<li> Entrada Familia Numerosa Adulto: 13,70€ </li>
-							<li> Entrada Familia Numerosa Infantil: 9,40€ </li>
-							<li> Menores de 3 años: GRATIS </li>
-						</ul>
-						<p class="ruta"> *Para cualquier entrada (que no sea la general) se deberá presentar un título oficial que verifique la tarifa </p>
-					</div>
-					<div class="col-lg-1">
 						<p class="subtitulo"> Dirección: </p>
 					</div>
-					<div class="col-lg-3">
-						<p> Casa de Campo s/n </p>
-						<p> 28011 Madrid Madrid </p>
-						<p> España </p>
+					<div class="col-lg-2">
+						<p>Calle Ponzano, 8</p>
+						<p>28010 Madrid Madrid </p>
+						<p>España </p>
 					</div>
-				</div>
-				<div class="row">
 					<div class="col-lg-2">
 						<p class ="subtitulo"> Cómo llegar: </p>
 					</div>
-					<div class="col-lg-5">
+					<div class="col-lg-4">
 						<ul> 
-							<li type="circle"> Coche:
-								<ul>
-									<li> Autovía A3 dirección Valencia, salida 6 (Valdebernardo) </li>
-									<li> Autovía M 40 dirección Norte (salida 13) </li>
-									<li> Autovía M 40 dirección Sur (salida 12) </li>
-									<li> Autovía M 23 prolongación de O’Donnell, salida Vicálvaro </li>
-								</ul>
-							</li>
-			 				<li type="circle"> Metro: Metro Valdebernardo (Línea 9)</li>
-			 				<li type="circle"> Cercanías: Vicálvaro (Línea C2) </li>
-	    					<li type="circle"> Autobús: Línea 71 de la EMT </li>
+							<li type="circle"> Metro: Metro La Rambla (Línea 7)</li>
+			 				<li type="circle"> Cercanías: Coslada (Líneas C2 o C7) </li>
 			 			</ul>
 					</div>
+				</div>
+				<div class="row">
+					
+				</div>
+				<div class="row">
+					<div class="col-lg-3"></div>
 					<div class="col-lg-2">
 						<p class="subtitulo"> Teléfono de contacto: </p>
 					</div>
 					<div class="col-lg-3">
-						<p> Para más información: 917741000 </p>
+						<p> Para más información: 915138059 </p>
 			 		</div>
 			 	</div>
-				<div class="row">
-					<div class="text-center">
-			 			<p> <img src="img/entrada.jpg" alt="entrada"> </p>
-			 			<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						<p> Selección de entrada:</p>
-							<select name="entrada">
-								<option selected>General</option>
-								<option>Infantil</option>
-								<option>Senior</option>
-								<option>Persona Discapacidad + acompañante </option>
-								<option>Familia Numerosa Adulto </option>
-								<option>Familia Numerosa Infantil </option>
-								<option>Menores de 3 años</option>
-							</select>
-						<br><br><br><br>
-						<!--ESTO CAMBIARÁ CON EL TIPO DE ENTRADA SELECCIONADO-->
-						<p> Precio: 12,00€ </p>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-					</div>
-	            </div>
+				
 	            
 	            <hr class="featurette-divider">
 	            <!-- FOOTER -->
@@ -159,7 +121,7 @@
 	                include("footer.html");
 	            ?>
 	        </div>
-        </div>
+	    </div>
     
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
@@ -175,4 +137,3 @@
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 	</body>
 </html>
-

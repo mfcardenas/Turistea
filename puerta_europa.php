@@ -21,7 +21,7 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <title>Turistea | Ruta de los deportistas</title>
+        <title>Turistea | Puerta de Europa</title>
         
     </head> 
     <body> 
@@ -29,35 +29,36 @@
             include("navbar.php");
         ?>
         <div class="container">
-            <div class="contenido">
-	            <h1 class="text-center">Ruta de los Deportistas</h1>
+            <div class="contenido">      
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
 					  	<li><a href="index.php">Inicio</a></li>
-					  	<li><a href="Rutas.php">Rutas turísticas</a></li>
-					  	<li class="active">Ruta de los deportistas</li>
+					  	<li><a href="visitas.php">Visita Madrid</a></li>
+					  	<li class="active">Puerta de Europa</li>
 					</ol>
 	            </div>
-	            <!--AHORA AQUÍ VA LA INFORMACIÓN DE LA RUTA -->
 	            <div class="row">
-	            	<nav class="text-center">
-	            	<p>Bueno ruteros para esta ruta comenzaremos en Plaza Castilla donde podremos ver las Torres Esquio muy importantes en nuestra ciudad.</p>
-					<img src= "img/plazaCastilla.jpg" alt="PlazaCastilla" class="img-rounded"><br><br>
-					<p> A continuación, bajaremos toda la Castellana hasta llegar al estadio Santiago Bernabeu, donde haremos un tour por el estadio donde podremos visitar los vestuarios y la colección de copas del Real Madrid entre otros. Por ello, es imprescindible que el día que vayamos a hacer esta ruta, no haya partido del Real del Madrid en el Santiago Bernabeu, ya que el tour no se realiza durante esas horas.</p>
-					<img src= "img/bernabeu.jpg" alt="SantiagoBernabeu" class="img-rounded"><br><br>
-					<p>Tras la visita, es ¡hora de comer! Uno de los sitios más recomendados se situa en la calle Raimundo Fernández Villaverde número 44, llamado La Imperial, donde hacen unos boquerones adobados riquísimos. Otra opción, es a lo largo de la castellana pasado el Santiago Bernabeu, llamado Complejo Azca, donde hay una larga lista de restaurantes para comer, desde italianos como el Ginos hasta restaurantes de comida rápida como el Burguer King.</p>
-					<p>La tarde la dedicaremos visitar Nuevos Ministerios y la Calle Orense. La plaza de Nuevos Ministerios esta respleta de puestecitos artesanales encantadores, donde poder comprar algún regalo a un familiar o pareja. Por si no nos hemos cansado de compras, la calle Orense esta llena de tiendas, pero esta vez de marcas famosas como Zara o Mango. De entre medias, también podemos tomar algún café o tentenpie a lo largo de esta calle en sitios como Rodilla o el Starbucks.</p>
-					<img src= "img/nuevosmin3.jpg" alt="NuevosMinisterios" class="img-rounded"><br><br>
-					<p>Espero que os guste esta recomendación de ruta, donde podréis visitar el famoso Santiago Bernabeu, uno de los lugares culturales más importantes de Madrid.</p>
-					</nav>            
+	                <h1>Puerta de Europa</h1>
+	            </div>
+	            
+	            <nav class="text-center">
+	        	    <img src="img/puertaDeEuropa.jpg" alt="Puerta de Europa" class="img-visita">
+	        	</nav>
+	        	<hr class="featurette-divider">
+	        	<div class="row">
+	        		<p>Las dos torres que conforman la llamada Puerta de Europa, también conocidas como Torres KIO (debido a que fueron promovidas por la empresa kuwaití KIO, Kuwait Investments Office) son dos torres inclinadas la una hacia la otra, 15° respecto a la vertical, con una altura de 114 m y 26 plantas. La Puerta de Europa son las segundas torres gemelas más altas de España, tras las Torres de Santa Cruz en Santa Cruz de Tenerife, con 120 metros sin contar los pararrayos. Están situadas en la Plaza de Castilla de Madrid (España), entre el centro financiero de AZCA y las Cuatro Torres Business Area.</p>
+
+					<!--ESTO EN UN FUTURO SERÁ UN BOTÓN QUE CUENTE LOS LIKES DE CADA SITIO-->	 
+					<img src="img/like.png" alt="Like" class="img-emotion">
+	           
 	            <hr class="featurette-divider">
 	            <!-- FOOTER -->
 	            <?php
 	                include("footer.html");
 	            ?>
 	        </div>
-	    </div>
+        </div>
     
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->

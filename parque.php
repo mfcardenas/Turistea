@@ -21,52 +21,32 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <title>Turistea | Experiencia 1</title>
+        <title>Turistea | Teatro</title>
         
     </head> 
     <body> 
         <?php 
             include("navbar.php");
+            include("function/funciones.php");
+            if(isset($_GET['id'])){
+            	$idParque = $_GET['id'];
+            }
+            else{
+            	header('Location: parques.php?error=nohayid');
+            }
         ?>
         <div class="container">
             <div class="contenido">  
-	            <div class="row">
-	            	<!--Ruta donde te encuentras -->
-	            	<ol class="breadcrumb">
-					  	<li><a href="index.php">Inicio</a></li>
-					  	<li><a href="galeria.php"> Galería </a></li>
-					  	<li class="active">Experiencia1</li>
-					</ol>
-	            </div>
-	            <div class="row row-margin-bottom">
-            		<div class="col-md-5 no-padding lib-item" data-category="view">
-                		<div class="lib-panel">
-                    		<div class="row box-shadow">
-                        		<div class="col-md-6">
-                            		<img class="lib-img-show" src="img/experiencia1.jpg">
-                        		</div>
-                        		<div class="col-md-6">
-                            		<div class="lib-row lib-header">
-                                		<h5> Navidad nocturna madrileña </h5>
-                                		<div class="lib-header-seperator"></div>
-                                    </div>
-                            		<div class="lib-row lib-desc">
-                                		Ha sido la mejor Navidad de mi vida, qué decoración, qué estupendo!! Os recomiendo ir si o si! Y MIRAD QUE FOTAZA!!!!
-                            		</div>
-                        		</div>
-                    		</div>
-                		</div>
-                	</div>
-            	</div>
-	            <hr class="featurette-divider">
+
+				<?php cargarLugar($idParque); ?>
 	            
-            </div>
-            <!-- FOOTER -->
+	            <!-- FOOTER -->
 	            <?php
 	                include("footer.html");
-            	?>
+	            ?>
+	        </div>
         </div>
-    
+
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
 	    <!-- Placed at the end of the document so the pages load faster -->

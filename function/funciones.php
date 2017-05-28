@@ -17,50 +17,57 @@
 		            $lugares = mysqli_fetch_object($consulta);
 		            $cont = 0;
 		            while($lugares){
-
-		            	$nombreSinEspacios = limpia_espacios(strtolower($lugares->Nombre));
-		                $url = $nombreSinEspacios . ".php";
-		                $imagen = $lugares->Imagen;
-
-		            	if($cont % 2 == 0){
-			            	echo '<div class="row">
-		                			<div class="col-lg-6">
-		                   				<a href="';
-
-		                   	echo $url . '"> 
-		                   		<img class="img-circle" src= "';
-
-		                   	echo $imagen . '" alt="' . $nombreSinEspacios . '"> </a>                 
-		                		</div>
-		                		<div class="col-lg-6">
-									<a href="'. $url . '"> <h2>' . $lugares->Nombre . '</h2> </a>
-									<p class="subtitulo"> Dirección: </p>' . $lugares->Direccion . '
-							    </div>
-		            		</div>
-		            		<hr class="featurette-divider">';
-			            }
-			            else {
-			            	echo '<div class="row">
-			            			<div class="col-lg-6">
-			            				<a href="' . $url . '"> <h2>' . $lugares->Nombre . '</h2></a>
-			            				<p class="subtitulo"> Dirección: </p>' . $lugares->Direccion . '
-			            			</div>
-			            			<div class="col-lg-6">
-			            				<a href="' .$url. '">
-			            				<img class="img-circle" src="' . $imagen . '" alt="' . $nombreSinEspacios . '"></a>
-			            			</div>
-			            		</div>';
-			            }
+                  $id = $lugares->id;
+                  verUnLugar($id, $cont);
 			            $lugares = mysqli_fetch_object($consulta);
 			            $cont = $cont + 1;
+                }
 			        }
 		        }
 		    }
 	        @mysql_close($db);
-      	}
 	}
-?>
-  <?php
+
+  function verUnLugar($id, $cont){
+    $db = mysqli_connect('localhost', 'root', '', 'turistea');
+    if(!$db){
+      error('Error en la conexion');
+    }
+    $sql = "SELECT * FROM lugares WHERE id = '$id'";
+    $consulta = mysqli_query($db, $sql);
+    $lugares = mysqli_fetch_object($consulta);
+    $nombreSinEspacios = limpia_espacios(strtolower($lugares->Nombre));
+    $imagen = $lugares->Imagen;
+    $tipoDeLugar = strtolower($lugares->Tipo);
+      if($cont % 2 == 0){
+        echo '<div class="row">
+                <div class="col-lg-6">
+                  <a href="'.$tipoDeLugar. '.php?id=' . $id . '">';
+
+        echo      '<img class="img-circle" src= "';
+        echo        $imagen . '" alt="' . $nombreSinEspacios . '"> </a>                 
+                </div>
+                <div class="col-lg-6">
+                    <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h2>'. $lugares->Nombre . '</h2> </a>
+                    <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion . '
+                </div>
+              </div>
+              <hr class="featurette-divider">';
+      }
+      else {
+        echo '<div class="row">
+                <div class="col-lg-6">
+                    <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h2>' . $lugares->Nombre . '</h2></a>
+                    <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion . '
+                </div>
+                <div class="col-lg-6">
+                    <a href="'.$tipoDeLugar. '.php?id=' . $id . '">
+                    <img class="img-circle" src="' . $imagen . '" alt="' . $nombreSinEspacios . '"></a>
+                </div>
+              </div>
+              <hr class="featurette-divider">';
+      }
+  }
 
     function mostrarVisitas(){
       
@@ -169,11 +176,152 @@
 			            $productos = mysqli_fetch_object($consulta);
 			        }
                     echo '<tr>';
-		        }   
-            
-  
-                
+		        }                   
         }
         mysqli_close($db);
+    }
+
+    function cargarLugar($id){
+      $db = mysqli_connect('localhost', 'root', '', 'turistea');
+      $sql = "SELECT * FROM lugares WHERE id = '$id'";
+      $consulta = mysqli_query($db, $sql);
+      $lugar = mysqli_fetch_object($consulta);
+      $nombreSinEspacios = limpia_espacios(strtolower($lugar->Nombre));
+      $tipoDeLugar = strtolower($lugar->Tipo) .'s';
+      $nombreTipoDeLugar = strtoupper($tipoDeLugar);
+      $horarios = explode(" ", $lugar->Horario);
+
+      echo '<h1 class="text-center">' . $lugar->Nombre . '</h1>
+              <div class="row">
+                <ol class="breadcrumb">
+                  <li><a href="index.php">Inicio</a></li>
+                  <li><a href="'. $tipoDeLugar . '.php">' .$nombreTipoDeLugar. '</a></li>
+                  <li class="active">' . $lugar->Nombre . '</li>
+                </ol>
+              </div>
+              
+              <div class="row">
+                <nav class="text-center">
+                  <img src= "' .$lugar->Imagen . '" alt="'. $nombreSinEspacios . '"><br><br>
+                  <p>' . $lugar->Descripcion . '</p><br>
+                </nav>
+              </div>
+              <div class="row">
+                <div class="col-lg-1">
+                  <p class="subtitulo"> Horario: </p>
+                </div>
+                <div class="col-lg-2">
+                  <table> 
+                    <tr>
+                      <td> Lunes: </td>';
+                      if($horarios[1] == $horarios[2]){
+                        echo '<td> Cerrado </td>';
+                      }
+                      else{
+                       echo '<td> ' .$horarios[1]. ' a ' . $horarios[2] .'</td>';
+                      }
+                    echo '</tr>
+                    <tr>
+                      <td> Martes: </td>';
+                      if($horarios[4] == $horarios[5]){
+                        echo '<td> Cerrado </td>';
+                      }
+                      else{
+                        echo '<td> ' .$horarios[4]. ' a ' .$horarios[5] . '</td>';
+                      }
+                    echo '</tr>
+                    <tr>
+                      <td> Miércoles: </td>';
+                      if($horarios[7] == $horarios[8]){
+                        echo '<td> Cerrado </td>';
+                      }
+                      else{
+                        echo '<td> ' .$horarios[7]. ' a ' .$horarios[8] . '</td>';
+                      }
+                    echo '</tr>
+                    <tr>
+                      <td> Jueves: </td>';
+                      if($horarios[10] == $horarios[11]){
+                        echo '<td> Cerrado </td>';
+                      }
+                      else{
+                        echo '<td> ' .$horarios[10]. ' a ' .$horarios[11] . '</td>';
+                      }
+                      echo '</tr>
+                    <tr>
+                      <td> Viernes: </td>';
+                      if($horarios[13] == $horarios[14]){
+                        echo '<td> Cerrado </td>';
+                      }
+                      else{
+                        echo '<td> ' .$horarios[4]. ' a ' .$horarios[5] . '</td>';
+                      }
+                      echo '</tr>
+                    <tr>
+                      <td> Sábado: </td>';
+                      if($horarios[16] == $horarios[17]){
+                        echo '<td> Cerrado </td>';
+                      }
+                      else{
+                        echo '<td> ' .$horarios[16]. ' a ' .$horarios[17] . '</td>';
+                      }
+                      echo '</tr>
+                    <tr>
+                      <td> Domingo: </td>';
+                      if($horarios[19] == $horarios[20]){
+                        echo '<td> Cerrado </td>';
+                      }
+                      else{
+                        echo '<td> ' .$horarios[19]. ' a ' .$horarios[20] . '</td>';
+                      }
+                    echo '</tr>
+                  </table>
+                </div>
+                <br>
+                <div class="col-lg-1">
+                  <p class ="subtitulo"> Tarifas: </p>
+                </div>
+                <div class="col-lg-4">
+                  ' . nl2br($lugar->Precio) . '
+                </div>
+                <div class="col-lg-1">
+                  <p class="subtitulo"> Dirección: </p>
+                </div>
+                <div class="col-lg-3">
+                  <p> ' . $lugar->Direccion . ' </p>
+                </div>
+              </div>
+              <br><br>
+              <div class="row">
+                <div class="col-lg-2">
+                  <p class ="subtitulo"> Cómo llegar: </p>
+                </div>
+                <div class="col-lg-5">
+                  <p> ' . nl2br($lugar->Llegada). '</p>
+                </div>
+                <div class="col-lg-2">
+                  <p class="subtitulo"> Teléfono de contacto: </p>
+                </div>
+                <div class="col-lg-3">
+                  <p> Para más información: ' . $lugar->Telefono . '</p>
+                </div>
+              </div>
+              <br><br><br><br>              
+              <hr class="featurette-divider">';
+    } 
+
+    function mostrarResultados($tipo, $busqueda){
+      $db = mysqli_connect('localhost', 'root', '', 'turistea');
+      $sql = "SELECT id FROM lugares WHERE Tipo = '$tipo' AND (Nombre LIKE '%" . $busqueda ."%' OR Imagen LIKE '%" . $busqueda ."%' OR Direccion LIKE '%" . $busqueda ."%' OR Descripcion LIKE '%" . $busqueda ."%')";
+      $consulta = mysqli_query($db, $sql);
+      if($consulta != null){
+        $resultados = mysqli_fetch_object($consulta);
+        $cont = 0;
+        while($resultados){
+          verUnLugar($resultados->id, $cont);
+          $cont = $cont + 1;
+          $resultados = mysqli_fetch_object($consulta);
+        }
+      }
     }
 ?>

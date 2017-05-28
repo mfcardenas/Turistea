@@ -21,93 +21,38 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <title>Turistea | Teatro Marquina</title>
+        <title>Turistea | Gran Vía</title>
         
     </head> 
     <body> 
         <?php 
-            include("navbar.html");
+            include("navbar.php");
         ?>
         <div class="container">
-            <div class="contenido">
-	            <h1 class="text-center">Teatro Marquina</h1>
+            <div class="contenido">      
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
 					  	<li><a href="index.php">Inicio</a></li>
-					  	<li><a href="teatros.php">Teatros</a></li>
-					  	<li class="active">Teatro Marquina</li>
+					  	<li><a href="visitas.php">Visita Madrid</a></li>
+					  	<li class="active">Gran Vía</li>
 					</ol>
 	            </div>
-	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL TEATRO -->
 	            <div class="row">
-	            	<nav class="text-center">
-						<img src= "img/teatroMarquina.jpg" alt="teatroMarquina"><br><br>
-						<p>El teatro Marquina es una sala de teatro situada en el barrio de Justicia en el distrito Centro en Madrid, España. Se levanta sobre un solar que el dramaturgo Eduardo Marquina legó al Montepío de Autores, de ahí que se diera su nombre al mismo.</p><br>
-					</nav>
-				</div>
-				<div class="row">
-					<div class="col-lg-2">
-						<p class="subtitulo"> Horario: </p>
-					</div>
-					<div class="col-lg-4">
-						<table> 
-							<tr>
-								<td> Lunes: </td>
-								<td> Cerrado </td>
-							</tr>
-							<tr>
-								<td> Martes: </td>
-								<td> Cerrado </td>
-							</tr>
-							<tr>
-								<td> Miércoles: </td>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-							<tr>
-								<td> Jueves: </td>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-							<tr>
-								<td> Viernes: </td>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-							<tr>
-								<td> Sábado: </td30>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-							<tr>
-								<td> Domingo: </td>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-						</table>
-					</div>
-					<div class="col-lg-2">
-						<p class="subtitulo"> Dirección: </p>
-					</div>
-					<div class="col-lg-4">
-						<p> Calle de Prim, 11  </p>
-						<p>	28004 Madrid Madrid </p>
-						<p>	España </p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="text-center">
-			 			<p> <img src="img/entrada.jpg" alt="entrada"> </p>
-			 			<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						<p> Selección de entrada:</p>
-							<select name="entrada">
-								<option selected>Normal</option>
-								<option>Niño</option>
-								<option>Otro tipo de entrada</option>
-							</select>
-						<br><br><br><br>
-						<!--ESTO CAMBIARÁ CON EL TIPO DE ENTRADA SELECCIONADO-->
-						<p> Precio: 15,00€ </p>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-					</div>
+	                <h1>Gran Vía</h1>
 	            </div>
 	            
+	            <nav class="text-center">
+	        	    <img src="img/granVia.jpg" alt="Gran Vía" class="img-visita">
+	        	</nav>
+	        	<hr class="featurette-divider">
+	        	<div class="row">
+	        		<p>La Gran Vía es una de las principales calles de Madrid (España). Comienza en la calle de Alcalá y termina en la plaza de España. Es un importante hito en la ciudad desde su construcción a principios de siglo XX visto desde el punto de vista comercial, turístico y de ocio. En este último aspecto es famosa por sus cines, si bien en los últimos años algunos de ellos han cerrado y otros se han reconvertido con gran éxito al teatro musical, por lo que el tramo comprendido entre la plaza de Callao y la de España se conoce como el Broadway madrileño. </p> 
+					<p>El tramo comprendido entre la red de San Luis y la plaza de Callao alberga en la actualidad numerosas tiendas de cadenas internacionales de moda.</p>
+
+					<!--ESTO EN UN FUTURO SERÁ UN BOTÓN QUE CUENTE LOS LIKES DE CADA SITIO-->	 
+					<img src="img/like.png" alt="Like" class="img-emotion">
+	           
 	            <hr class="featurette-divider">
 	            <!-- FOOTER -->
 	            <?php

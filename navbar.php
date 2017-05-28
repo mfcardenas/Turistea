@@ -19,60 +19,10 @@
                 <!--Esto me parece interesante que esté si no os gusta lo quito -->
                 <li><a href="quienSomos.php">¿Quiénes somos?</a></li>
                 <li><a href="queEs.php">¿Qué es Turistea?</a></li>
-                <li class="dropdown">
-                  <!--MENÚ DE TEATROS (desplegable, aquí habrá que poner los nombres según la base de datos)-->
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teatros<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="teatros.php"> TODOS LOS TEATROS </a></li>
-                    <li role="separator" class="divider"></li>
-                    <!--ESTO SE CARGARÍA DE LA BASE DE DATOS igual estaría bien solo tener aquí los teatros más vistos o en promoción (para que no se haga muy larga la lista) -->
-                    <li><a href="teatroEspanol.php">Teatro Español</a></li>
-                    <li><a href="teatroMarquina.php">Teatro Marquina</a></li>
-                    <li><a href="teatroNuevoAlcala.php">Teatro Nuevo Alcalá</a></li>
-                    <!--ESTO DE MOMENTO NO LO QUIERO
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                    -->
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <!--MENÚ DE MUSEOS (desplegable)-->
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Museos<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="museos.php"> TODOS LOS MUSEOS </a></li>
-                    <li role="separator" class="divider"></li>
-                    <!--ESTO SE CARGARÍA DE LA BASE DE DATOS igual estaría bien solo tener aquí los teatros más vistos o en promoción (para que no se haga muy larga la lista) -->
-                    <li><a href="museoThyssen.php">Museo Thyssen</a></li>
-                    <li><a href="museoReinaSofia.php">Museo Reina Sofía</a></li>
-                    <li><a href="museoDelPrado.php">Museo Del Prado</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <!--MENÚ DE PARQUES TEMÁTICOS (desplegable)-->
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parques temáticos<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="parquesTematicos.php"> TODOS LOS PARQUES TEMÁTICOS </a></li>
-                    <li role="separator" class="divider"></li>
-                     <!--ESTO SE CARGARÍA DE LA BASE DE DATOS igual estaría bien solo tener aquí los parques más vistos o en promoción (para que no se haga muy larga la lista) -->
-                    <li><a href="faunia.php">Faunia</a></li>
-                    <li><a href="zooDeMadrid.php">Zoo de Madrid</a></li>
-                    <li><a href="aquopolisVillanueva.php">Aquopolis Villanueva</a></li>
-                  </ul>
-                </li>
-                 <li class="dropdown">
-                  <!--MENÚ DE CINES (desplegable)-->
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cines<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="cines.php"> TODOS LOS CINES </a> </li>
-                    <li role="separator" class="divider"> </li>
-                     <!--ESTO SE CARGARÍA DE LA BASE DE DATOS igual estaría bien solo tener aquí los cines más vistos o en promoción (para que no se haga muy larga la lista) -->
-                    <li><a href="cinesaPrincipePio.php">Cinesa Príncipe Pío</a></li>
-                    <li><a href="cineCoslada.php">Cine Coslada</a></li>
-                    <li><a href="cinemoralejaGreen.php">Cine Moraleja Green</a></li>
-                  </ul>
-                </li>
+                <li><a href="teatros.php">Teatros</a></li>
+                <li><a href="museos.php">Museos</a></li>
+                <li><a href="parques.php">Parques temáticos</a></li>
+                <li><a href="cines.php">Cines</a></li> 
               </ul>
               <ul class="nav navbar-nav navbar-right">
 

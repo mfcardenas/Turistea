@@ -26,7 +26,7 @@
     </head> 
     <body onload="muestraVisitas()"> 
         <?php 
-            include("navbar.html");
+            include("navbar.php");
         ?>
         <div class="container">
             <div class="contenido"> 

@@ -52,7 +52,7 @@
 					exit('Fallo en la conexion');
 				}
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
-				$target_dir = "C:/Users/Paloma/Desktop/xamppTuristea/xampp/htdocs/test/imgLugares/";  										//ruta
+				$target_dir = "imgLugares/";  										//ruta
 				$target_file = $target_dir . basename($_FILES["imagen"]["name"]);			//ruta completa (path + nombre de la img)
 				$file_name = basename($_FILES["imagen"]["name"]);
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);						//tipo de la img
@@ -78,7 +78,7 @@
 							header('Location: ../cines.php');
 							break;
 						case "parque":
-							header('Location: ../parquesTematicos.php');
+							header('Location: ../parques.php');
 							break;
 						case "museo":
 							header('Location: ../museos.php');

@@ -14,101 +14,44 @@
 
 	    <!-- Custom styles for this template -->
 	    <link href="css/carousel.css" rel="stylesheet">
-	    
+
 	    <link href="css/estilo.css" rel="stylesheet" type="text/css">
 
 	    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <title>Turistea | Teatro Español</title>
+        <title>Turistea | Monasterio del Escorial</title>
         
     </head> 
     <body> 
         <?php 
-            include("navbar.html");
+            include("navbar.php");
         ?>
         <div class="container">
-            <div class="contenido">
-	            <h1 class="text-center">Teatro Español</h1>
+            <div class="contenido">      
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
 					  	<li><a href="index.php">Inicio</a></li>
-					  	<li><a href="teatros.php">Teatros</a></li>
-					  	<li class="active">Teatro Español</li>
+					  	<li><a href="visitas.php">Visita Madrid</a></li>
+					  	<li class="active">Monasterio del Escorial</li>
 					</ol>
 	            </div>
-	            <!--AHORA AQUÍ VA LA INFORMACIÓN DEL TEATRO -->
 	            <div class="row">
-	            	<nav class="text-center">
-						<img src= "img/teatroEspanol.jpg" alt="teatroEspanol"><br><br>
-						<p>El Teatro Español, llamado hasta 1849 Teatro del Príncipe, es un teatro público de Madrid, perteneciente al ayuntamiento de la capital.</p><br>
-					</nav>
-				</div>
-				<div class="row">
-					<div class="col-lg-2">
-						<p class="subtitulo"> Horario: </p>
-					</div>
-					<div class="col-lg-4">
-						<table> 
-							<tr>
-								<td> Lunes: </td>
-								<td> Cerrado </td>
-							</tr>
-							<tr>
-								<td> Martes: </td>
-								<td> Cerrado </td>
-							</tr>
-							<tr>
-								<td> Miércoles: </td>
-								<td> Cerrado </td>
-							</tr>
-							<tr>
-								<td> Jueves: </td>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-							<tr>
-								<td> Viernes: </td>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-							<tr>
-								<td> Sábado: </td>
-								<td> 16:00 a 24:00 </td>
-							</tr>
-							<tr>
-								<td> Domingo: </td>
-								<td> Cerrado </td>
-							</tr>
-						</table>
-					</div>
-					<div class="col-lg-2">
-						<p class="subtitulo"> Dirección: </p>
-					</div>
-					<div class="col-lg-4">
-						<p> Calle del Príncipe, 25  </p>
-						<p>	28012 Madrid Madrid </p>
-						<p>	España </p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="text-center">
-			 			<p> <img src="img/entrada.jpg" alt="entrada"> </p>
-			 			<!--A mi forma de ver esto solo tiene que estar disponible para los que están logueados-->
-						<p> Selección de entrada:</p>
-							<select name="entrada">
-								<option selected>Normal</option>
-								<option>Niño</option>
-								<option>Otro tipo de entrada</option>
-							</select>
-						<br><br><br><br>
-						<!--ESTO CAMBIARÁ CON EL TIPO DE ENTRADA SELECCIONADO-->
-						<p> Precio: 15,00€ </p>
-						<button type="button" class="btn btn-success">Agregar a la cesta</button>
-					</div>
+	                <h1>Monasterio del Escorial</h1>
 	            </div>
 	            
-	            
+	            <nav class="text-center">
+	        	    <img src="img/monasterioEscorial.jpg" alt="Monasterio del Escorial" class="img-visita">
+	        	</nav>
+	        	<hr class="featurette-divider">
+	        	<div class="row">
+	        		<p>La Plaza de Toros de Monasterio del Escorial es la mayor plaza de toros de España y con 23.798 espectadore la tercera con más aforo del mundo, tras las de México y Valencia (Venezuela). También es la segunda más grande en cuanto al diámetro de su ruedo tras la plaza de Ronda.Está situada en Madrid, en el barrio de La Guindalera en el distrito de Salamanca, y suele estar considerada por profesionales, aficionados y críticos como la más importante del mundo, seguida de La Maestranza de Sevilla. </p>
+
+					<!--ESTO EN UN FUTURO SERÁ UN BOTÓN QUE CUENTE LOS LIKES DE CADA SITIO-->	 
+					<img src="img/like.png" alt="Like" class="img-emotion">
+	           
 	            <hr class="featurette-divider">
 	            <!-- FOOTER -->
 	            <?php
@@ -131,4 +74,3 @@
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 	</body>
 </html>
-
