@@ -58,6 +58,8 @@
   	$telefonoAdd=$_POST['telefonobar'];
   	$estrellaAdd=$_POST['estrellabar'];
 
+  	//$key = array_search(, $nombresG);
+
   	
 
   	/*$dir_subida = 'imgGastro/';
@@ -78,6 +80,8 @@
 
 	$target = $currentdir .'/imgGastro/' . basename($_FILES['fichero']['name']);
 	move_uploaded_file($_FILES['fichero']['tmp_name'], $target);*/
+
+
 	
 	
 
@@ -117,7 +121,7 @@
     </head> 
     <body> 
         <?php 
-            include("navbar.php");
+            include("navbar.html");
         ?>
         <div class="container">
             <div class="contenido">     
@@ -154,7 +158,8 @@
 	  					</tr>
 					  	<tr>
 					    	<td>1</td>
-					    	<td><a href="lambuzo.php"><?php echo "$nombresG[0]"; ?></a></td>
+					    	<!--<td><a href="lambuzo.php"><?php //echo "$nombresG[0]"; ?></a></td>-->
+					    	<td><a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal" data-id=<?php echo "0"; ?>><?php echo "$nombresG[0]"; ?></a></td>
 					    	<td>El bar Lambuzo es uno de esos sitios que se nota que está montado con cariño. En Madrid existen dos locales de la misma compañía, uno en la calle Ponzano y otro en las Conchas. Para este post nos centraremos en el bar situado en la calle Ponzano que es el más concurrido en la ciudad. Este bar es ideal para ir de tapas con un toque andaluz. Podrás viajar directamente a Cadiz a través de las maravillosas tapas que este fantástico bar ofrece.</td>
 					    	<td><?php
 					    		echo "$direccionG[0]"; 
@@ -163,7 +168,8 @@
 					  	</tr>
 					  	<tr>
 					    	<td>2</td>
-					    	<td><a href="elMandil.php"><?php echo "$nombresG[1]"; ?></a></td>
+					    	<!--<td><a href="elMandil.php"><?php //echo "$nombresG[1]"; ?></a></td>-->
+					    	<td><a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal" data-id=<?php echo "1"; ?>><?php echo "$nombresG[1]"; ?></a></td>
 					    	<td>El Mandil es un restaurante situado en pleno corazón de Chueca. La decoración es rústica y elegante mezclandolo con un toque clásico a través de una enorme pared de ladrillo que recorre todo el local</td>
 					    	<td><?php
 					    		echo "$direccionG[1]"; 
@@ -172,7 +178,8 @@
 					  	</tr>
 					  	<tr>
 					    	<td>3</td>
-					    	<td><a href="montesDeGalicia.php"><?php echo "$nombresG[2]"; ?></a></td>
+					    	<!--<td><a href="montesDeGalicia.php"><?php //echo "$nombresG[2]"; ?></a></td>-->
+					 		<td><a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal" data-id=<?php echo "2"; ?>><?php echo "$nombresG[2]"; ?></a></td>
 					    	<td>Jose Espasandín, empresario y restaurador propietario de Los Montes de Galicia desde 1997 ha sido fiel a su compromiso con los comensales que han pasado por el restaurante de Azcona, 46. El concepto de Montes de Galicia es muy sencillo. Consiste en ofrecer una experiencia gastronómica completa, desde un picoteo en barra con vinos de prestigio por copas, variedad de recetas tanto clásicas como modernas y coctelería de autor. Y todo ello, en un entorno agradable y rodeados por un servicio que transmita pasión y ganas de hacer disfrutar al cliente.</td>
 					    	<td><?php
 					    		echo "$direccionG[2]"; 
@@ -186,8 +193,8 @@
 					<hr class="featurette-divider">
 					<div class="row">
 						<div class="col-lg-3">
-							<a href="lambuzo.php"> <h2> <?php echo "$nombresG[0]"; ?> </h2> </a>
-							<a href="lambuzo.php"> <img src= "imgGastro/lambuzo.jpg" alt="Lambuzo"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[0]"; ?> </h2> </a>
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <img src= "imgGastro/lambuzo.jpg" alt="Lambuzo"> </a> 
 						</div>
 						<div class="col-lg-9">
 							<p class="subtitulo"> Localización: </p>
@@ -216,8 +223,8 @@
 				          		BRUH <br> <!--ESTO FALTA POR IMPLEMENTAR-->
 				         </div>
 						<div class="col-lg-3">
-							<a href="elMandil.php"> <h2> <?php echo "$nombresG[1]"; ?> </h2> </a>
-							<a href="elMandil.php"> <img src= "imgGastro/elMandil.jpg" alt="Mandil"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[1]"; ?> </h2> </a>
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <img src= "imgGastro/elMandil.jpg" alt="Mandil"> </a> 
 						</div>
 						<div class="col-lg-9">
 							
@@ -227,8 +234,8 @@
 				    <hr class="featurette-divider">
 					<div class="row">
 						<div class="col-lg-3">
-							<a href="montesDeGalicia.php"> <h2> <?php echo "$nombresG[2]"; ?> </h2> </a>
-							<a href="montesDeGalicia.php"> <img src= "imgGastro/losMontesDeGalicia.jpg" alt="Los Montes de Galicia"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[2]"; ?> </h2> </a>
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <img src= "imgGastro/losMontesDeGalicia.jpg" alt="Los Montes de Galicia"> </a> 
 						</div>
 						<div class="col-lg-9">
 							<p class="subtitulo"> Localización: </p>
@@ -252,7 +259,7 @@
         </div>
 
 
-        <!-- Modal -->
+        <!-- Modal1 -->
         <div class="modal fade" id="formularioGastronomia" role="dialog">
             <div class="modal-dialog">
 
@@ -300,6 +307,56 @@
 
             </div>
         </div> 
+
+        <!-- Modal2 -->
+        <div class="modal fade" id="infoGastronomia" role="dialog">
+            <div class="modal-dialog">
+            
+
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">X</button>
+                        <h4 class="modal-title text-center">Conoce más sobre este lugar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post">
+				      	     <p> Nombre: </p>
+                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrebar" aria-describedby="basic-addon2" required>
+                            <br>
+                            <label for="fichero" class="label">Seleccione una imagen: </label>
+				            <div class="input-group">				             
+				                <input id="fichero" name="fichero" type="file" multiple class="file-loading">
+				            </div>
+				            <br>
+				      	     <p> Introduzca una forma de llegar: </p>
+				      	     <textarea class="form-control" name="llegadabar" rows="3" placeholder="Escriba aquí la ruta"></textarea>
+						    <br>
+						     <p> Introduce la dirección: </p>
+						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionbar1" aria-describedby="basic-addon2" required>
+						     <p> Introduce algún horario: </p>
+							 <input type="text" class="form-control" placeholder="L hh:mm:ss (apertura) hh:mm:ss (cierre) M hh:mm:ss (apertura) ...." name="horariobar" aria-describedby="basic-addon2">
+							 <!--<input type="text" class="form-control" placeholder="País" name="localizacionbar3" aria-describedby="basic-addon2">-->
+							<br>
+							 <p> Introduce el teléfono de contacto: </p>
+							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonobar" aria-describedby="basic-addon2">
+							<br>
+							 <p> Introduce el plato estrella: </p>
+						     <input type="text" class="form-control" placeholder="Plato estrella" name="estrellabar" aria-describedby="basic-addon2">
+
+							<br>
+
+
+
+				      	<button type="submit" class="btn btn-default centrado" name="submit" value="Upload">Añadir</button>
+						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+                     
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
@@ -313,6 +370,28 @@
 	    <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+	    <script type="text/javascript">
+
+		    function muestraModalGastro(nombre_gastro) {   //funcion ajax para enviar datos(usado en la modal)
+	                // Send the value in PHP
+	                
+	                $.ajax({
+	                    type: "POST",
+	                    dataType: "html",
+	                    url: "ajax/modalMostrarGastro.php",
+	                    data: { "nombre": nombre_gastro},
+	                    success: function(data, textStatus) {
+	                        $("#infoGastronomia .modal-body").html(data);
+	                        $("#infoGastronomia").modal('show');    
+	                    }
+	                    }).done(function(msg) {
+
+
+	                });
+	        };
+
+        </script>
+
 	</body>
 </html>
 
