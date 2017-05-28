@@ -76,7 +76,7 @@
                         <h4 class="modal-title text-center">Introduce un nuevo producto</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="post">
+                        <form action="function/insertar_producto.php" method="post">
 				      	     
                             <p> Introduce el nombre del producto:</p>
                              <input type="text" class="form-control" placeholder="Nombre del producto" name="nombreproducto" aria-describedby="basic-addon2">

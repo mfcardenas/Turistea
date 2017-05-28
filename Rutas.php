@@ -75,13 +75,13 @@
             <div class="modal-dialog">
 
             <!-- Modal content-->
-                <div class="modal-content">
+                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">X</button>
                         <h4 class="modal-title text-center">Añadir Nueva Ruta</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="post">
+                        <form action="validaRuta.php" enctype="multipart/form-data" method="POST">
 				      	    <p>Nombre de la ruta: </p>
                             <input type="text" class="form-control" placeholder="Nombre de la ruta" name="nombreruta" aria-describedby="basic-addon2">
                             <br>
@@ -100,17 +100,22 @@
 				      	    <p>Descripción: </p>
 				      	    <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
 						    <br>
-						    <p>Fotos: </p>
-                            <input type="file" name="imagenes">
-                            <br>
-                            <p>Contenido: </p>
-				      	    <textarea class="form-control" name="contenido" rows="10" placeholder="Escriba aquí el contenido"></textarea>
-						    <br>
+                            <?php
+                            for ($i=1; $i <= 5; $i++) {
+                                echo '<p>Párrafo ' .$i. ': </p>'; ?>
+                                <textarea class="form-control" name="<?php echo 'parrafo' .$i; ?>" rows="10" placeholder="Escriba aquí el contenido"></textarea>
+                                <br>
+                                <?php echo '<p>Foto ' .$i. ': </p>'; ?>
+                                <input type="file" name="<?php echo 'imagen' .$i; ?>">
+                                <?php 
+                                echo '<br>';
+                            }
+                            ?>
+				      	    
 				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
-						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
-                     
+                            <button type="reset" class="btn btn-default ">Borrar</button></form>
+						
                     </div>
-
                 </div>
 
             </div>
