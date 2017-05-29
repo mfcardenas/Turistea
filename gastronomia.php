@@ -38,6 +38,13 @@
   	while($row = mysqli_fetch_assoc($result3))
     { $estrellaG[] = $row['Plato estrella'];}
 
+	$query_imagenG = "SELECT `Imagen` FROM gastronomia";
+  	$result4 = mysqli_query($db, $query_imagenG);
+  	$imagenG = array();
+
+  	while($row = mysqli_fetch_assoc($result4))
+    { $imagenG[] = $row['Imagen'];}
+
 	//echo "$estrellaG[0]";
 	//echo "$estrellaG[1]";
 
@@ -121,7 +128,7 @@
     </head> 
     <body> 
         <?php 
-            include("navbar.html");
+            include("navbar.php");
         ?>
         <div class="container">
             <div class="contenido">     
@@ -194,7 +201,7 @@
 					<div class="row">
 						<div class="col-lg-3">
 							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[0]"; ?> </h2> </a>
-							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <img src= "imgGastro/lambuzo.jpg" alt="Lambuzo"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <img src= "<?php echo "$imagenG[0]" ?>" alt="Lambuzo"> </a> 
 						</div>
 						<div class="col-lg-9">
 							<p class="subtitulo"> Localización: </p>
@@ -224,7 +231,7 @@
 				         </div>
 						<div class="col-lg-3">
 							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[1]"; ?> </h2> </a>
-							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <img src= "imgGastro/elMandil.jpg" alt="Mandil"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <img src= "<?php echo "$imagenG[1]" ?>" alt="Mandil"> </a> 
 						</div>
 						<div class="col-lg-9">
 							
@@ -235,7 +242,7 @@
 					<div class="row">
 						<div class="col-lg-3">
 							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[2]"; ?> </h2> </a>
-							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <img src= "imgGastro/losMontesDeGalicia.jpg" alt="Los Montes de Galicia"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <img src= "<?php echo "$imagenG[2]" ?>" alt="Los Montes de Galicia"> </a> 
 						</div>
 						<div class="col-lg-9">
 							<p class="subtitulo"> Localización: </p>
