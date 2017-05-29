@@ -87,8 +87,8 @@
 
   	if(isset($_POST['submit'])){
   				
-		//$query_add="INSERT INTO gastronomia (`Nombre`, `Imagen`, `Direccion`, `Telefono`, `Horario`, `Llegada`, `Plato estrella`) VALUES ('$nombreAdd', NULL, '$direccionAdd', '$telefonoAdd', '$horarioAdd', '$llegarAdd', '$estrellaAdd')";
-		//$inserta=mysqli_query($db, $query_add);
+		$query_add="INSERT INTO gastronomia (`Nombre`, `Imagen`, `Direccion`, `Telefono`, `Horario`, `Llegada`, `Plato estrella`) VALUES ('$nombreAdd', NULL, '$direccionAdd', '$telefonoAdd', '$horarioAdd', '$llegarAdd', '$estrellaAdd')";
+		$inserta=mysqli_query($db, $query_add);
 		
 	}
 
