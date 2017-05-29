@@ -56,7 +56,7 @@
 	            <!-- div que se mostrará solo cuando haya algun error relativo a la img en el formulario de crear una noticia  -->
 
 	            <div class="row">	            	
-	            	<?php if(isset($_GET["errorDatos"]) && $_GET["errorDatos"]=="si"){ ?>
+	            	<?php if(isset($_GET["errorImg"]) && $_GET["errorImg"]=="si"){ ?>
 	            		<div class="panel panel-danger">
 			            	<div class="panel-heading">La imagen que has intentado subir para la noticia no cumple con alguno de los siguientes requisitos:
 				            	<ul>
@@ -91,7 +91,7 @@
 
 	            
 
-			     <div class="row">
+			    <div class="row">
 			        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 			             aria-hidden="true">
 			            <div class="modal-dialog long-size">
