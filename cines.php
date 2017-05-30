@@ -6,7 +6,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -80,7 +80,7 @@
                     <div class="modal-body">
                         <form action="function/insertar_lugar.php?lugar=cine" enctype="multipart/form-data" method="post" >
 				      	     <p> Introduce el nombre*: </p>
-                             <input type="text" class="form-control" placeholder="Nombre del cine" name="nombre" aria-describedby="basic-addon2" required>
+                             <input type="text" class="form-control" placeholder="Nombre del cine" name="nombre" required>
                             <br>
                             <p>Introduce una imagen*: </p>
                             <input type="file" name="imagen" required>
@@ -89,42 +89,42 @@
 				      	     <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
 						    <br>
 						     <p> Introduce la dirección*: </p>
-						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacion1" aria-describedby="basic-addon2" required>
-							 <input type="text" class="form-control" placeholder="Localidad, Provincia" name="localizacion2" aria-describedby="basic-addon2" required>
-							 <input type="text" class="form-control" placeholder="País" name="localizacion3" aria-describedby="basic-addon2" required>
+						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacion1" required>
+							 <input type="text" class="form-control" placeholder="Localidad, Provincia" name="localizacion2" required>
+							 <input type="text" class="form-control" placeholder="País" name="localizacion3" required>
 							<br>
 							 <p> Introduce el teléfono de contacto: </p>
-							 <input type="text" class="form-control" placeholder="Teléfono" name="telefono" aria-describedby="basic-addon2">
+							 <input type="text" class="form-control" placeholder="Teléfono" name="telefono" >
 							<br>
 							<p> Introduce el horario*: </p>
 								<ul>
 								    <li><label> Lunes: </label> 
-								    	<input type="time" name="aperturaLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreLunes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
+								    	<input type="time" name="aperturaLunes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreLunes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
 								    </li>
 								    <li> <label> Martes: </label> 
-								    	<input type="time" name="aperturaMartes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreMartes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
+								    	<input type="time" name="aperturaMartes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreMartes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Miércoles: </label> 
-								    	<input type="time" name="aperturaMiercoles" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreMiercoles" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
+								    	<input type="time" name="aperturaMiercoles" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreMiercoles" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Jueves: 
-								    	</label> <input type="time" name="aperturaJueves" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreJueves" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
+								    	</label> <input type="time" name="aperturaJueves" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreJueves" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Viernes: </label> 
-								    	<input type="time" name="aperturaViernes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreViernes" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
+								    	<input type="time" name="aperturaViernes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreViernes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Sábado: </label> 
-								    	<input type="time" name="aperturaSabado" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreSabado" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> 
+								    	<input type="time" name="aperturaSabado" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreSabado" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
 								    <li><label> Domingo: </label> 
-								    	<input type="time" name="aperturaDomingo" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreDomingo" value="10:00:00" max="24:00:00" min="08:00:00" step="1" required> </li>
+								    	<input type="time" name="aperturaDomingo" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<input type="time" name="cierreDomingo" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> </li>
 								</ul>
 							<p> Introduce cómo llegar: </p>
 							<textarea class="form-control" name="comoLlegar" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>
@@ -132,7 +132,7 @@
 							<textarea class="form-control" name="entradas" rows="3" placeholder="Escriba aquí la el tipo de entradas y sus respectivs precios"></textarea>
 
 					      	<button type="submit" class="btn btn-default centrado">Añadir</button>
-							<button type="reset" class="btn btn-default ">Borrar</button></center>
+							<button type="reset" class="btn btn-default ">Borrar</button>
 						</form>
 						<p class="ruta"> *Campos obligatorios </p>
                     </div>
@@ -153,5 +153,23 @@
 	    <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+	    <script type=text/javascript>
+		    function eliminarLugar(identificador){
+
+		        $.ajax({
+		            type: "POST",
+		            dataType: "html",
+		            url: "ajax/sqlBorraLugar.php",
+		            data: { "id": identificador},
+		            success: function(data, textStatus) {
+		                   location.reload();
+		            }
+		        }).done(function(msg) {
+
+
+		        });
+		    }
+		</script>
 	</body>
 </html>

@@ -41,7 +41,7 @@
   </head>
 
   <body class="idbody">
-    <div id="bg"><img src="img/bg_login.jpg"></div>
+    <div id="bg"><img src="img/bg_login.jpg" alt="Imagen de login"></div>
     
     <?php 
       include("navbar.php");
@@ -49,7 +49,7 @@
 
     <div class="container">
 
-      <form class="form-signin" action="validaLogin.php" method="POST">
+      <form class="form-signin" action="function/validaLogin.php" method="POST">
           <div class="sidebar-module sidebar-module-inset bloqueFondo " >
 
                   <!-- Si el php de validacion dectecta algun error saltará aluno de estos bloques de advertencia -->

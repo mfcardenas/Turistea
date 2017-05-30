@@ -1,1 +1,6 @@
-//Aquí se realiza la conexión a la base de datos y se deja abierta (la conexion se hace en una varibale llamada conn = mysqli)
+<?php
+	$conn = @mysqli_connect('localhost', 'root', '', 'turistea'); 
+	if(!$conn){
+		exit("Error en la conexión con la base de datos");
+	}
+?>

@@ -79,12 +79,15 @@
 				//si todas las entradas son válidas
 				// Conecto a la BBDD
 				//$con;
-				$db = mysqli_connect('localhost', 'root', '', 'turistea');
+				$db = mysqli_connect('localhost', 'ichthuse_paloma', 'Pa123456', 'ichthuse_turistea');
+				//include("../config/conn.php");
 				if(!$db){
 					exit('Fallo en la conexion');
 				}
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
-				$target_dir = "../test/imgLugares/";  										//ruta
+				//$target_dir = "imgLugares/";  			
+				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
+				$target_dir = "imgLugares/";  										//ruta
 				$target_file = $target_dir . basename($_FILES["imagen"]["name"]);			//ruta completa (path + nombre de la img)
 				$file_name = basename($_FILES["imagen"]["name"]);
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);						//tipo de la img
@@ -92,10 +95,9 @@
 				// Comprobamos que es una img nueva y si es una img falsa
 					
 				$check = getimagesize($_FILES["imagen"]["tmp_name"]);
-				if($check !== false AND $_FILES["imagen"]["size"] <= 500000){
-
-					move_uploaded_file($_FILES['imagen']['tmp_name'], $target_dir.$file_name);  //subimos la imagen en el servidor
-				
+				if($check !== false AND !file_exists($target_file) AND $_FILES["imagen"]["size"] <= 500000){
+					move_uploaded_file($_FILES['imagen']['tmp_name'], '../imgLugares/'.$file_name);  //subimos la imagen en el servidor
+				    
 					$sql = "INSERT INTO lugares(Tipo, Nombre, Imagen, Direccion, Telefono, Horario, Llegada, Precio, Descripcion) VALUES ('$lugar', '$nombre', '$target_file', '$direccion' , '$telefono', '$horario', '$llegar', '$entradas', '$descripcion')";
 					$consulta = mysqli_query($db, $sql);
 					if($consulta != null){

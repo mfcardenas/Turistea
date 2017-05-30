@@ -19,7 +19,17 @@
   width: 100%;
   height: 100%;
 }
-
+.imagenGaleria{
+    width="180px";
+    height="180px";
+}
+.imagenVisitas{
+    width="100%";
+    height="180px;
+}
+.negrita{
+    font-weight: bold;
+}
 .instagram {
   margin: auto;
   max-width: 935px;
@@ -395,4 +405,9 @@ div .jumbotron{
 
 .busqueda{
   text-align: right;
+}
+
+.imagenesLugares{
+  height: 300px;
+  width: 300px;
 }

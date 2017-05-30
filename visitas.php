@@ -6,7 +6,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -27,6 +27,7 @@
     <body onload="muestraVisitas()"> 
         <?php 
             include("navbar.php");
+            include("function/funciones.php");
         ?>
         <div class="container">
             <div class="contenido"> 
@@ -55,7 +56,6 @@
 	        	    <table class="enMedio">  	
 						<tbody id="cuerpoTabla">
                             <?php 
-                                include("function/funciones.php");
                                 mostrarVisitas() 
                             ?>
 					    </tbody>
@@ -72,7 +72,7 @@
         
 	            <!--                            Modal Visitas                              -->
 
-	            <div class="modal fade" id="modalVisita" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	            <div class="modal fade" id="modalVisita" tabindex="-1" role="dialog" aria-hidden="true">
 			        <div class="modal-dialog" role="document" style="color: black;">
 			          <div class="modal-content">
 			            <div class="modal-header">
@@ -105,7 +105,7 @@
                     <div class="modal-body">
                         <form action="function/insertar_visita.php" enctype="multipart/form-data" method="post">
 				      	     <p> Introduce el nombre: </p>
-                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrelugar" aria-describedby="basic-addon2">
+                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrelugar">
                             <br>
                             <p>Introduce una imagen: </p>
                             <input type="file" name="imagenVisita">
@@ -114,7 +114,8 @@
 				      	     <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
 						      <br>
 				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
-						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+						  		<button type="reset" class="btn btn-default ">Borrar</button>
+                        </form>
                      
                     </div>
 
@@ -154,6 +155,23 @@
 
                 });
             };
+
+            function eliminarVisita(titulo_visita){
+
+                $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: 'funciones/funciones.php?action=borraVisita',
+                    data: { "titulo": titulo_visita},
+                    success: function(data, textStatus) {
+                           location.reload();
+                    }
+                }).done(function(msg) {
+
+
+               });
+
+	       }
         </script>
 	</body>
 </html>

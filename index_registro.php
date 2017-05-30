@@ -33,101 +33,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="js/validator.js"></script>
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    </head>
-   
-
-    <body class="idbody">
-        <div id="bg"><img src="img/bg_login.jpg"></div>
-    
-        <?php 
-            include("navbar.php");
-        ?>
-
-        <div class="container">
-            
-          <form class="form-signin" name="registerForm" action="validaRegistro.php" method="post" data-toggle="validator" role="form" onsubmit="return prueba()">
-
-            <div class="sidebar-module sidebar-module-inset bloqueFondoRegistro">
-
-                         <!-- Si el php de validacion dectecta algun error saltará aluno de estos bloques de advertencia -->
-     
-
-                <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="si"){ ?>
-                    <div class="panel panel-danger auxbloq1">
-                        <div class="panel-heading">El usuario introducido ya existe prueba con otro.</div>
-                    </div>
-                <?php } ?>
-
-                <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="cont"){ ?>
-                    <div class="panel panel-danger auxbloq1">
-                        <div class="panel-heading">La contraseñas no coinciden,asegurate de que están bien escritas.</div>
-                    </div>
-                <?php } ?>
-                
-
-                <?php if(isset($_GET["errorcampos"]) && $_GET["errorcampos"]=="si"){ ?>
-                    <div class="panel panel-danger auxbloq1">
-                        <div class="panel-heading">Ha ocurrido un error al enviar el formulario, pruebe de nuevo.</div>
-                    </div>
-                <?php } ?>
-
-                <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="esapcios"){ ?>
-                    <div class="panel panel-danger auxbloq1">
-                        <div class="panel-heading">El nombre o el usuario contienen espacios. Asegurate de que no hay espacios en blanco.</div>
-                    </div>
-                <?php } ?>
-
-                <label for="inputNombre" class="nameLogin">Nombre:</label>
-                <div class="input-group auxbloq1">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-piggy-bank"></i></span>
-                    <input type="text" id="inputNombre" class="form-control" name="inputNombre" placeholder="Tu nombre" required="true" autofocus>
-                </div>
-                <br>
-
-                <label for="inputUsu" class="nameLogin">Usuario:</label>
-                <div class="input-group auxbloq1">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="text" id="inputUsu" class="form-control" name="inputUsu" placeholder="Tu id usuario" required="true" autofocus>
-                </div>
-                <br>
-
-                <label for="inputPassword" class="nameLogin">Contraseña:</label>
-                <div class="input-group auxbloq1">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="Password" required="true">
-                </div>
-                <br>
-
-                <label for="inputPassword2" class="nameLogin">Escribe de nuevo la contraseña:</label>
-                <div class="input-group auxbloq1">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input type="password" id="inputPassword2" class="form-control" name="inputPassword2" placeholder="Verifique la contraseña" required="true"="true">
-                </div>
-                                
-                <br>
-
-                <label for="inputEmail" class="nameLogin">Email:</label>
-                <div class="input-group auxbloq1">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="Tu correo electrónico" required="true" autofocus>
-                </div>
-                <br>
-
-                <div id="botonEnviar"><button class="btn btn-lg btn-primary btn-block auxbloq1" type="submit" style="width: 280px; margin-top: 14px;">Enviar</button></div>
-                <div class="auxbloq"></div>
-              </form>
-            </div>
-        </div> <!-- /container -->
-     </body>
-
-    <script type="application/javascript">
+       <script type="application/javascript">
 
         //Comprobacion de campos
 
@@ -250,4 +156,99 @@
 
 
     </script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+   
+
+    <body class="idbody">
+        <div id="bg"><img src="img/bg_login.jpg" alt="Imagen de login"></div>
+    
+        <?php 
+            include("navbar.php");
+        ?>
+
+        <div class="container">
+            
+          <form class="form-signin" name="registerForm" action="validaRegistro.php" method="post" data-toggle="validator" onsubmit="return prueba()">
+
+            <div class="sidebar-module sidebar-module-inset bloqueFondoRegistro">
+
+                         <!-- Si el php de validacion dectecta algun error saltará aluno de estos bloques de advertencia -->
+     
+
+                <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="si"){ ?>
+                    <div class="panel panel-danger auxbloq1">
+                        <div class="panel-heading">El usuario introducido ya existe prueba con otro.</div>
+                    </div>
+                <?php } ?>
+
+                <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="cont"){ ?>
+                    <div class="panel panel-danger auxbloq1">
+                        <div class="panel-heading">La contraseñas no coinciden,asegurate de que están bien escritas.</div>
+                    </div>
+                <?php } ?>
+                
+
+                <?php if(isset($_GET["errorcampos"]) && $_GET["errorcampos"]=="si"){ ?>
+                    <div class="panel panel-danger auxbloq1">
+                        <div class="panel-heading">Ha ocurrido un error al enviar el formulario, pruebe de nuevo.</div>
+                    </div>
+                <?php } ?>
+
+                <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="esapcios"){ ?>
+                    <div class="panel panel-danger auxbloq1">
+                        <div class="panel-heading">El nombre o el usuario contienen espacios. Asegurate de que no hay espacios en blanco.</div>
+                    </div>
+                <?php } ?>
+
+                <label for="inputNombre" class="nameLogin">Nombre:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-piggy-bank"></i></span>
+                    <input type="text" id="inputNombre" class="form-control" name="inputNombre" placeholder="Tu nombre" required>
+                </div>
+                <br>
+
+                <label for="inputUsu" class="nameLogin">Usuario:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" id="inputUsu" class="form-control" name="inputUsu" placeholder="Tu id usuario" required>
+                </div>
+                <br>
+
+                <label for="inputPassword" class="nameLogin">Contraseña:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" id="inputPassword" class="form-control" name="inputPassword" placeholder="Password" required>
+                </div>
+                <br>
+
+                <label for="inputPassword2" class="nameLogin">Escribe de nuevo la contraseña:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" id="inputPassword2" class="form-control" name="inputPassword2" placeholder="Verifique la contraseña" required>
+                </div>
+                                
+                <br>
+
+                <label for="inputEmail" class="nameLogin">Email:</label>
+                <div class="input-group auxbloq1">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="Tu correo electrónico" required autofocus>
+                </div>
+                <br>
+
+                <div id="botonEnviar"><button class="btn btn-lg btn-primary btn-block auxbloq1" type="submit" style="width: 280px; margin-top: 14px;">Enviar</button></div>
+                <div class="auxbloq"></div>
+              </div>
+            </form>
+        </div> <!-- /container -->
+     </body>
+
+   
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -98,7 +98,7 @@
               <h4 class="modal-title">¡Lo siento!</h4>
             </div>
             <div class="modal-body">
-              <p><img src="img/caritallorando.png"></p>
+              <p><img src="img/caritallorando.png" alt="Carita llorando"></p>
               <p> Lo sentimos, esto aún no está disponible </p>
             </div>
             

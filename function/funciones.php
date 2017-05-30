@@ -8,10 +8,10 @@
 	function mostarLugares($tipo){
 		
     	if($tipo != null){ //Si los parámetros son válidos saca de la base de datos la bandeja tipo
-            $db = @mysqli_connect('localhost', 'root', '', 'turistea');
-
+            //$db = @mysqli_connect('localhost', 'ichthuse_paloma', 'Pa123456', 'ichthuse_turistea');
+            include("/../config/conn.php");
             $sql = "SELECT * FROM lugares WHERE Tipo like '$tipo'";
-            $consulta = mysqli_query($db, $sql);
+            $consulta = mysqli_query($conn, $sql);
             if($consulta != null){
             	if(mysqli_num_rows($consulta) != 0){
 		            $lugares = mysqli_fetch_object($consulta);
@@ -25,16 +25,13 @@
 			        }
 		        }
 		    }
-	        @mysql_close($db);
+	        @mysql_close($conn);
 	}
 
-  function verUnLugar($id, $cont){
-    $db = mysqli_connect('localhost', 'root', '', 'turistea');
-    if(!$db){
-      error('Error en la conexion');
-    }
+   function verUnLugar($id, $cont){
+    include("/../config/conn.php");
     $sql = "SELECT * FROM lugares WHERE id = '$id'";
-    $consulta = mysqli_query($db, $sql);
+    $consulta = mysqli_query($conn, $sql);
     $lugares = mysqli_fetch_object($consulta);
     $nombreSinEspacios = limpia_espacios(strtolower($lugares->Nombre));
     $imagen = $lugares->Imagen;
@@ -44,58 +41,69 @@
                 <div class="col-lg-6">
                   <a href="'.$tipoDeLugar. '.php?id=' . $id . '">';
 
-        echo      '<img class="img-circle" src= "';
+        echo      '<img class="img-circle imagenesLugares" src= "';
         echo        $imagen . '" alt="' . $nombreSinEspacios . '"> </a>                 
                 </div>
                 <div class="col-lg-6">
                     <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h2>'. $lugares->Nombre . '</h2> </a>
-                    <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion . '
-                </div>
-              </div>
+                    <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion;?>
+                    <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+                            <button type="button" onclick="eliminarLugar('<?php echo $lugares->id;?>')">Eliminar</button><?php }
+        echo '</div>;
+            </div>
               <hr class="featurette-divider">';
       }
       else {
         echo '<div class="row">
                 <div class="col-lg-6">
                     <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h2>' . $lugares->Nombre . '</h2></a>
-                    <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion . '
-                </div>
+                    <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion;?>
+                    <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+                            <button type="button" onclick="eliminarLugar('<?php echo $lugares->id;?>')">Eliminar</button><?php }
+        echo '</div>
                 <div class="col-lg-6">
                     <a href="'.$tipoDeLugar. '.php?id=' . $id . '">
-                    <img class="img-circle" src="' . $imagen . '" alt="' . $nombreSinEspacios . '"></a>
+                    <img class="img-circle imagenesLugares" src="' . $imagen . '" alt="' . $nombreSinEspacios . '"></a>
                 </div>
               </div>
               <hr class="featurette-divider">';
       }
+       
   }
 
     function mostrarVisitas(){
-      
-          $db = mysqli_connect('localhost','root','','turistea');
-          if(!$db){
-            exit('Error en la conexion.');
-          }
+          include("/../config/conn.php");
           $sql = "SELECT * FROM visitas;";
-          $consulta = mysqli_query($db, $sql);
+          $consulta = mysqli_query($conn, $sql);
           $fila = mysqli_fetch_row($consulta);
           $contador = 0;
           while($fila){
 
               if($contador == 0) echo '<tr>';
               echo '<td class="auxtd1">';
-                ?><a role="button" onclick="muestraModalVisita('<?php echo $fila[0]; ?>')"><img src="<?php echo $fila[1]; ?>" alt="<?php echo $fila[0]; ?>" class="img-rounded auximg2" width="100%" height="180px"></a>
+                ?><a role="button" onclick="muestraModalVisita('<?php echo $fila[0]; ?>')"><img src="<?php echo $fila[1]; ?>" alt="<?php echo $fila[0]; ?>" class="img-rounded auximg2 imagenVisitas"></a>
               <a  onclick="muestraModalVisita('<?php echo $fila[0]; ?>')"><p class="tituloVisitas centrado" > <?php echo $fila[0]; ?> <?php echo'</p></a>';
+              ?>
+              <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+                <div class="centrado">
+                    <button type="button" onclick="eliminarVisita('<?php echo $fila[0];?>')">Eliminar</button></div><?php }
               echo '</td>';
               $contador = $contador+1;
               if($contador == 4) {
-                  echo '</tr><tr>';
+                  echo '</tr>';
                   $contador = 0; 
               }
               $fila = mysqli_fetch_row($consulta);
 
           }
-
-          mysqli_close($db);
+        while($contador < 4 AND $contador != 0){
+            echo '<td></td>';
+            $contador = $contador + 1;
+        }
+        if($contador == 4){     
+            echo '</tr>';
+        }
+          mysqli_close($conn);
 
     }
 
@@ -142,18 +150,17 @@
     }*/
 
     function mostrarProductos(){
-        $db = mysqli_connect('localhost','root','','turistea');
-        if(!$db){
-            exit('Error en la conexion.');
-        }
+        include("/../config/conn.php");
         $sql = "SELECT * FROM tienda";
-        $consulta = mysqli_query($db, $sql);
+        $consulta = mysqli_query($conn, $sql);
         if($consulta != null){
+                $contador = 0;
             	if(mysqli_num_rows($consulta) != 0){
 		            $productos = mysqli_fetch_object($consulta);
-		            $contador = 0;
-                    echo '<tr>';
 		            while($productos){
+                        if($contador == 0){
+                            echo '<tr>';
+                        }
                         if($contador == 4) {
                             $contador = 0;
                             echo '</tr><tr>';
@@ -165,26 +172,36 @@
                         echo '<p>'; 
                         echo $productos->Nombre;
                         echo '</p>';
-                        echo '<img src= "'; echo $imagen . '" alt="' . $nombreSinEspacios . '">';
+                        echo '<img src= "'; echo $imagen . '" alt="' . $imagen . '">';
                         echo '<p> Precio: ';
                         echo $productos->Precio;
                         echo ' € </p>';
                         echo '<button type="submit" class="btn btn-default"> Agregar a la cesta </button>';
                         echo '</td>';
+                        $contador = $contador+1;
+                        if($contador == 4) {
+                             echo '</tr>';
+                            $contador = 0;
+                        }
+                        $productos = mysqli_fetch_object($consulta);
+                    }
+                    
+			     }
+                while($contador < 4 AND $contador != 0){
+                        echo '<td></td>';
                         $contador = $contador + 1;
-                       
-			            $productos = mysqli_fetch_object($consulta);
-			        }
-                    echo '<tr>';
-		        }                   
-        }
-        mysqli_close($db);
+                }
+                if($contador == 4){     
+                    echo '</tr>';
+                }                  
+            }
+        mysqli_close($conn);
     }
 
     function cargarLugar($id){
-      $db = mysqli_connect('localhost', 'root', '', 'turistea');
+      include("/../config/conn.php");
       $sql = "SELECT * FROM lugares WHERE id = '$id'";
-      $consulta = mysqli_query($db, $sql);
+      $consulta = mysqli_query($conn, $sql);
       $lugar = mysqli_fetch_object($consulta);
       $nombreSinEspacios = limpia_espacios(strtolower($lugar->Nombre));
       $tipoDeLugar = strtolower($lugar->Tipo) .'s';
@@ -308,12 +325,13 @@
               </div>
               <br><br><br><br>              
               <hr class="featurette-divider">';
+        mysqli_close($conn);
     } 
 
     function mostrarResultados($tipo, $busqueda){
-      $db = mysqli_connect('localhost', 'root', '', 'turistea');
+      include("/../config/conn.php");
       $sql = "SELECT id FROM lugares WHERE Tipo = '$tipo' AND (Nombre LIKE '%" . $busqueda ."%' OR Imagen LIKE '%" . $busqueda ."%' OR Direccion LIKE '%" . $busqueda ."%' OR Descripcion LIKE '%" . $busqueda ."%')";
-      $consulta = mysqli_query($db, $sql);
+      $consulta = mysqli_query($conn, $sql);
       if($consulta != null){
         $resultados = mysqli_fetch_object($consulta);
         $cont = 0;
@@ -323,5 +341,33 @@
           $resultados = mysqli_fetch_object($consulta);
         }
       }
+      mysqli_close($conn);
+    }
+
+ function mostrarGaleria(){
+      
+      include("/../config/conn.php");
+      $sql = "SELECT * FROM galeria;";
+      $consulta = mysqli_query($conn, $sql);
+      $fila = mysqli_fetch_row($consulta);
+      $contador = 0;
+      while($fila){
+
+          if($contador == 0) echo '<tr>';
+          echo '<td class="auxtd1">';
+            ?><a role="button" onclick="muestraModalGaleria('<?php echo $fila[0];?>')"><img src="<?php echo $fila[2]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded auximg2 imagenGaleria"></a>
+          <?php
+          echo '</td>';
+          $contador = $contador+1;
+          if($contador == 4) {
+              echo '</tr><tr>';
+              $contador = 0; 
+          }
+          $fila = mysqli_fetch_row($consulta);
+
+      }
+
+      mysqli_close($conn);
+
     }
 ?>

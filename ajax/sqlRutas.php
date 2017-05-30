@@ -1,11 +1,11 @@
  <?php
-   
-      $db = mysqli_connect('localhost','root','','turistea');
-      if(!$db){
+      include("../config/conn.php");
+      //$db = mysqli_connect('localhost','ichthuse_paloma','Pa123456','ichthuse_turistea');
+      if(!$conn){
         exit('Error en la conexion.');
       }
       $sql = "SELECT ID, Nombre, Descripcion, Mapa, Duracion, Punto_Partida, Punto_Destino FROM rutas ORDER BY ID DESC;";
-      $consulta = mysqli_query($db, $sql);
+      $consulta = mysqli_query($conn, $sql);
       $fila = mysqli_fetch_row($consulta);
       $aux = 0;
       session_start();
@@ -67,6 +67,6 @@
         $fila = mysqli_fetch_row($consulta);
       }
       
-      mysqli_close($db);
+      mysqli_close($conn);
     
   ?>

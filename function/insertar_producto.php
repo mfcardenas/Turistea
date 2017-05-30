@@ -14,11 +14,12 @@
 				// Conecto a la BBDD
 				//$con;
 				$db = mysqli_connect('localhost', 'root', '', 'turistea');
+				//include("../config/conn.php");
 				if(!$db){
 					exit('Fallo en la conexion');
 				}
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
-				$target_dir = "C:\Users\GEMA\Desktop\UNIVERSIDAD\TERCERO\AW\xampp\htdocs\25.05.2017\imgVisitas";  										//ruta
+				$target_dir = "imgTienda/";  										//ruta
 				$target_file = $target_dir . basename($_FILES["imagenProducto"]["name"]);			//ruta completa (path + nombre de la img)
 				$file_name = basename($_FILES["imagenProducto"]["name"]);
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);						//tipo de la img
@@ -27,7 +28,7 @@
 					
 				$check = getimagesize($_FILES["imagenProducto"]["tmp_name"]);
 				if($check !== false AND $_FILES["imagenProducto"]["size"] <= 500000){
-					move_uploaded_file($_FILES['imagenProducto']['tmp_name'], $target_dir.$file_name);  //subimos la imagen en el servidor
+					move_uploaded_file($_FILES['imagenProducto']['tmp_name'], '../imgTienda/'.$file_name);  //subimos la imagen en el servidor
 				    $sql = "INSERT INTO visitas (Nombre, Imagen, Descripcion) VALUES ('$nombrelugar', '$target_file', '$precioProducto')";
 				
 				    $consulta = mysqli_query($db, $sql);

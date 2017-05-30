@@ -6,7 +6,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -21,13 +21,16 @@
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <title>Turistea | Cines</title>
+        <title>Turistea | Galería</title>
         
     </head> 
     <body> 
         <?php 
             include("navbar.php");
         ?>
+
+
+
         <div class="container">
             <div class="contenido">  
 	            <h1 class="text-center">Galería</h1>
@@ -43,6 +46,40 @@
 	               <h4 class="tituloVisita">Comparte con tod@s tu experiencia en Madrid. Una imagen vale más que mil palabras </h4>
                 </div>
 
+                <!-- div que se mostrará solo cuando haya algun error relativo a la img en el formulario de compartir experiencia  -->
+
+	            <div class="row">	            	
+	            	<div <?php if(isset($_GET["errorDatos"]) && $_GET["errorDatos"]=="si"){ ?> class="panel panel-danger">
+			            <div class="panel-heading">La imagen de tu experiencia no cumple con alguno de los siguientes requisitos:
+			            	<ul>
+			            		<li>La imagen no puede superar los 5KB permitidos.</li>
+			            		<li>Debe ser una imagen que no exista.</li>
+			            		<li>Debe ser una imagen de tipo PNG o JPG.</li>
+			            	</ul>
+			            </div>
+			            <?php }else{ ?> > 
+			            <?php } ?>
+			        </div>
+	            </div>
+
+	            <!-- div que se mostrará solo cuando haya algun error en los datos en el formulario  de compartir experiencia -->
+
+	            <div class="row">	            	
+	            	<div <?php if(isset($_GET["errorForm"]) && $_GET["errorForm"]=="si"){ ?> class="panel panel-danger">
+			            <div class="panel-heading">Los campos del formulario no son corretos.</div>
+			            <?php }else{ ?> > 
+			            <?php } ?>
+			        </div>
+	            </div>
+	            
+                 <div class="row">
+                    <div class="aniadir">
+                        <a href="" onClick="$('#formularioGaleria').modal()" data-toggle="modal">
+                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+                        <div class="limpiar"></div> 
+                    </div>
+	            </div>
+
                 <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
 		            <div class="row">
 		                <div class="aniadir">
@@ -55,19 +92,14 @@
 		        <?php } ?>
 		        
 	            <div class="row">
-				    <div class="col-xs-6 col-md-12 portfolio">
-				    	<a href="experiencia1.php"><img src="img/experiencia1.jpg" alt="exp1"></a>
-				    	<a href="experiencia2.php"><img src="img/experiencia2.jpg" alt="exp2"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    	<a href="#"><img src="img/muypronto.jpg" alt="muypronto"></a>
-				    </div>
+                        <table class="enMedio">  	
+						<tbody id="cuerpoTabla">
+                            <?php 
+                                include("function/funciones.php");
+                                mostrarGaleria() 
+                            ?>
+					    </tbody>
+					</table>				    	
 				</div>
 
 	            <hr class="featurette-divider">
@@ -77,6 +109,27 @@
             	?>
             </div>
         </div>
+
+          <!--                            Modal Galeria                              -->
+
+	            <div class="modal fade" id="modalGaleria" tabindex="-1" role="dialog" aria-hidden="true">
+			        <div class="modal-dialog" role="document" style="color: black;">
+			          <div class="modal-content">
+			            <div class="modal-header">
+			            	<h4 class="tituloVisita centrado">Una experiencia inolvidable</h4>
+			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                <span aria-hidden="true" style="color: black;">&times;</span>
+			              </button>
+			            </div>
+			            
+			            <div class="modal-body">
+			            
+
+			            </div>
+			           
+			          </div>
+			        </div>
+			      </div> 
 
         <!-- Modal -->
         <div class="modal fade" id="formularioGaleria" role="dialog">
@@ -89,9 +142,9 @@
                         <h4 class="modal-title text-center">Introduce una nueva experiencia</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="post">
+                        <form action="validaGaleria.php" enctype="multipart/form-data" method="POST">
 				      	     <p> Introduce un título*: </p>
-                             <input type="text" class="form-control" placeholder="Título de la experiencia" name="experiencia" aria-describedby="basic-addon2" required>
+                             <input type="text" class="form-control" placeholder="Título de la experiencia" name="experiencia" required>
                             <br>
                             <p>Introduce una imagen*: </p>
                             <input type="file" name="imagenexperiencia" required>
@@ -100,11 +153,11 @@
 				      	     <textarea class="form-control" name="anecdotaExp" rows="3" placeholder="Escriba aquí su anécdota"></textarea>
 						    <br>
 						     <p> ¿Recuerda dónde fue?: </p>
-						     <textarea class="form-control" name="anecdotaExp" rows="3" placeholder="Escriba aquí el lugar de la experiencia"></textarea>
+						     <textarea class="form-control" name="lugarExp" rows="3" placeholder="Escriba aquí el lugar de la experiencia"></textarea>
 							
 							<br>
 					      	<button type="submit" class="btn btn-default centrado">Añadir</button>
-							<button type="reset" class="btn btn-default ">Borrar</button></center>
+							<button type="reset" class="btn btn-default ">Borrar</button>
 						</form>
 						<p class="ruta"> *Campos obligatorios </p>
                     </div>
@@ -124,5 +177,26 @@
 	    <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    
+         <script type="text/javascript">
+	
+            function muestraModalGaleria(id) {   //funcion ajax para enviar datos(usado en la modal)
+                // Send the value in PHP
+                
+                $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: "ajax/modalMostrarGaleria.php",
+                    data: { "id": id},
+                    success: function(data, textStatus) {
+                        $("#modalGaleria .modal-body").html(data);
+                        $("#modalGaleria").modal('show');    
+                    }
+                    }).done(function(msg) {
+
+
+                });
+            };
+        </script>
 	</body>
 </html>

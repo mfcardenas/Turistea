@@ -1,12 +1,12 @@
 <?php
   if (($id = filter_input(INPUT_POST, "id", FILTER_UNSAFE_RAW)) !== null){ //si se ha enviado el data 'grupo'
-
-      $db = mysqli_connect('localhost','root','','turistea');
-      if(!$db){
+      include("../config/conn.php");
+      //$db = mysqli_connect('localhost','ichthuse_paloma','Pa123456','ichthuse_turistea');
+      if(!$conn){
         exit('Error en la conexion.');
       }
       $sql = "SELECT Id, Nombre, Descripcion, Mapa, Duracion, Punto_partida, Punto_destino, Parrafo1, Foto1, Parrafo2, Foto2, Parrafo3, Foto3, Parrafo4, Foto4, Parrafo5, Foto5 FROM rutas WHERE Id = '$id';";
-      $consulta = mysqli_query($db, $sql);
+      $consulta = mysqli_query($conn, $sql);
       $fila = mysqli_fetch_row($consulta);
 
       ?>
@@ -71,7 +71,7 @@
 
 
 	     <?php
-      mysqli_close($db);
+      mysqli_close($conn);
   }
 ?>
 

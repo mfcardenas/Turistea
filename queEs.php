@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- Bootstrap core CSS-->
         <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -37,7 +37,7 @@
                     </ol>   
                 </div>
                 <br>
-                <table border=8>
+                <table class="table-bordered">
                     <tr>
                         <td> <h3>Introducción</h3> </td>
                         <td>
@@ -55,13 +55,13 @@
                         <td> <h3>Tipos de usuarios</h3> </td>
                         <td>
                             <ul>
-                                <li><div class="apartados"> Administrador:</div> &nbsp&nbsp&nbsp -Seremos cada uno de los componentes del grupo, quienes nos dedicaremos a la creación y modelación de la página.</li>
-                                <li><div class="apartados"> Usuario registrado:</div> &nbsp&nbsp&nbsp -Todos y cada uno de los usuarios que se den de alta en nuestra página.</li>
+                                <li><div class="negrita">Administrador:</div><p class="apartados"> Seremos cada uno de los componentes del grupo, quienes nos dedicaremos a la creación y modelación de la página.</p></li>
+                                <li><div class="negrita">Usuario registrado:</div> <p class="apartados">Todos y cada uno de los usuarios que se den de alta en nuestra página.</p></li>
                                     <ol>
-                                        <li><div class="apartados"> Residente:</div> &nbsp&nbsp&nbsp -Serán usuarios registrados que vivan en la ciudad de Madrid. Tendrán la opción de proporcionar contenido y dar sugerencias, las cuales se quedarán pendientes de aprobación por alguno de los administradores.</li>
-                                        <li><div class="apartados"> Visitante:</div> &nbsp&nbsp&nbsp -Seran usuarios registrados que no vivan en la ciudad de Madrid, es decir, que vengan de visita para un tiempo concreto.</li>
+                                        <li><div class="negrita"> Residente:</div> <p class="apartados">Serán usuarios registrados que vivan en la ciudad de Madrid. Tendrán la opción de proporcionar contenido y dar sugerencias, las cuales se quedarán pendientes de aprobación por alguno de los administradores.</p></li>
+                                        <li><div class="negrita"> Visitante:</div><p class="apartados"> Seran usuarios registrados que no vivan en la ciudad de Madrid, es decir, que vengan de visita para un tiempo concreto.</p></li>
                                     </ol>
-                                <li><div class="apartados"> Usuario anónimo:</div> &nbsp&nbsp&nbsp -Este tipo de usuario tiene la posibilidad de acceder a la tienda y visitar su contenido. Sin embargo, no podrá realizar ninguna compra de los articulos propuestos en la misma. Para ello deberá registrarse.</li>
+                                <li><div class="negrita">Usuario anónimo:</div><p class="apartados"> Este tipo de usuario tiene la posibilidad de acceder a la tienda y visitar su contenido. Sin embargo, no podrá realizar ninguna compra de los articulos propuestos en la misma. Para ello deberá registrarse.</p></li>
                             </ul>
                         </td>
                     </tr>

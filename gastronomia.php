@@ -38,13 +38,6 @@
   	while($row = mysqli_fetch_assoc($result3))
     { $estrellaG[] = $row['Plato estrella'];}
 
-	$query_imagenG = "SELECT `Imagen` FROM gastronomia";
-  	$result4 = mysqli_query($db, $query_imagenG);
-  	$imagenG = array();
-
-  	while($row = mysqli_fetch_assoc($result4))
-    { $imagenG[] = $row['Imagen'];}
-
 	//echo "$estrellaG[0]";
 	//echo "$estrellaG[1]";
 
@@ -108,7 +101,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="wid=device-wid, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -201,7 +194,7 @@
 					<div class="row">
 						<div class="col-lg-3">
 							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[0]"; ?> </h2> </a>
-							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <img src= "<?php echo "$imagenG[0]" ?>" alt="Lambuzo"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[0]; ?>')" data-toggle="modal"> <img src= "imgGastro/lambuzo.jpg" alt="Lambuzo"> </a> 
 						</div>
 						<div class="col-lg-9">
 							<p class="subtitulo"> Localización: </p>
@@ -231,7 +224,7 @@
 				         </div>
 						<div class="col-lg-3">
 							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[1]"; ?> </h2> </a>
-							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <img src= "<?php echo "$imagenG[1]" ?>" alt="Mandil"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[1]; ?>')" data-toggle="modal"> <img src= "imgGastro/elMandil.jpg" alt="Mandil"> </a> 
 						</div>
 						<div class="col-lg-9">
 							
@@ -242,7 +235,7 @@
 					<div class="row">
 						<div class="col-lg-3">
 							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <h2> <?php echo "$nombresG[2]"; ?> </h2> </a>
-							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <img src= "<?php echo "$imagenG[2]" ?>" alt="Los Montes de Galicia"> </a> 
+							<a href="" onclick="muestraModalGastro('<?php echo $nombresG[2]; ?>')" data-toggle="modal"> <img src= "imgGastro/losMontesDeGalicia.jpg" alt="Los Montes de Galicia"> </a> 
 						</div>
 						<div class="col-lg-9">
 							<p class="subtitulo"> Localización: </p>
@@ -279,35 +272,35 @@
                     <div class="modal-body">
                         <form action="#" method="post">
 				      	     <p> Introduce el nombre: </p>
-                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrebar" aria-describedby="basic-addon2" required>
+                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrebar"  required>
                             <br>
                             <label for="fichero" class="label">Seleccione una imagen: </label>
 				            <div class="input-group">				             
-				                <input id="fichero" name="fichero" type="file" multiple class="file-loading">
+				                <input id="fichero1" name="fichero1" type="file" multiple class="file-loading">
 				            </div>
 				            <br>
 				      	     <p> Introduzca una forma de llegar: </p>
 				      	     <textarea class="form-control" name="llegadabar" rows="3" placeholder="Escriba aquí la ruta"></textarea>
 						    <br>
 						     <p> Introduce la dirección: </p>
-						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionbar1" aria-describedby="basic-addon2" required>
+						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionbar1"  required>
 						     <p> Introduce algún horario: </p>
-							 <input type="text" class="form-control" placeholder="L hh:mm:ss (apertura) hh:mm:ss (cierre) M hh:mm:ss (apertura) ...." name="horariobar" aria-describedby="basic-addon2">
-							 <!--<input type="text" class="form-control" placeholder="País" name="localizacionbar3" aria-describedby="basic-addon2">-->
+							 <input type="text" class="form-control" placeholder="L hh:mm:ss (apertura) hh:mm:ss (cierre) M hh:mm:ss (apertura) ...." name="horariobar" >
+							 <!--<input type="text" class="form-control" placeholder="País" name="localizacionbar3" >-->
 							<br>
 							 <p> Introduce el teléfono de contacto: </p>
-							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonobar" aria-describedby="basic-addon2">
+							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonobar" >
 							<br>
 							 <p> Introduce el plato estrella: </p>
-						     <input type="text" class="form-control" placeholder="Plato estrella" name="estrellabar" aria-describedby="basic-addon2">
+						     <input type="text" class="form-control" placeholder="Plato estrella" name="estrellabar" >
 
 							<br>
 
 
 
 				      	<button type="submit" class="btn btn-default centrado" name="submit" value="Upload">Añadir</button>
-						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
-                     
+						  		<button type="reset" class="btn btn-default ">Borrar</button>
+                        </form>
                     </div>
 
                 </div>
@@ -327,9 +320,9 @@
                         <h4 class="modal-title text-center">Conoce más sobre este lugar</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="#" method="post">
+                        <form method="post">
 				      	     <p> Nombre: </p>
-                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrebar" aria-describedby="basic-addon2" required>
+                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrebar"  required>
                             <br>
                             <label for="fichero" class="label">Seleccione una imagen: </label>
 				            <div class="input-group">				             
@@ -340,24 +333,24 @@
 				      	     <textarea class="form-control" name="llegadabar" rows="3" placeholder="Escriba aquí la ruta"></textarea>
 						    <br>
 						     <p> Introduce la dirección: </p>
-						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionbar1" aria-describedby="basic-addon2" required>
+						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacionbar1"  required>
 						     <p> Introduce algún horario: </p>
-							 <input type="text" class="form-control" placeholder="L hh:mm:ss (apertura) hh:mm:ss (cierre) M hh:mm:ss (apertura) ...." name="horariobar" aria-describedby="basic-addon2">
-							 <!--<input type="text" class="form-control" placeholder="País" name="localizacionbar3" aria-describedby="basic-addon2">-->
+							 <input type="text" class="form-control" placeholder="L hh:mm:ss (apertura) hh:mm:ss (cierre) M hh:mm:ss (apertura) ...." name="horariobar" >
+							 <!--<input type="text" class="form-control" placeholder="País" name="localizacionbar3" >-->
 							<br>
 							 <p> Introduce el teléfono de contacto: </p>
-							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonobar" aria-describedby="basic-addon2">
+							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonobar" >
 							<br>
 							 <p> Introduce el plato estrella: </p>
-						     <input type="text" class="form-control" placeholder="Plato estrella" name="estrellabar" aria-describedby="basic-addon2">
+						     <input type="text" class="form-control" placeholder="Plato estrella" name="estrellabar" >
 
 							<br>
 
 
 
 				      	<button type="submit" class="btn btn-default centrado" name="submit" value="Upload">Añadir</button>
-						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
-                     
+						  		<button type="reset" class="btn btn-default ">Borrar</button>
+                        </form>
                     </div>
 
                 </div>

@@ -5,7 +5,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -79,16 +79,17 @@
                         <form action="function/insertar_producto.php" method="post">
 				      	     
                             <p> Introduce el nombre del producto:</p>
-                             <input type="text" class="form-control" placeholder="Nombre del producto" name="nombreproducto" aria-describedby="basic-addon2">
+                             <input type="text" class="form-control" placeholder="Nombre del producto" name="nombreproducto">
                             <br>
                             <p>Introduce una imagen: </p>
                             <input type="file" name="imagenProducto">
                             <br>
 				      	     <p> Introduce el precio: </p>
-				      	      <input type="text" class="form-control" placeholder="Precio del producto €" name="precioProducto" aria-describedby="basic-addon2">
+				      	      <input type="text" class="form-control" placeholder="Precio del producto €" name="precioProducto">
 						      <br>
 				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
-						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+						  		<button type="reset" class="btn btn-default ">Borrar</button>
+                        </form>
                      
                     </div>
 

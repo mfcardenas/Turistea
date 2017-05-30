@@ -1,12 +1,12 @@
 <?php
     if (($nombreG = filter_input(INPUT_POST, "nombre", FILTER_UNSAFE_RAW)) !== null){ //si se ha enviado el data 'grupo'
-
-      $db = mysqli_connect('localhost','root','','turistea');
-      if(!$db){
+      include("../config/conn.php");
+      $db = mysqli_connect('localhost','ichthuse_paloma','Pa123456','ichthuse_turistea');
+      if(!$conn){
         exit('Error en la conexion.');
       }
       $sqlG = "SELECT * FROM gastronomia WHERE Nombre = '$nombreG';";
-      $consultaG = mysqli_query($db, $sqlG);
+      $consultaG = mysqli_query($conn, $sqlG);
       $filaG = mysqli_fetch_row($consultaG);
       /*echo '<div class="row">';
         echo '<div class="col-md-6">';
@@ -51,6 +51,6 @@
         echo '</div>';
       echo '</div>';    
       
-      mysqli_close($db);
+      mysqli_close($conn);
     }
   ?>

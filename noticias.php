@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -23,12 +23,69 @@
 
         <title>Turistea | Noticias</title>
 
-        
+        <script type="text/javascript">
+		
+	function muestraNoticias(){
+		
+		$.ajax({
+	        type: "POST",
+	        dataType: "html",
+	        url: "ajax/sqlNoticias.php",
+	        data: {},
+	        success: function(data, textStatus) {
+				$(".noticias").html(data);
+			}
+	    }).done(function(msg) {
+	 
+	        
+	    });
+
+	}
+
+	function borraNoticia(id_noticia){
+
+		$.ajax({
+	        type: "POST",
+	        dataType: "html",
+	        url: "ajax/sqlBorraNoticia.php",
+	        data: { "id": id_noticia},
+	        success: function(data, textStatus) {
+	               location.reload();
+	        }
+	    }).done(function(msg) {
+	 
+	        
+	    });
+
+	}
+
+	function muestraModalNoticia(id_noticia) {   //funcion ajax para enviar datos(usado en la modal)
+	    // Send the value in PHP
+	    $.ajax({
+	        type: "POST",
+	        dataType: "html",
+	        url: "ajax/modalMostrarNoticia.php",
+	        data: { "id": id_noticia},
+	        success: function(data, textStatus) {
+	            $("#myModal2 .modal-body").html(data);
+	            $("#myModal2").modal('show');    
+	        }
+	    }).done(function(msg) {
+	 
+	        
+	    });
+	};
+
+	</script>
         
     </head> 
     <body onload="muestraNoticias()"> 
         <?php 
             include("navbar.php");
+            if(isset($_SESSION['autentificado']) AND $_SESSION['autentificado'] == 'SI'){
+
+            }
+            else{header('Location: index.php');}
         ?>
         <div class="container">
             <div class="contenido">
@@ -91,9 +148,8 @@
 
 	            
 
-			    <div class="row">
-			        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-			             aria-hidden="true">
+			     <div class="row">
+			        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
 			            <div class="modal-dialog long-size">
 			                <div class="modal-content img-container">
 			                    <div class="modal-body modal-instagram">
@@ -128,14 +184,14 @@
                         	<label for="titulonoticia" class="label">· Introduce el título de la noticia: </label>
 				            <div class="input-group">
 				                <span class="input-group-addon"><i class="glyphicon glyphicon-leaf"></i></span>
-				                <input type="text" class="form-control" placeholder="Título de la noticia" id="titulonoticia" name="titulonoticia" aria-describedby="basic-addon2" required>
+				                <input type="text" class="form-control" placeholder="Título de la noticia" id="titulonoticia" name="titulonoticia" required>
 				            </div>
 				            <br>
 
 				            <label for="subtitulonoticia" class="label">· Introduce el subtítulo de la noticia: </label>
 				            <div class="input-group">
 				                <span class="input-group-addon"><i class="glyphicon glyphicon-leaf"></i></span>
-				                <input type="text" class="form-control" placeholder="Subtítulo de la noticia" id="subtitulonoticia" name="subtitulonoticia" aria-describedby="basic-addon2" required>
+				                <input type="text" class="form-control" placeholder="Subtítulo de la noticia" id="subtitulonoticia" name="subtitulonoticia" required>
 				            </div>
 				            <br>
 
@@ -162,7 +218,7 @@
 				            <label for="fuentenoticia" class="label">· Indique la fuente de la noticia: </label>
 				            <div class="input-group">
 				                <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-				                <input type="text" class="form-control" placeholder="url del sitio donde encontraste la noticia" id="fuentenoticia" name="fuentenoticia" aria-describedby="basic-addon2" required>
+				                <input type="text" class="form-control" placeholder="url del sitio donde encontraste la noticia" id="fuentenoticia" name="fuentenoticia" required>
 				            </div>
 				            <br>
 				            <div class="centrado">
@@ -179,58 +235,5 @@
     
 	</body>
 
-	<script type="text/javascript">
-		
-	function muestraNoticias(){
-		
-		$.ajax({
-	        type: "POST",
-	        dataType: "html",
-	        url: "ajax/sqlNoticias.php",
-	        data: {},
-	        success: function(data, textStatus) {
-				$(".noticias").html(data);
-			}
-	    }).done(function(msg) {
-	 
-	        
-	    });
-
-	}
-
-	function borraNoticia(id_noticia){
-
-		$.ajax({
-	        type: "POST",
-	        dataType: "html",
-	        url: "ajax/sqlBorraNoticia.php",
-	        data: { "id": id_noticia},
-	        success: function(data, textStatus) {
-	               location.reload();
-	        }
-	    }).done(function(msg) {
-	 
-	        
-	    });
-
-	}
-
-	function muestraModalNoticia(id_noticia) {   //funcion ajax para enviar datos(usado en la modal)
-	    // Send the value in PHP
-	    $.ajax({
-	        type: "POST",
-	        dataType: "html",
-	        url: "ajax/modalMostrarNoticia.php",
-	        data: { "id": id_noticia},
-	        success: function(data, textStatus) {
-	            $("#myModal2 .modal-body").html(data);
-	            $("#myModal2").modal('show');    
-	        }
-	    }).done(function(msg) {
-	 
-	        
-	    });
-	};
-
-	</script>
+	
 </html>

@@ -41,7 +41,7 @@
 
                 <?php if(!isset($_SESSION["autentificado"]) || $_SESSION["autentificado"] == "NO"){ ?>
                   <li class="active">
-                    <a id href="index_login.php"> Logueate <span class="glyphicon glyphicon-log-in"></span> </a>
+                    <a href="index_login.php"> Logueate <span class="glyphicon glyphicon-log-in"></span> </a>
                   </li>
                 <?php } ?>
 
@@ -49,7 +49,7 @@
 
                 <?php if(!isset($_SESSION["autentificado"]) || $_SESSION["autentificado"] == "NO"){ ?>
                   <li class="active">
-                    <a id href="index_registro.php"> Registrate <span class="glyphicon glyphicon-pencil"></span> </a>
+                    <a href="index_registro.php"> Registrate <span class="glyphicon glyphicon-pencil"></span> </a>
                   </li>
                 <?php } ?>
 
@@ -57,7 +57,7 @@
 
                 <?php if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){ ?>
                   <li class="active">
-                    <a id href="pag_usu.php"> <?php echo $_SESSION["usuLogeado"]; ?> <span class="glyphicon glyphicon-user"></span> </a>
+                    <a href="pag_usu.php"> <?php echo $_SESSION["usuLogeado"]; ?> <span class="glyphicon glyphicon-user"></span> </a>
                   </li>
                 <?php } ?>
 
@@ -65,7 +65,7 @@
 
                 <?php if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){ ?>
                   <li>
-                    <a id href="validaLogout.php"> Cerrar Sesion <span class="glyphicon glyphicon-log-out"></span> </a>
+                    <a href="/../function/validaLogout.php"> Cerrar Sesion <span class="glyphicon glyphicon-log-out"></span> </a>
                   </li>
                 <?php }?>
 
@@ -74,7 +74,5 @@
             </div>
           </div>
         </nav>
-      </div>
-    </div>
-
-                 
+        </div>
+</div>
