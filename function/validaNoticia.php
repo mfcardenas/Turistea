@@ -6,11 +6,7 @@
 	<body>
 		<?php
 			
-			$db = mysqli_connect('localhost', 'ichthuse_paloma', 'Pa123456', 'ichthuse_turistea');
-
-			if(!$db){
-				exit('Fallo en la conexion');
-			}
+			include("/../config/conn.php");
 
 			if(isset($_POST['titulonoticia']) AND isset($_POST['subtitulonoticia']) AND isset($_POST['resumennoticia']) AND isset($_POST['descripcionnoticia']) AND isset($_POST['fuentenoticia'])){
 				
@@ -37,21 +33,21 @@
 
 						//insertamos la nueva noticia en la base de datos
 						$sql = "INSERT INTO noticias VALUES ('$titulo', null , '$subtitulo','$resumen','$descp', '$fuente', '$fecha','$target_file');";
-						$consulta = mysqli_query($db, $sql);
-						header('Location: noticias.php');
+						$consulta = mysqli_query($conn, $sql);
+						header('Location: ../noticias.php');
 
 					}
 					else{
-						header('Location: noticias.php?errorImg=si');
+						header('Location: ../noticias.php?errorImg=si');
 					}
 
 				}
 				else{
-					header('Location: noticias.php?errorForm=si');
+					header('Location: ../noticias.php?errorForm=si');
 				}
 			}
 			else{
-				header('Location: noticias.php?errorForm=si');
+				header('Location: ../noticias.php?errorForm=si');
 			}
 		?>
 	</body>

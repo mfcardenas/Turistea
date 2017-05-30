@@ -79,11 +79,7 @@
 				//si todas las entradas son válidas
 				// Conecto a la BBDD
 				//$con;
-				$db = mysqli_connect('localhost', 'ichthuse_paloma', 'Pa123456', 'ichthuse_turistea');
-				//include("../config/conn.php");
-				if(!$db){
-					exit('Fallo en la conexion');
-				}
+				include("/../config/conn.php");
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
 				//$target_dir = "imgLugares/";  			
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
@@ -99,7 +95,7 @@
 					move_uploaded_file($_FILES['imagen']['tmp_name'], '../imgLugares/'.$file_name);  //subimos la imagen en el servidor
 				    
 					$sql = "INSERT INTO lugares(Tipo, Nombre, Imagen, Direccion, Telefono, Horario, Llegada, Precio, Descripcion) VALUES ('$lugar', '$nombre', '$target_file', '$direccion' , '$telefono', '$horario', '$llegar', '$entradas', '$descripcion')";
-					$consulta = mysqli_query($db, $sql);
+					$consulta = mysqli_query($conn, $sql);
 					if($consulta != null){
 						switch($lugar){
 						case null:
@@ -130,7 +126,7 @@
 			else {
 				echo "Hay algún dato mal";
 			}
-			@mysqli_close($db);
+			@mysqli_close($conn);
 		?>
 	</body>
 </html>

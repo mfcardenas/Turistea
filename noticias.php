@@ -179,7 +179,7 @@
                         <h4 class="modal-title text-center">Introduce una nueva noticia</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="validaNoticia.php" enctype="multipart/form-data" method="POST">
+                        <form action="function/validaNoticia.php" enctype="multipart/form-data" method="POST">
 
                         	<label for="titulonoticia" class="label">· Introduce el título de la noticia: </label>
 				            <div class="input-group">

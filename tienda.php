@@ -39,11 +39,13 @@
 					</ol>
 	            </div>
                  <div class="row">
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioTienda').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
+                      <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+	                    <div class="aniadir">
+	                        <a href="" onClick="$('#formularioTienda').modal()" data-toggle="modal">
+	                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+	                        <div class="limpiar"></div> 
+	                    </div>
+                     <?php } ?>
 	            </div>
 	            <div class="row enMedio">
                     <!--TENGO QUE PONER Y DARLE FUNCIONALIDAD A ESTE BOTÓN<*/?php 
@@ -87,7 +89,7 @@
 				      	     <p> Introduce el precio: </p>
 				      	      <input type="text" class="form-control" placeholder="Precio del producto €" name="precioProducto">
 						      <br>
-				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
+				      	     <button type="submit" class="btn btn-default centrado">Añadir</button>
 						  		<button type="reset" class="btn btn-default ">Borrar</button>
                         </form>
                      

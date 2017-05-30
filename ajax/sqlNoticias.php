@@ -2,10 +2,6 @@
   <?php
       session_start();
       include("../config/conn.php");
-      //$db = mysqli_connect('localhost','ichthuse_paloma','Pa123456','ichthuse_turistea');
-      if(!$conn){
-        exit('Error en la conexion.');
-      }
       $sql = "SELECT Titulo, Subtitulo, Resumen, Fecha, Imagen, ID FROM noticias ORDER BY Fecha;";
       $consulta = mysqli_query($conn, $sql);
       $fila = mysqli_fetch_row($consulta);

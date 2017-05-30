@@ -6,10 +6,7 @@
 	<body>
 		<?php
 			//$db = mysqli_connect('localhost', '', 'Pa123456', 'ichthuse_turistea');
-			require_once("/../config/conn.php");
-			if(!$conn){
-				exit('Fallo en la conexion');
-			}
+			include("/../config/conn.php");
 			//Compruebo que todos los campos esten marcados
 			if(isset($_POST['inputEmail']) AND isset($_POST['inputPassword'])){
 				//Compruebo que no hay ningún campo vacio

@@ -6,11 +6,7 @@
 	<body>
 		<?php
 			
-			$db = mysqli_connect('localhost', 'root', '', 'turistea');
-			if(!$db){
-				exit('Fallo en la conexion');
-			}
-
+			include("/../config/conn.php");
 			if(isset($_POST['experiencia'])){
 				
 				if($_POST['experiencia'] != "") {
@@ -35,22 +31,22 @@
 						move_uploaded_file($_FILES['imagenexperiencia']['tmp_name'], 'imgGaleria/'.$file_name);  //subimos la imagen en el servidor
 
 						//insertamos la nueva noticia en la base de datos
-						$sql = "INSERT INTO imgGaleria VALUES ('$titulo', '$target_file', '$lugar','$autor','$anecdota');";
-						$consulta = mysqli_query($db, $sql);
-						header('Location: galeria.php');	
+						$sql = "INSERT INTO galeria VALUES ('', '$titulo', '$target_file', '$lugar','$autor','$anecdota');";
+						$consulta = mysqli_query($conn, $sql);
+						header('Location: ../galeria.php');	
 
 					}
 					else{
-						header('Location: galeria.php?errorImg=si');
+						header('Location: ../galeria.php?errorImg=si');
 					}
 
 				}
 				else{
-					header('Location: galeria.php?errorForm=si');
+					header('Location: ../galeria.php?errorForm=si');
 				}
 			}
 			else{
-				header('Location: galeria.php?errorForm=si');
+				header('Location: ../galeria.php?errorForm=si');
 			}
 		?>
 	</body>

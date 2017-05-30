@@ -65,7 +65,7 @@
 
                 <?php if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){ ?>
                   <li>
-                    <a href="/../function/validaLogout.php"> Cerrar Sesion <span class="glyphicon glyphicon-log-out"></span> </a>
+                    <a href="function/validaLogout.php"> Cerrar Sesion <span class="glyphicon glyphicon-log-out"></span> </a>
                   </li>
                 <?php }?>
 

@@ -175,7 +175,7 @@
 
         <div class="container">
             
-          <form class="form-signin" name="registerForm" action="validaRegistro.php" method="post" data-toggle="validator" onsubmit="return prueba()">
+          <form class="form-signin" name="registerForm" action="function/validaRegistro.php" method="post" data-toggle="validator" onsubmit="return prueba()">
 
             <div class="sidebar-module sidebar-module-inset bloqueFondoRegistro">
 

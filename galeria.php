@@ -142,7 +142,7 @@
                         <h4 class="modal-title text-center">Introduce una nueva experiencia</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="validaGaleria.php" enctype="multipart/form-data" method="POST">
+                        <form action="function/validaGaleria.php" enctype="multipart/form-data" method="POST">
 				      	     <p> Introduce un título*: </p>
                              <input type="text" class="form-control" placeholder="Título de la experiencia" name="experiencia" required>
                             <br>

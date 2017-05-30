@@ -118,7 +118,7 @@
 							 <p> Introduce el teléfono de contacto: </p>
 							 <input type="text" class="form-control" placeholder="Teléfono" name="telefonoteatro" >
 							<br>
-							<p> Introduce el horario*: (Primero la hora de apertura y después la de cierre</p>
+							<p> Introduce el horario*: (Primero la hora de apertura y después la de cierre)</p>
 								<ul>
 								    <li><label> Lunes: </label> 
 								    	<input type="time" name="aperturaLunes" value="10:00:00" max="23:59:59" min="10:00:00" step="1" required>

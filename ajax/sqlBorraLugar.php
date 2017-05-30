@@ -1,11 +1,8 @@
 <?php
 	if (($id = filter_input(INPUT_POST, "id", FILTER_UNSAFE_RAW)) !== null){ 
-		$db = mysqli_connect('localhost','root','','turistea');
-		if (!$db) {
-			exit('Error en la conexión');
-		}
+		include("../config/conn.php");
 		$sql = "DELETE FROM lugares WHERE id = '$id';";
-		$consulta = mysqli_query($db, $sql);
+		$consulta = mysqli_query($conn, $sql);
 	
 	}
 ?>

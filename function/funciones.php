@@ -25,7 +25,7 @@
 			        }
 		        }
 		    }
-	        @mysql_close($conn);
+	        mysqli_close($conn);
 	}
 
    function verUnLugar($id, $cont){

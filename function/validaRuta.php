@@ -6,11 +6,9 @@
 	<body>
 		<?php
 			
-			$db = mysqli_connect('localhost', 'ichthuse_paloma', 'Pa123456', 'ichthuse_turistea');
-			//include("config/conn.php");
-			if(!$db){
-				exit('Fallo en la conexion');
-			}
+			
+			include("/../config/conn.php");
+			
 
 			if(isset($_POST['nombreruta']) AND isset($_POST['duracion']) AND isset($_POST['inicio']) AND isset($_POST['destino']) AND isset($_POST['descripcion']) AND isset($_POST['parrafo1']) AND isset($_POST['parrafo2']) AND isset($_POST['parrafo3']) AND isset($_POST['parrafo4']) AND isset($_POST['parrafo5'])){
 				//No se si las fotos funcionan así, con el Isset.
@@ -70,21 +68,21 @@
 
 						//insertamos la nueva ruta en la base de datos
 						$sql = "INSERT INTO rutas VALUES (null, '$nombre', '$descp' , '$target_file','$duracion','$inicio','$destino','$parrafo1', '$target_file1', '$parrafo2', '$target_file2', '$parrafo3', '$target_file3', '$parrafo4', '$target_file4', '$parrafo5', '$target_file5');";
-						$consulta = mysqli_query($db, $sql);
+						$consulta = mysqli_query($conn, $sql);
 						header('Location: rutas.php');
 
 					}
 					else{
-						header('Location: rutas.php?errorImg=si');
+						header('Location: ../rutas.php?errorImg=si');
 					}
 
 				}
 				else{
-					header('Location: rutas.php?errorForm=si');
+					header('Location: ../rutas.php?errorForm=si');
 				}
 			}
 			else{
-				header('Location: rutas.php?errorForm=si');
+				header('Location: ../rutas.php?errorForm=si');
 			}
 		?>
 	</body>
