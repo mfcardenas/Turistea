@@ -51,12 +51,12 @@
 	//GUARDAR DATOS DEL FORMULARIO DE AÑADIR
 	error_reporting(E_PARSE);
 
-	$nombreAdd=$_POST['nombrebar'];
-  	$llegarAdd=$_POST['llegadabar'];
-  	$horarioAdd=$_POST['horariobar'];
-  	$direccionAdd=$_POST['localizacionbar1'];
-  	$telefonoAdd=$_POST['telefonobar'];
-  	$estrellaAdd=$_POST['estrellabar'];
+	$nombreAdd = htmlspecialchars(trim(strip_tags($_POST['nombrebar'])));
+  	$llegarAdd = htmlspecialchars(trim(strip_tags($_POST['llegadabar'])));
+  	$horarioAdd = htmlspecialchars(trim(strip_tags($_POST['horariobar'])));
+  	$direccionAdd = htmlspecialchars(trim(strip_tags($_POST['localizacionbar1'])));
+  	$telefonoAdd = htmlspecialchars(trim(strip_tags($_POST['telefonobar'])));
+  	$estrellaAdd = htmlspecialchars(trim(strip_tags($_POST['estrellabar'])));
 
   	//$key = array_search(, $nombresG);
 

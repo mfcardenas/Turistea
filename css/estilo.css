@@ -107,7 +107,9 @@
 
     border-spacing: 15px;
 }
-
+.modalNegro{
+   color: black;
+}
 
 /* carousel mini */
 .media-carousel 

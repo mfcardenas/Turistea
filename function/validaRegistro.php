@@ -11,9 +11,9 @@
 					//comprobamos que no hay ningún campo vacío
 				if($_POST['inputEmail'] != "" AND $_POST['inputPassword'] != "" AND $_POST['inputPassword2'] != "" AND $_POST['inputUsu'] != "" AND $_POST['inputNombre'] != "") {
 					
-					$email = $_POST['inputEmail'];
-					$cont1 = $_POST['inputPassword'];
-					$cont2 = $_POST['inputPassword2'];
+					$email = htmlspecialchars(trim(strip_tags($_POST['inputEmail'])));
+					$cont1 = htmlspecialchars(trim(strip_tags($_POST['inputPassword'])));
+					$cont2 = htmlspecialchars(trim(strip_tags($_POST['inputPassword2'])));
 					$nombre = htmlspecialchars(trim(strip_tags($_REQUEST["inputNombre"])));
 					$usu = htmlspecialchars(trim(strip_tags($_REQUEST["inputUsu"])));
 
@@ -54,7 +54,12 @@
 								$consulta1 = mysqli_query($conn, $sql1);
 								
 								mysqli_close($conn);
-								header('Location: ../index_login.php');
+								session_start(); 
+								$_SESSION["autentificado"]= "SI"; //varibale de sesion para saber si el suario está autenticado
+								$_SESSION["usuLogeado"]= $usu; //variable de sesion que contiene el id del usuario logeado
+								$_SESSION["tipoUsuarioLog"] = "normal"; //variable de sesion que tiene el tipo del usuario logeado(para saber si es admin o no)
+								header('Location: ../index.php');
+								//header('Location: ../index_login.php');
 								
 							}else{
 								mysqli_close($conn);

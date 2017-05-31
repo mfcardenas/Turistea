@@ -165,7 +165,7 @@
                         <h4 class="modal-title text-center">Añadir Nueva Ruta</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="validaRuta.php" enctype="multipart/form-data" method="POST">
+                        <form action="function/validaRuta.php" enctype="multipart/form-data" method="POST">
 				      	    <p>Nombre de la ruta: </p>
                             <input type="text" class="form-control" placeholder="Nombre de la ruta" name="nombreruta" required>
                             <br>

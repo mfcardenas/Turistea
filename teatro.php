@@ -29,7 +29,7 @@
             include("navbar.php");
             include("function/funciones.php");
             if(isset($_GET['id'])){
-            	$idTeatro = $_GET['id'];
+            	$idTeatro = htmlspecialchars(trim(strip_tags($_GET['id'])));
             }
             else{
             	header('Location: teatros.php?error=nohayid');

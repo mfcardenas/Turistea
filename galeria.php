@@ -113,12 +113,12 @@
           <!--                            Modal Galeria                              -->
 
 	            <div class="modal fade" id="modalGaleria" tabindex="-1" role="dialog" aria-hidden="true">
-			        <div class="modal-dialog" role="document" style="color: black;">
+			        <div class="modal-dialog modalNegro" role="document">
 			          <div class="modal-content">
 			            <div class="modal-header">
 			            	<h4 class="tituloVisita centrado">Una experiencia inolvidable</h4>
 			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			                <span aria-hidden="true" style="color: black;">&times;</span>
+			                <span aria-hidden="true" class="modalNegro">&times;</span>
 			              </button>
 			            </div>
 			            
@@ -149,11 +149,11 @@
                             <p>Introduce una imagen*: </p>
                             <input type="file" name="imagenexperiencia" required>
                             <br>
-				      	     <p> ¿Alguna anécdota?: </p>
-				      	     <textarea class="form-control" name="anecdotaExp" rows="3" placeholder="Escriba aquí su anécdota"></textarea>
+				      	     <p> ¿Alguna anécdota?*: </p>
+				      	     <textarea class="form-control" name="anecdotaExp" rows="3" placeholder="Escriba aquí su anécdota" required></textarea>
 						    <br>
-						     <p> ¿Recuerda dónde fue?: </p>
-						     <textarea class="form-control" name="lugarExp" rows="3" placeholder="Escriba aquí el lugar de la experiencia"></textarea>
+						     <p> ¿Recuerda dónde fue?*: </p>
+						     <textarea class="form-control" name="lugarExp" rows="3" placeholder="Escriba aquí el lugar de la experiencia" required></textarea>
 							
 							<br>
 					      	<button type="submit" class="btn btn-default centrado">Añadir</button>

@@ -73,12 +73,12 @@
 	            <!--                            Modal Visitas                              -->
 
 	            <div class="modal fade" id="modalVisita" tabindex="-1" role="dialog" aria-hidden="true">
-			        <div class="modal-dialog" role="document" style="color: black;">
+			        <div class="modal-dialog modalNegro" role="document">
 			          <div class="modal-content">
 			            <div class="modal-header">
 			            	<h4 class="tituloVisita centrado">Conoce este lugar un poco más.</h4>
 			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			                <span aria-hidden="true" style="color: black;">&times;</span>
+			                <span aria-hidden="true" class="modalNegro">&times;</span>
 			              </button>
 			            </div>
 			            

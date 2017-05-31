@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<?php
-			$nombrelugar = isset($_POST['nombrelugar'])?$_POST['nombrelugar']:null;
-			$descripcion = isset($_POST['descripcion'])?$_POST['descripcion']:null;
+			$nombrelugar = htmlspecialchars(trim(strip_tags(isset($_POST['nombrelugar'])?$_POST['nombrelugar']:null)));
+			$descripcion = htmlspecialchars(trim(strip_tags(isset($_POST['descripcion'])?$_POST['descripcion']:null)));
         
 			if($nombrelugar != null AND $descripcion != null){				
 				//si todas las entradas son válidas

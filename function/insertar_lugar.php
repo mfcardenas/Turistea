@@ -6,82 +6,62 @@
 	</head>
 	<body>
 		<?php
-			$lugar = isset($_GET['lugar'])?$_GET['lugar']:null;
 
-			//Compruebo todos los campos del formulario
-			$nombre = isset($_POST['nombre'])?$_POST['nombre']:null;
-			$descripcion = isset($_POST['descripcion'])?$_POST['descripcion']:null;
+			if(isset($_GET['lugar'])){
+				$lugar = htmlspecialchars(trim(strip_tags($_GET['lugar'])));
+			}
 
-			$localizacion1 = isset($_POST['localizacion1'])?$_POST['localizacion1']:null;
-			$localizacion2 = isset($_POST['localizacion2'])?$_POST['localizacion2']:null;
-			$localizacion3 = isset($_POST['localizacion3'])?$_POST['localizacion3']:null;
-
-			$telefono = isset($_POST['telefonoteatro'])?$_POST['telefonoteatro']:null;
-
-			$aLunes = isset($_POST['aperturaLunes'])?$_POST['aperturaLunes']:null;
-			$aMartes = isset($_POST['aperturaMartes'])?$_POST['aperturaMartes']:null;
-			$aMiercoles = isset($_POST['aperturaMiercoles'])?$_POST['aperturaMiercoles']:null;
-			$aJueves = isset($_POST['aperturaJueves'])?$_POST['aperturaJueves']:null;
-			$aViernes = isset($_POST['aperturaViernes'])?$_POST['aperturaViernes']:null;
-			$aSabado = isset($_POST['aperturaSabado'])?$_POST['aperturaSabado']:null;
-			$aDomingo = isset($_POST['aperturaDomingo'])?$_POST['aperturaDomingo']:null;
-
-			$cLunes = isset($_POST['cierreLunes'])?$_POST['cierreLunes']:null;
-			$cMartes = isset($_POST['cierreMartes'])?$_POST['cierreMartes']:null;
-			$cMiercoles = isset($_POST['cierreMiercoles'])?$_POST['cierreMiercoles']:null;
-			$cJueves = isset($_POST['cierreJueves'])?$_POST['cierreJueves']:null;
-			$cViernes = isset($_POST['cierreViernes'])?$_POST['cierreViernes']:null;
-			$cSabado = isset($_POST['cierreSabado'])?$_POST['cierreSabado']:null;
-			$cDomingo = isset($_POST['cierreDomingo'])?$_POST['cierreDomingo']:null;
-
-			$llegar = isset($_POST['comoLlegar'])?$_POST['comoLlegar']:null;
-			$entradas = isset($_POST['entradas'])?$_POST['entradas']:null;
+			//Comprobamos que los datos requeridos no estén vacíos
+			if(isset($_POST['nombre']) AND isset($_POST['localizacion1']) AND isset($_POST['localizacion2']) AND isset($_POST['localizacion3']) AND isset($_POST['aperturaLunes']) AND isset($_POST['aperturaMartes']) AND isset($_POST['aperturaMiercoles']) AND isset($_POST['aperturaJueves']) AND isset($_POST['aperturaViernes']) AND isset($_POST['aperturaSabado']) AND isset($_POST['aperturaDomingo']) AND isset($_POST['cierreLunes']) AND isset($_POST['cierreMartes']) AND isset($_POST['cierreMiercoles']) AND isset($_POST['cierreJueves']) AND isset($_POST['cierreViernes']) AND isset($_POST['cierreSabado']) AND isset($_POST['cierreDomingo'])){
+				//Compruebo todos los campos del formulario
+				$nombre = htmlspecialchars(trim(strip_tags($_POST['nombre'])));
+				
+				$localizacion1 = htmlspecialchars(trim(strip_tags($_POST['localizacion1'])));
+				$localizacion2 = htmlspecialchars(trim(strip_tags($_POST['localizacion2'])));
+				$localizacion3 = htmlspecialchars(trim(strip_tags($_POST['localizacion3'])));
 
 
-///////////////////////////////////////////////////
-			echo $nombre;
-			echo $descripcion;
+				$aLunes = htmlspecialchars(trim(strip_tags($_POST['aperturaLunes'])));
+				$aMartes = htmlspecialchars(trim(strip_tags($_POST['aperturaMartes'])));
+				$aMiercoles = htmlspecialchars(trim(strip_tags($_POST['aperturaMiercoles'])));
+				$aJueves = htmlspecialchars(trim(strip_tags($_POST['aperturaJueves'])));
+				$aViernes = htmlspecialchars(trim(strip_tags($_POST['aperturaViernes'])));
+				$aSabado = htmlspecialchars(trim(strip_tags($_POST['aperturaSabado'])));
+				$aDomingo = htmlspecialchars(trim(strip_tags($_POST['aperturaDomingo'])));
 
-			echo $localizacion1 ;
-			echo $localizacion2 ;
-			echo $localizacion3 ;
+				$cLunes = htmlspecialchars(trim(strip_tags($_POST['cierreLunes'])));
+				$cMartes = htmlspecialchars(trim(strip_tags($_POST['cierreMartes'])));
+				$cMiercoles = htmlspecialchars(trim(strip_tags($_POST['cierreMiercoles'])));
+				$cJueves = htmlspecialchars(trim(strip_tags($_POST['cierreJueves'])));
+				$cViernes = htmlspecialchars(trim(strip_tags($_POST['cierreViernes'])));
+				$cSabado = htmlspecialchars(trim(strip_tags($_POST['cierreSabado'])));
+				$cDomingo = htmlspecialchars(trim(strip_tags($_POST['cierreDomingo'])));
 
-			echo $telefono;
+				echo "Validados los datos requeridos";
 
-			echo $aLunes;
-			echo $aMartes;
-			echo $aMiercoles;
-			echo $aJueves;
-			echo $aViernes;
-			echo $aSabado;
-			echo $aDomingo;
+				$descripcion = htmlspecialchars(trim(strip_tags(isset($_POST['descripcion'])?$_POST['descripcion']:null)));
+				if($descripcion == null){
+					$descripcion = "No definida";
+				}
+				$llegar = htmlspecialchars(trim(strip_tags(isset($_POST['comoLlegar'])?$_POST['comoLlegar']:null)));
+				if($llegar == null){
+					$llegar = "No definido";
+				}
+				$entradas = htmlspecialchars(trim(strip_tags(isset($_POST['entradas'])?$_POST['entradas']:null)));
+				if($entradas == null){
+					$entradas = "No definidas";
+				}
+				$telefono = htmlspecialchars(trim(strip_tags(isset($_POST['telefono'])?$_POST['telefono']:null)));
 
-			echo $cLunes;
-			echo $cMartes;
-			echo $cMiercoles;
-			echo $cJueves;
-			echo $cViernes;
-			echo $cSabado;
-			echo $cDomingo;
-
-			echo $llegar;
-			echo $entradas;
-
-
-
-
-			if($nombre != null AND $descripcion != null AND $localizacion1 != null AND $localizacion2 != null AND $localizacion3 != null AND $aLunes != null AND $aMartes != null AND $aMiercoles != null AND $aJueves != null AND $aViernes != null AND $aSabado != null AND $aDomingo != null AND $cLunes != null AND $cMartes != null AND $cMiercoles != null AND $cJueves != null AND $cViernes != null AND $cSabado != null AND $cDomingo != null AND $llegar != null AND $entradas != null){
 
 				$direccion = $localizacion1 . " " . $localizacion2 . " " . $localizacion3;
 				
 				$horario = "L ". $aLunes . " ". $cLunes . " M " . $aMartes . " " . $cMartes . " X " . $aMiercoles . " " . $cMiercoles . " J " . $aJueves . " " . $cJueves . " V " . $aViernes . " " . $cViernes . " S " . $aSabado . " " . $cSabado . " D " . $aDomingo . " " . $cDomingo;
-				
+
 				//si todas las entradas son válidas
 				// Conecto a la BBDD
 				//$con;
 				include("/../config/conn.php");
-				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
-				//$target_dir = "imgLugares/";  			
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
 				$target_dir = "imgLugares/";  										//ruta
 				$target_file = $target_dir . basename($_FILES["imagen"]["name"]);			//ruta completa (path + nombre de la img)
@@ -89,7 +69,8 @@
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);						//tipo de la img
 					
 				// Comprobamos que es una img nueva y si es una img falsa
-					
+				//AQUI DA EL ERROR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				var_dump($_FILES);
 				$check = getimagesize($_FILES["imagen"]["tmp_name"]);
 				if($check !== false AND !file_exists($target_file) AND $_FILES["imagen"]["size"] <= 500000){
 					move_uploaded_file($_FILES['imagen']['tmp_name'], '../imgLugares/'.$file_name);  //subimos la imagen en el servidor
@@ -124,8 +105,8 @@
 				}
 			}
 			else {
-				echo "Hay algún dato mal";
-			}
+				echo "No se inserta";
+			}	
 			@mysqli_close($conn);
 		?>
 	</body>

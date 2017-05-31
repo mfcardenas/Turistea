@@ -12,8 +12,8 @@
 				//Compruebo que no hay ningún campo vacio
 				if($_POST['inputEmail'] != "" AND $_POST['inputPassword'] != "") {
 					
-					$usuEmail = $_POST['inputEmail'];
-					$cont = $_POST['inputPassword'];
+					$usuEmail = htmlspecialchars(trim(strip_tags($_POST['inputEmail'])));
+					$cont = htmlspecialchars(trim(strip_tags($_POST['inputPassword'])));
 					$sql = "SELECT Contrasenia, Id_usuario, Tipo FROM usuarios WHERE Email = '$usuEmail';";
 					$consulta = mysqli_query($conn, $sql);
 					$fila = mysqli_fetch_row($consulta);

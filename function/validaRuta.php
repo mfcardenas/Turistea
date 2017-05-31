@@ -48,16 +48,16 @@
 
 					if(!file_exists($target_file) AND !file_exists($target_file1) AND !file_exists($target_file2) AND !file_exists($target_file3) AND !file_exists($target_file4) AND !file_exists($target_file5) AND $check !== false AND $check1 !== false AND $check2 !== false AND $check3 !== false AND $check4 !== false AND $check5 !== false AND $_FILES["imagenmapa"]["size"] <= 800000 AND $_FILES["foto1"]["size"] <= 800000 AND $_FILES["foto2"]["size"] <= 800000 AND $_FILES["foto3"]["size"] <= 800000 AND $_FILES["foto4"]["size"] <= 800000 AND $_FILES["foto5"]["size"] <= 800000){
 
-						$nombre = $_POST['nombreruta'];
-						$descp = $_POST['descripcion'];
-						$duracion = $_POST['duracion'];
-						$inicio = $_POST['inicio'];
-                        $destino = $_POST['destino'];
-                        $parrafo1 = $_POST['parrafo1'];
-                        $parrafo2 = $_POST['parrafo2'];
-                        $parrafo3 = $_POST['parrafo3'];
-                        $parrafo4 = $_POST['parrafo4'];
-                        $parrafo5 = $_POST['parrafo5'];
+						$nombre = htmlspecialchars(trim(strip_tags($_POST['nombreruta'])));
+						$descp = htmlspecialchars(trim(strip_tags($_POST['descripcion'])));
+						$duracion = htmlspecialchars(trim(strip_tags($_POST['duracion'])));
+						$inicio = htmlspecialchars(trim(strip_tags($_POST['inicio'])));
+                        $destino = htmlspecialchars(trim(strip_tags($_POST['destino'])));
+                        $parrafo1 = htmlspecialchars(trim(strip_tags($_POST['parrafo1'])));
+                        $parrafo2 = htmlspecialchars(trim(strip_tags($_POST['parrafo2'])));
+                        $parrafo3 = htmlspecialchars(trim(strip_tags($_POST['parrafo3'])));
+                        $parrafo4 = htmlspecialchars(trim(strip_tags($_POST['parrafo4'])));
+                        $parrafo5 = htmlspecialchars(trim(strip_tags($_POST['parrafo5'])));
 
 						move_uploaded_file($_FILES['imagenmapa']['tmp_name'], 'imgRutas/'.$file_name);  //subimos la imagen en el servidor
                         move_uploaded_file($_FILES['foto1']['tmp_name'], 'imgRutas/'.$file_name1);  //subimos la imagen en el servidor
@@ -69,7 +69,7 @@
 						//insertamos la nueva ruta en la base de datos
 						$sql = "INSERT INTO rutas VALUES (null, '$nombre', '$descp' , '$target_file','$duracion','$inicio','$destino','$parrafo1', '$target_file1', '$parrafo2', '$target_file2', '$parrafo3', '$target_file3', '$parrafo4', '$target_file4', '$parrafo5', '$target_file5');";
 						$consulta = mysqli_query($conn, $sql);
-						header('Location: rutas.php');
+						header('Location: ../rutas.php');
 
 					}
 					else{

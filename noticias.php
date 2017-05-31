@@ -197,7 +197,7 @@
 
 				            <label for="fileToUpload" class="label">· Seleccione una imagen: </label>
 				            <div class="input-group">				             
-				                <input id="fileToUpload" name="fileToUpload" type="file" multiple class="file-loading">
+				                <input id="fileToUpload" name="fileToUpload" type="file" multiple class="file-loading" required>
 				            </div>
 				            <br>
 

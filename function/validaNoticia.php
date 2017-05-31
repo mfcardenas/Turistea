@@ -22,11 +22,11 @@
 					$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 					if($check !== false AND !file_exists($target_file) AND $_FILES["fileToUpload"]["size"] <= 500000){
 
-						$titulo = $_POST['titulonoticia'];
-						$subtitulo = $_POST['subtitulonoticia'];
-						$resumen = $_POST['resumennoticia'];
-						$descp = $_POST['descripcionnoticia'];
-						$fuente = $_POST['fuentenoticia'];
+						$titulo = htmlspecialchars(trim(strip_tags($_POST['titulonoticia'])));
+						$subtitulo = htmlspecialchars(trim(strip_tags($_POST['subtitulonoticia'])));
+						$resumen = htmlspecialchars(trim(strip_tags($_POST['resumennoticia'])));
+						$descp = htmlspecialchars(trim(strip_tags($_POST['descripcionnoticia'])));
+						$fuente = htmlspecialchars(trim(strip_tags($_POST['fuentenoticia'])));
 						$fecha = strftime( "%Y-%m-%d %H:%M:%S", time());
 
 						move_uploaded_file($_FILES['fileToUpload']['tmp_name'], 'imgNoticias/'.$file_name);  //subimos la imagen en el servidor
