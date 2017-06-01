@@ -108,7 +108,7 @@
     }
 
     function mostrarProductos(){
-        include("config/conn.php");
+        include("config/conn.php"); $conn =mysqli_connect('localhost','root','','turistea');
         $sql = "SELECT * FROM tienda";
         $consulta = mysqli_query($conn, $sql);
         if($consulta != null){
@@ -127,17 +127,19 @@
                   $nombreSinEspacios = limpia_espacios(strtolower($productos->Nombre));
                     $url = $nombreSinEspacios . ".php";
                     $imagen = $productos->Imagen;
-                        echo '<p>'; 
+                        echo '<div class="centrado">';
+                        echo '<p class="subtituloN">'; 
                         echo $productos->Nombre;
                         echo '</p>';
-                        echo '<img src= "'; echo $imagen . '" alt="' . $imagen . '">';
-                        echo '<p> Precio: ';
+                        ?><img src="<?php echo $imagen; ?>" alt="<?php echo $imagen; ?>" class="img-rounded" width="150px" height="150px"><?php                        
+                        echo '<p class="auxtable subtituloN"> Precio: <span class="auxColor">';
                         echo $productos->Precio;
-                        echo ' € </p>';
+                        echo '</span> € </p>';
+                        echo "</div>";
                         echo '<div class="centrado">';
                         echo '<button type="submit" class="btn btn-default"> Agregar a la cesta </button><br>'; ?>
                          <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
-                        <button type="button" class="btn btn-default" onclick="eliminarProducto('<?php echo $productos->Nombre;?>')">Eliminar</button><?php }
+                        <button type="button" class="btn btn-default auxtable" onclick="eliminarProducto('<?php echo $productos->Nombre;?>')">Eliminar</button><?php }
                          echo '</div>';
                         echo '</td>';
                         $contador = $contador+1;

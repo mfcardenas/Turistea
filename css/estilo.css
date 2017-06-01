@@ -1,3 +1,14 @@
+.auxtable{
+  margin-top: 15px;
+}
+
+.auxColor{
+  color: blue;
+}
+
+.auxSub{
+  text-decoration: underline;
+}
 
 /* SAMPLE STYLES for modal window in HTML similar to instagram */
 .img-container {

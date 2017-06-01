@@ -75,7 +75,7 @@
 	            </div>
 
 	            <div class="row">
-	            	<table class ="enMedio">
+	            	<table class ="table table-hover auxtable">
 	            		<tbody>
                         <?php 
                             include("function/funciones.php");

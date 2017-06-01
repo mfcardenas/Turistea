@@ -11,6 +11,8 @@
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
 	    <link rel="stylesheet" href="css/bootstrap-theme.min.css" crossorigin="anonymous">
+	    
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
 	    <!-- Custom styles for this template -->
 	    <link href="css/carousel.css" rel="stylesheet">
@@ -100,24 +102,18 @@
 
           <!--                            Modal Galeria                              -->
 
-	            <div class="modal fade" id="modalGaleria" tabindex="-1" role="dialog" aria-hidden="true">
-			        <div class="modal-dialog modalNegro" role="document">
-			          <div class="modal-content">
-			            <div class="modal-header">
-			            	<h4 class="tituloVisita centrado">Una experiencia inolvidable</h4>
-			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			                <span aria-hidden="true" class="modalNegro">&times;</span>
-			              </button>
-			            </div>
-			            
-			            <div class="modal-body">
-			            
 
+			      <div class="row">
+			        <div class="modal fade" id="modalGaleria" tabindex="-1" role="dialog" aria-hidden="true">
+			            <div class="modal-dialog long-size">
+			                <div class="modal-content img-container">
+			                    <div class="modal-body modal-instagram">
+			                       
+			                    </div>
+			                </div>
 			            </div>
-			           
-			          </div>
 			        </div>
-			      </div> 
+			    </div> 
 
         <!-- Modal -->
         <div class="modal fade" id="formularioGaleria" role="dialog">
