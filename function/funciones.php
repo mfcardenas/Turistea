@@ -318,7 +318,9 @@
           if($contador == 0) echo '<tr>';
           echo '<td class="auxtd1">';
             ?><a role="button" onclick="muestraModalGaleria('<?php echo $fila[0];?>')"><img src="<?php echo $fila[2]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded auximg2 imagenGaleria"></a>
-          <?php
+          <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+                  <div class="centrado"><button type="button" class="btn btn-default " onclick="eliminarExperiencia('<?php echo $fila[0];?>')">Eliminar</button></div>
+          <?php }
           echo '</td>';
           $contador = $contador+1;
           if($contador == 4) {

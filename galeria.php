@@ -71,15 +71,6 @@
 			        </div>
 	            </div>
 	            
-                 <div class="row">
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioGaleria').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
-	            </div>
-
-                <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
 		            <div class="row">
 		                <div class="aniadir">
 		                    <a href="" onClick="$('#formularioGaleria').modal()" data-toggle="modal">
@@ -87,8 +78,6 @@
 		                    <div class="limpiar"></div> 
 		                </div>
 		            </div>
-
-		        <?php } ?>
 		        
 	            <div class="row">
                         <table class="enMedio">  	
@@ -196,6 +185,21 @@
 
                 });
             };
+               function eliminarExperiencia(id){
+                $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: 'ajax/sqlBorraGaleria.php',
+                    data: { "id": id},
+                    success: function(data, textStatus) {
+                           location.reload();
+                    }
+                }).done(function(msg) {
+
+
+               });
+
+	       };
         </script>
 	</body>
 </html>
