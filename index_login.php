@@ -67,10 +67,10 @@
             <?php } ?>
             
 
-            <label for="inputEmail" class="nameLogin">Email:</label>
+            <label for="inputEmail" class="nameLogin">Id usuario:</label>
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="Tu correo electrónico" required autofocus>
+                <input type="text" id="inputUsuario" class="form-control" name="inputUsuario" placeholder="Id de usuario" required autofocus>
             </div>
             <br>
 

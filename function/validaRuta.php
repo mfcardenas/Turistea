@@ -7,7 +7,7 @@
 		<?php
 			
 			
-			include("/../config/conn.php");
+			include("config/conn.php");
 			
 
 			if(isset($_POST['nombreruta']) AND isset($_POST['duracion']) AND isset($_POST['inicio']) AND isset($_POST['destino']) AND isset($_POST['descripcion']) AND isset($_POST['parrafo1']) AND isset($_POST['parrafo2']) AND isset($_POST['parrafo3']) AND isset($_POST['parrafo4']) AND isset($_POST['parrafo5'])){

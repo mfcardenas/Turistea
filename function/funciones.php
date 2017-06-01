@@ -9,7 +9,7 @@
 		
     	if($tipo != null){ //Si los parámetros son válidos saca de la base de datos la bandeja tipo
             //$db = @mysqli_connect('localhost', 'ichthuse_paloma', 'Pa123456', 'ichthuse_turistea');
-            include("/../config/conn.php");
+            include("config/conn.php");
             $sql = "SELECT * FROM lugares WHERE Tipo like '$tipo'";
             $consulta = mysqli_query($conn, $sql);
             if($consulta != null){
@@ -29,7 +29,7 @@
 	}
 
    function verUnLugar($id, $cont){
-    include("/../config/conn.php");
+    include("config/conn.php");
     $sql = "SELECT * FROM lugares WHERE id = '$id'";
     $consulta = mysqli_query($conn, $sql);
     $lugares = mysqli_fetch_object($consulta);
@@ -72,7 +72,7 @@
   }
 
     function mostrarVisitas(){
-          include("/../config/conn.php");
+          include("config/conn.php");
           $sql = "SELECT * FROM visitas;";
           $consulta = mysqli_query($conn, $sql);
           $fila = mysqli_fetch_row($consulta);
@@ -107,57 +107,15 @@
 
     }
 
-
-    /*function mostrarFormularioProducto(){
-        $db = mysqli_connect('localhost','root','','turistea');
-        if(!$db){
-         exit('Error en la conexion.');
-        }
-        echo '<form>
-        <ul class="nav nav-pills" role="tablist">
-            <li style="width: 150px" > Tipo: </li>
-            <li style="width: 100px"> Ordenar por: </li>
-            <li style="width: 80px"> Pedido: </li>
-        </ul>
-        <ul class="nav nav-pills" role="tablist">
-            <li> 
-                <select class="form-control" id="sel1" style="width: 150px">
-                        <option> - Cualquiera - </option>
-                        <option> Parque temático</option>
-                        <option> Museo </option>
-                        <option> Teatro</option>
-                        <option> Estadios </option>
-                        <option> Cine </option>
-                </select>
-            </li>
-            <li> 
-                <select class="form-control" id="sel1" style="width: 100px">
-                        <option> Título </option>
-                        <option> Precio </option>
-                </select> 
-            </li>
-            <li> 
-                <select class="form-control" id="sel1" style="width: 80px">
-                        <option> Desc </option>
-                        <option> Asc </option>
-                </select>
-            </li>
-            <li><button type="submit" class="btn btn-default"> Aplicar </button></li>
-        </ul>
-    </form>';
-        
-          mysqli_close($db);
-    }*/
-
     function mostrarProductos(){
-        include("/../config/conn.php");
+        include("config/conn.php");
         $sql = "SELECT * FROM tienda";
         $consulta = mysqli_query($conn, $sql);
         if($consulta != null){
                 $contador = 0;
-            	if(mysqli_num_rows($consulta) != 0){
-		            $productos = mysqli_fetch_object($consulta);
-		            while($productos){
+              if(mysqli_num_rows($consulta) != 0){
+                $productos = mysqli_fetch_object($consulta);
+                while($productos){
                         if($contador == 0){
                             echo '<tr>';
                         }
@@ -166,9 +124,9 @@
                             echo '</tr><tr>';
                         }
                         echo '<td>';
-		            	$nombreSinEspacios = limpia_espacios(strtolower($productos->Nombre));
-		                $url = $nombreSinEspacios . ".php";
-		                $imagen = $productos->Imagen;
+                  $nombreSinEspacios = limpia_espacios(strtolower($productos->Nombre));
+                    $url = $nombreSinEspacios . ".php";
+                    $imagen = $productos->Imagen;
                         echo '<p>'; 
                         echo $productos->Nombre;
                         echo '</p>';
@@ -176,7 +134,11 @@
                         echo '<p> Precio: ';
                         echo $productos->Precio;
                         echo ' € </p>';
-                        echo '<button type="submit" class="btn btn-default"> Agregar a la cesta </button>';
+                        echo '<div class="centrado">';
+                        echo '<button type="submit" class="btn btn-default"> Agregar a la cesta </button><br>'; ?>
+                         <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+                        <button type="button" class="btn btn-default" onclick="eliminarProducto('<?php echo $productos->Nombre;?>')">Eliminar</button><?php }
+                         echo '</div>';
                         echo '</td>';
                         $contador = $contador+1;
                         if($contador == 4) {
@@ -186,7 +148,7 @@
                         $productos = mysqli_fetch_object($consulta);
                     }
                     
-			     }
+           }
                 while($contador < 4 AND $contador != 0){
                         echo '<td></td>';
                         $contador = $contador + 1;
@@ -199,7 +161,7 @@
     }
 
     function cargarLugar($id){
-      include("/../config/conn.php");
+      include("config/conn.php");
       $sql = "SELECT * FROM lugares WHERE id = '$id'";
       $consulta = mysqli_query($conn, $sql);
       $lugar = mysqli_fetch_object($consulta);
@@ -329,7 +291,7 @@
     } 
 
     function mostrarResultados($tipo, $busqueda){
-      include("/../config/conn.php");
+      include("config/conn.php");
       $sql = "SELECT id FROM lugares WHERE Tipo = '$tipo' AND (Nombre LIKE '%" . $busqueda ."%' OR Imagen LIKE '%" . $busqueda ."%' OR Direccion LIKE '%" . $busqueda ."%' OR Descripcion LIKE '%" . $busqueda ."%')";
       $consulta = mysqli_query($conn, $sql);
       if($consulta != null){
@@ -346,7 +308,7 @@
 
  function mostrarGaleria(){
       
-      include("/../config/conn.php");
+      include("config/conn.php");
       $sql = "SELECT * FROM galeria;";
       $consulta = mysqli_query($conn, $sql);
       $fila = mysqli_fetch_row($consulta);

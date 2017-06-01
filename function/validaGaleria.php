@@ -6,7 +6,7 @@
 	<body>
 		<?php
 			
-			include("/../config/conn.php");
+			include("../config/conn.php");
 			if(isset($_POST['experiencia'])){
 				
 				if($_POST['experiencia'] != "") {

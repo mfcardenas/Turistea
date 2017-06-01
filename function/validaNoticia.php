@@ -6,7 +6,7 @@
 	<body>
 		<?php
 			
-			include("/../config/conn.php");
+			include("../config/conn.php");
 
 			if(isset($_POST['titulonoticia']) AND isset($_POST['subtitulonoticia']) AND isset($_POST['resumennoticia']) AND isset($_POST['descripcionnoticia']) AND isset($_POST['fuentenoticia'])){
 				

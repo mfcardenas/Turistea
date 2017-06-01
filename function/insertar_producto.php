@@ -13,7 +13,7 @@
 				//si todas las entradas son válidas
 				// Conecto a la BBDD
 				//$con;
-				include("/../config/conn.php");
+				include("config/conn.php");
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
 				$target_dir = "imgTienda/";  										//ruta
 				$target_file = $target_dir . basename($_FILES["imagenProducto"]["name"]);			//ruta completa (path + nombre de la img)
