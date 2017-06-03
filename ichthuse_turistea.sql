@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-06-2017 a las 12:38:21
+-- Tiempo de generación: 03-06-2017 a las 20:26:52
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `galeria` (
   `Id` int(11) NOT NULL,
   `Titulo` varchar(30) NOT NULL,
-  `Imagen` varchar(30) NOT NULL,
+  `Imagen` varchar(255) NOT NULL,
   `Lugar` varchar(30) NOT NULL,
   `Autor` varchar(30) NOT NULL,
   `Anecdota` text NOT NULL
@@ -42,9 +42,8 @@ CREATE TABLE `galeria` (
 --
 
 INSERT INTO `galeria` (`Id`, `Titulo`, `Imagen`, `Lugar`, `Autor`, `Anecdota`) VALUES
-(1, 'Navidad nocturna madrileña', 'experiencia1.jpg', 'Plaza de Sol', '', 'Ha sido la mejor Navidad de mi vida, qué decoración, qué estupendo!! Os recomiendo ir si o si! Y MIRAD QUE FOTAZA!!!!'),
-(2, 'Anochecer en Debod', 'experiencia2.jpg', 'Templo de Debod', '', 'Creo que es una de las cosas más bonitas que he visto en mi vida, estoy encantadísimo, deseando volver. Si tenéis que elegir a donde ir porque va a anochecer, no dudéis e ir al templo de Debod.. LA PUESTA DE SOL ES LO MEJOR!'),
-(3, 'experiencia', 'imgGaleria/descarga.png', 'experiencia', 'paloguti', 'anecdota');
+(1, 'Navidad nocturna madrileña', 'imgGaleria/experiencia1.jpg', 'Plaza de Sol', '', 'Ha sido la mejor Navidad de mi vida, qué decoración, qué estupendo!! Os recomiendo ir si o si! Y MIRAD QUE FOTAZA!!!!'),
+(2, 'Anochecer en Debod', 'imgGaleria/experiencia2.jpg', 'Templo de Debod', '', 'Creo que es una de las cosas más bonitas que he visto en mi vida, estoy encantadísimo, deseando volver. Si tenéis que elegir a donde ir porque va a anochecer, no dudéis e ir al templo de Debod.. LA PUESTA DE SOL ES LO MEJOR!');
 
 -- --------------------------------------------------------
 
@@ -112,10 +111,9 @@ INSERT INTO `lugares` (`id`, `Nombre`, `Tipo`, `Imagen`, `Direccion`, `Telefono`
 (16, 'Aquopolis Villanueva', 'Parque', 'imgLugares/aquopolisVillanueva.jpg', 'Avenida de la Dehesa, s/n Villanueva de la CaÃ±ada', 0, 'L 12:00 20:00 M 12:00 20:00 X 12:00 20:00 J 12:00 20:00 V 12:00 20:00 S 12:00 20:00 D 12:00 20:00', 'Coche:\r\n	M-600: Une San Lorenzo de El Escorial con Brunete.\r\n	M-501: Une M-40 y M-50 con Brunete a la M-600 Brunete el Escorial.\r\n	M-503: Une Villanueva de la CaÃ±ada con la M-50/ Majadahonda\r\n								\r\nAutobÃºs: \r\n	LÃ­nea 627: MADRID â€“ BRUNETE. Salidas desde el Intercambiador de Transportes de Moncloa (Metro Moncloa), cada 10 minutos aprox. A partir de las 07:00 hs. En dÃ­as laborables pasan por la U. Alfonso X y por la U. Camilo JosÃ© Cela.\r\n	LÃ­nea 581: MADRID (PRÃ­NCIPE PÃ­O: INTERCAMBIADOR, DÃ¡rsena 5 Planta -1 (nivel azul)) â€“ QUIJORNA. Salidas desde el Paseo de la Florida (Metro PrÃ­ncipe PÃ­o) cada 40 minutos aprox en verano cada hora.', 'Entrada General Adulto (+140cm de altura): 25,95â‚¬\r\nEntrada Infantil (De 90 a 140cm de altura): 20,95â‚¬\r\nEntrada Senior (Mayores de 65 aÃ±os): 18,95â‚¬\r\nEntrada persona con discapacidad: 18,95â‚¬\r\nEntrada Menos de 90 cm: GRATIS\r\n						\r\n*Para cualquier entrada (que no sea la general) se deberÃ¡ presentar un tÃ­tulo oficial que verifique la tarifa', 'El Aquopolis es parque acuático con un montón de atracciones donde te lo pasarás genial. Es propiedad de Parques Reunidos, SA'),
 (17, 'Parque Warner Madrid', 'Parque', 'imgLugares/warner.jpg', 'Carretera A-4, salida 22 Madrid, Madrid EspaÃ±a', 0, 'L 11:30 20:00 M 11:30 20:00 X 11:30 20:00 J 11:30 20:00 V 11:30 20:00 S 11:30 23:55 D 11:30 22:00', 'Coche: \r\n   Carretera A-4, salida 22 y sigue las seÃ±alizaciones.\r\n\r\nRenfe + bus:\r\n   Parada Pinto (lÃ­nea C-3) y allÃ­ se coja el autobÃºs 413 de \"La Veloz\"\r\n\r\nBus:\r\n   LÃ­nea 412 de \"La Veloz\" (se coge en el intercambiador de Villaverde Bajo).\r\n   Bus en MÃ©ndez Ãlvaro (el billete para este bus se compara en la pÃ¡gina de la Warner)\r\n\r\n', 'Entrada individual (+140cm): 39,90 â‚¬\r\nEntrada Junior (+100cm): 29,90 â‚¬\r\nEntrada Senior (mayores de 60 aÃ±os): 29,90 â‚¬\r\nEntrada Individual con documento de Familia Numerosa: 29,90 â‚¬\r\nEntrada Junio con documento de Familia Numerosa: 25,90 â‚¬\r\nEntrada Persona con discapacidad (igual o +33%): 25,90 â‚¬\r\nNiÃ±os (menosres de 100cm): GRATIS\r\n\r\n*La entrada para personas con discapacidad incluye un acompaÃ±ante gratis y acceso rÃ¡pido a las atracciones. SerÃ¡ necesario presentar un documento acreditativo de la discapacidad (33% o superior)', 'El Parque Warner Madrid es un parque temático ubicado en la localidad de San Martín de la Vega, en la Comunidad de Madrid, España. Posee la segunda torre de caída libre más alta del mundo y 42 atracciones.'),
 (18, 'Parque de Atracciones', 'Parque', 'imgLugares/parqueDeAtracciones.jpg', 'Casa de Campo, s/n Madrid, Madrid EspaÃ±a', 0, 'L 12:00 22:00 M 12:00 22:00 X 12:00 22:00 J 12:00 22:00 V 12:00 22:00 S 12:00 23:55 D 12:00 22:00', 'Coche:\r\n   Entrada directa por la N-V (carretera de Extremadura). Salida Parque de Atracciones.\r\n   M-30 direcciÃ³n Badajoz. Salida Parque de Atracciones / Casa de Campo\r\n\r\nMetro\r\n   EstaciÃ³n BatÃ¡n (lÃ­nea 10)\r\n\r\nAutobÃºs\r\n   LÃ­nea 33: PrÃ­ncipe PÃ­o - Casa de Campo\r\n   LÃ­nea 65: Plaza Jacinto Benavente - Colonia Gran CapitÃ¡n\r\n', 'Entrada General (mÃ¡s de 140cm): 31,90â‚¬\r\nEntrada Reducida (Entre 100 y 140cm): 24,90â‚¬\r\nEntrada Senior(+60 aÃ±os): 19,20â‚¬\r\nEntrada Persona con discapacidad (mÃ­nimo 33%)*: 19,60â‚¬\r\nEntrada Familia numerosa General: 27,15â‚¬\r\nEntrada Familia numersoa Reducida: 21,20â‚¬\r\nEntrada para menores de un metro: GRATIS\r\nEntrada para mayores de 65 aÃ±os acompaÃ±ados**: GRATIS\r\n\r\n*Personas con discapacidad: Personas con un 33% o mÃ¡s de discapacidad tiene una entrada especial a 19,60â‚¬ y ademÃ¡s un acompaÃ±ante entra gratis. Tanto la persona con discapacidad como el acompaÃ±ante podrÃ¡n entrar a las atracciones por el acceso rÃ¡pido.\r\n**Mayores de 65: tendrÃ¡n entrada gratis siempre que vayan acompaÃ±adas por una persona con entrada de pago o Pase Anual', 'El Parque de Atracciones de Madrid es un parque de atracciones de Madrid, en la zona de Batán de la Casa de Campo. Cuenta con dos puertas de entrada: la principal y la de la zona infantil.'),
-(19, 'Cine Prueba', 'Cine', 'imgLugares/notaMusical.png', 'haol hoadlh hoahde', 0, 'L 10:00:00 10:00:00 M 10:00:00 10:00:00 X 10:00:00 10:00:00 J 10:00:00 10:00:00 V 10:00:00 10:00:00 S 10:00:00 10:00:00 D 10:00:00 10:00:00', 'sGE', 'DFAEFE', 'Hla'),
-(20, 'Prueba 2', 'Cine', 'imgLugares/imagen-prueba-nivel.jpg', 'hola hola hola', 0, 'L 10:00:00 10:00:00 M 10:00:00 10:00:00 X 10:00:00 10:00:00 J 10:00:00 10:00:00 V 10:00:00 10:00:00 S 10:00:00 10:00:00 D 10:00:00 10:00:00', 'hola', 'hola', 'hola'),
-(21, 'prueba 3', 'Cine', 'imgLugares/descarga.png', 'prue prueb preuba', 0, 'L 10:00:00 10:00:00 M 10:00:00 10:00:00 X 10:00:00 10:00:00 J 10:00:00 10:00:00 V 10:00:00 10:00:00 S 10:00:00 10:00:00 D 10:00:00 10:00:00', 'sdfghjklñsdfg', 'dfghjklñ', 'prueba'),
-(23, 'Nueva prueba', 'Cine', 'imgLugares/320px-Puente_Ferroviario_Nueva_Imperial.jpg', 'Subir imagen al  Servidor', 0, 'L 10:00:00 10:00:00 M 10:00:00 10:00:00 X 10:00:00 10:00:00 J 10:00:00 10:00:00 V 10:00:00 10:00:00 S 10:00:00 10:00:00 D 10:00:00 10:00:00', 'qwertyuio', 'wertyujikol', '¿Se subirá la imagen?');
+(28, 'Cinesa Méndez Álvaro', 'Cine', 'imgLugares/cineMendezAlvaro.jpg', 'Calle Acanto, 2, Madrid, Madrid España', 0, 'L 12:00 23:59 M 12:00 23:59 X 12:00 23:59 J 12:00 23:59 V 12:00 23:59 S 12:00 23:59 D 12:00 23:59', 'No definido', 'Depende de la película, los horarios también pueden cambiar', 'Películas de estreno en cadena de cines multisala con proyectores digitales y cantina con bebida y palomitas.'),
+(29, 'Cine Renoir Retiro', 'Cine', 'imgLugares/cineRenoir.jpg', 'Calle de Narváez, 42, Madrid, Madrid España', 915, 'L 12:00 23:59 M 12:00 23:59 X 12:00 23:59 J 12:00 23:59 V 12:00 23:59 S 12:00 23:59 D 12:00 23:59', 'No definido', 'Depende de la película', 'Últimos estrenos en versión original en un cine de toda la vida que ofrece la opción de alquilar sus salas.'),
+(30, 'Cine Acteón', 'Cine', 'imgLugares/cineActeon.jpg', 'Calle Montera, 31, Madrid, Madrid España', 915, 'L 12:00 23:59 M 12:00 23:59 X 12:00 23:59 J 12:00 23:59 V 12:00 23:59 S 12:00 23:59 D 12:00 23:59', 'No definido', 'Depende de la película', 'No definida');
 
 -- --------------------------------------------------------
 
@@ -141,9 +139,7 @@ CREATE TABLE `noticias` (
 INSERT INTO `noticias` (`Titulo`, `ID`, `Subtitulo`, `Resumen`, `Descripcion`, `Fuente`, `Fecha`, `Imagen`) VALUES
 ('prueba 2', 3, '1', '1', '234', '1', '2017-05-18 10:24:28', 'imgNoticias/o.jpg'),
 ('prueba 2', 4, '1', '1', '234', '1', '2017-05-18 20:09:50', 'imgNoticias/ALBARICOQUE-buena.jpg'),
-('Prueba', 5, 'prueba', 'prueba', 'prueba', 'prueba', '2017-05-29 10:11:24', 'imgNoticias/descarga.png'),
-('Noticia prueba 3', 6, 'prueeba', 'prueba', 'prueba', 'prueba', '2017-05-29 10:17:52', 'imgNoticias/imagen-prueba-nivel.jpg'),
-('Noticia', 7, 'noticia', 'noticia', 'descripción', 'fuente', '2017-06-01 12:30:14', 'imgNoticias/descarga.png');
+('Titulo', 13, 'Subtitulo', 'Resumen', 'Descripción', 'Fuente', '2017-06-03 18:00:05', 'imgNoticias/descarga.png');
 
 -- --------------------------------------------------------
 
@@ -271,8 +267,7 @@ INSERT INTO `visitas` (`Nombre`, `Imagen`, `Descripcion`) VALUES
 ('Parque Europa', 'imgVisitas/parqueEuropa.jpg', 'El Parque Europa es un parque municipal de la ciudad de Torrejón de Ardoz en la Comunidad de Madrid (España), inaugurado en septiembre de 2010 Se trata de la mejora y ampliación del antiguo parque del arroyo Ardoz.\r\n\r\nEl parque cuenta con 190.000 metros cuadrados de zonas verdes, realizado con un completo programa de paisajismo a base de especies naturales y monumentos asociados a los distintos países que constituyen la Unión Europea, incluidos monumentos históricos de España.'),
 ('Plaza de Santa Ana', 'imgVisitas/plazaDeSantaAna.jpg', 'La plaza de Santa Ana (también conocida antiguamente por plaza del Príncipe Alfonso)es una plaza urbana ubicada en el centro de Madrid. Esta plaza, que ha cambiado en diversas ocasiones a lo largo de su historia, se encuentra en el denominado Barrio de las Letras.'),
 ('Puerta de Europa', 'imgVisitas/puertaDeEuropa.jpg', 'Las dos torres que conforman la llamada Puerta de Europa, también conocidas como Torres KIO (debido a que fueron promovidas por la empresa kuwaití KIO, Kuwait Investments Office) son dos torres inclinadas la una hacia la otra, 15° respecto a la vertical, con una altura de 114 m y 26 plantas. La Puerta de Europa son las segundas torres gemelas más altas de España, tras las Torres de Santa Cruz en Santa Cruz de Tenerife, con 120 metros sin contar los pararrayos. Están situadas en la Plaza de Castilla de Madrid (España), entre el centro financiero de AZCA y las Cuatro Torres Business Area.'),
-('Puerta del Sol', 'imgVisitas/puertaDelSol.jpg', 'La Puerta del Sol es una plaza de Madrid. Aquí se encuentra desde 1950 el denominado Kilómetro Cero de las carreteras radiales españolas. El edificio más antiguo de la Puerta del Sol es la Casa de Correos y en ella destaca el reloj de torre que fue construido y donado en el siglo XIX por José Rodríguez de Losada, y cuyas campanadas de las 12 de la noche del 31 de diciembre marcan la tradicional toma de las doce uvas a la gran mayoría de los españoles. Dichas campanadas se empezaron a televisar el 31 de diciembre de 1962 en La 1 de TVE, a partir de ese año no se ha dejado de retransmitir por diversos canales de televisión de España. La Puerta del Sol es un lugar de cita, un lugar de paso entre diversas partes de Madrid. Es visita turística obligada de aquellos que se acercan a Madrid.\r\n\r\n'),
-('Templo de Debod', 'imgVisitas/temploDebod.jpg', 'El Templo de Debod es un edificio del antiguo Egipto localizado actualmente en Madrid (España). Está situado al oeste de la Plaza de España, junto al Paseo del Pintor Rosales (Parque del Oeste), en un alto donde se encontraba el Cuartel de la Montaña (en el que se produjo un sangriento episodio de la Guerra Civil Española). Al ser trasladado a España, se situó de manera que conservase aproximadamente la misma orientación que en su lugar de origen, de este a oeste.\r\n\r\nEl Templo de Debod fue un regalo de Egipto a España en 1968 en compensación por la ayuda española tras el llamamiento internacional realizado por la Unesco para salvar los templos de Nubia, principalmente el de Abu Simbel, en peligro de desaparición debido a la construcción de la presa de Asuán. Egipto donó cuatro de los templos salvados a distintas naciones colaboradoras');
+('Puerta del Sol', 'imgVisitas/puertaDelSol.jpg', 'La Puerta del Sol es una plaza de Madrid. Aquí se encuentra desde 1950 el denominado Kilómetro Cero de las carreteras radiales españolas. El edificio más antiguo de la Puerta del Sol es la Casa de Correos y en ella destaca el reloj de torre que fue construido y donado en el siglo XIX por José Rodríguez de Losada, y cuyas campanadas de las 12 de la noche del 31 de diciembre marcan la tradicional toma de las doce uvas a la gran mayoría de los españoles. Dichas campanadas se empezaron a televisar el 31 de diciembre de 1962 en La 1 de TVE, a partir de ese año no se ha dejado de retransmitir por diversos canales de televisión de España. La Puerta del Sol es un lugar de cita, un lugar de paso entre diversas partes de Madrid. Es visita turística obligada de aquellos que se acercan a Madrid.\r\n\r\n');
 
 --
 -- Índices para tablas volcadas
@@ -335,27 +330,27 @@ ALTER TABLE `visitas`
 -- AUTO_INCREMENT de la tabla `galeria`
 --
 ALTER TABLE `galeria`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `gastronomia`
 --
 ALTER TABLE `gastronomia`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT de la tabla `lugares`
 --
 ALTER TABLE `lugares`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `rutas`
 --
 ALTER TABLE `rutas`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,3 +1,10 @@
+.imagenesTienda{
+  width: 150px;
+  height: 150px;
+}
+.invisible{
+  display: none;
+}
 .auxtable{
   margin-top: 15px;
 }

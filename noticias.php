@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
     <head> 
-        
-        <meta charset="utf-8">
+    
+    <?php 
+    	session_start();
+    	if(isset($_SESSION['autentificado']) AND $_SESSION['autentificado'] == 'SI'){
+
+        }
+        else{header('Location: index.php?nologin=true');}
+    ?>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -82,10 +89,6 @@
     <body onload="muestraNoticias()"> 
         <?php 
             include("navbar.php");
-            if(isset($_SESSION['autentificado']) AND $_SESSION['autentificado'] == 'SI'){
-
-            }
-            else{header('Location: index.php');}
         ?>
         <div class="container">
             <div class="contenido">

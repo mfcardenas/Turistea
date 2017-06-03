@@ -24,19 +24,27 @@
   </head>
 
   <body>
+    
     <!-- NAVBAR
     ================================================== -->
-    <?php
-      include("navbar.php");
-    ?>
-
+    <div class="row">
+      <?php
+        include("navbar.php");
+      ?>
+    </div>
     <!-- Carousel
     ================================================== -->
     <!-- /.carousel -->
     <?php 
       include("carousel.html");
     ?>
-
+    <?php 
+      if(isset($_GET["nologin"]) && $_GET["nologin"]=='true'){ ?>
+        <div class="panel panel-index panel-danger">
+            <div class="panel-heading">No puedes acceder ahí, para poder acceder <a href="index_login.php">inicia sesión</a> o <a href="index_registro.php">regístratre</a>
+            </div>
+        </div> 
+    <?php } ?>
     <!-- Circulitos
     =================================================== -->
     <?php
@@ -47,11 +55,11 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-7">
+        <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading"> Noticias de interés</h2>
           <p class="lead">Entérate de los acontecimientos más importantes de Madrid; festivales, desfiles, manifestaciones..</p> <p class="lead"> <a href="noticias.php"> Todo al alacance de un click </a></p>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 col-md-pull-7">
           <a href="noticias.php"> <img class="featurette-image img-responsive center-block" src="img/noticias.jpg" alt="noticias"> </a>
         </div>
       </div>
@@ -72,12 +80,12 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading"> Nuestra tienda </h2>
+        <div class="col-md-7 col-md-push-5">
+          <h3 class="featurette-heading"> Nuestra tienda </h3>
           <p class="lead">Compra de manera rápida entradas para acceder a los distintos sitios, así como una serie de souvenirs relacionados con Madrid.</p> 
           <p class="lead"> <a href="tienda.php"> Accede de manera rápida, cómoda y sencilla </a></p>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 col-md-pull-7">
           <a href="tienda.php"> <img class="featurette-image img-responsive center-block" src="img/tienda.jpg" alt="tienda"> </a>
         </div>
       </div>

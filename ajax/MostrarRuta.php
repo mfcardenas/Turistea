@@ -5,7 +5,6 @@
       $sql = "SELECT Id, Nombre, Descripcion, Mapa, Duracion, Punto_partida, Punto_destino, Parrafo1, Foto1, Parrafo2, Foto2, Parrafo3, Foto3, Parrafo4, Foto4, Parrafo5, Foto5 FROM rutas WHERE Id = '$id';";
       $consulta = mysqli_query($conn, $sql);
       $fila = mysqli_fetch_row($consulta);
-
       ?>
 
 
@@ -25,42 +24,54 @@
         <!--                         Contenido de la página                         -->
 
         <div id="rutas"> <?php
-
           echo '</div>';
           echo '<div class="row">';
           echo '<nav class="text-center">';
           echo '<h1>' .$fila[1]. '</h1>';
+          //Parrafo1 y Foto1
           echo '<p>' .$fila[7]. '</p>'; 
           ?>
-          <img src= "<?php echo $fila[8]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded" width="500" height="490">
+          <img src= "<?php echo $fila[8]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded" width="500" height="490"> 
           <br>
           <br>
+            
           <?php
+          //Parrafo2 y Foto2
+          if ($fila[9] != null) {
           echo '<p>' .$fila[9]. '</p>'; 
-          ?>
+          }
+          if ($fila[10] != null) {?>
           <img src= "<?php echo $fila[10]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded" width="500" height="490">
           <br>
           <br>
-          <?php 
+          <?php }
+          //Parrafo3 y Foto3
+          if ($fila[11] != null) {
           echo '<p>' .$fila[11]. '</p>'; 
-          ?>
+          }
+          if ($fila[12] != null) {?>
           <img src= "<?php echo $fila[12]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded" width="500" height="490">
           <br>
-          <br>
-          <?php 
+          <br>  
+          <?php }
+          //Parrafo4 y Foto4
+          if ($fila[13] != null) {
           echo '<p>' .$fila[13]. '</p>'; 
-          ?>
+          }
+          if ($fila[14] != null) {?>
           <img src= "<?php echo $fila[14]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded" width="500" height="490">
           <br>
           <br>
-          <?php 
+          <?php }
+          //Parrafo5 y Foto5
+          if ($fila[15] != null) {
           echo '<p>' .$fila[15]. '</p>'; 
-          ?>
+          }
+          if ($fila[16] != null) {?>
           <img src= "<?php echo $fila[16]; ?>" alt="<?php echo $fila[1]; ?>" class="img-rounded" width="500" height="490">
           <br>
-          <br>
-          <?php 
-         
+          <br
+          <?php  }
           echo '</nav>';  
           echo '<hr class="featurette-divider">'; ?>
 
@@ -71,5 +82,3 @@
       mysqli_close($conn);
   }
 ?>
-
-

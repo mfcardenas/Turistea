@@ -13,7 +13,7 @@
 				//si todas las entradas son válidas
 				// Conecto a la BBDD
 				//$con;
-				include("config/conn.php");
+				include("../config/conn.php");
 				//ESTA RUTA HAY QUE CAMIBARLA EN EL SERVIDOR Y EN CADA ORDENADOR!!!!!!!!!
 				$target_dir = "imgTienda/";  										//ruta
 				$target_file = $target_dir . basename($_FILES["imagenProducto"]["name"]);			//ruta completa (path + nombre de la img)
@@ -25,10 +25,9 @@
 				$check = getimagesize($_FILES["imagenProducto"]["tmp_name"]);
 				if($check !== false AND !file_exists($target_file) AND $_FILES["imagenProducto"]["size"] <= 500000){
 					move_uploaded_file($_FILES['imagenProducto']['tmp_name'], '../imgTienda/'.$file_name);  //subimos la imagenProducto en el servidor
-					echo "Voy a insertar";
+					
 				    $sql = "INSERT INTO tienda (Nombre, Imagen, Precio) VALUES ('$nombreproducto', '$target_file', '$precioProducto')";
-				    echo "<br> Esto inserto: " . $sql . "<br>";
-				
+				    				
 				    $consulta = mysqli_query($conn, $sql);
 					if($consulta != null){
                         //Quizá estaría bien que muestre un mensaje que se ha insertado correctamente

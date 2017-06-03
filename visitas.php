@@ -138,7 +138,7 @@
 
             <div class="contenido"> 
 
-	            <h1 class="text-center">Visitas</h1>
+	            <h2 class="text-center">Visitas</h2>
 
 	            <h3 class="text-center"> ¿A qué estás esperando? ¡A visitar Madrid! </h3>
 
@@ -259,21 +259,21 @@
 
                         <form action="function/insertar_visita.php" enctype="multipart/form-data" method="post">
 
-				      	     <p> Introduce el nombre: </p>
+				      	     <label for="nombrelugar"> Introduce el nombre: </label>
 
-                             <input type="text" class="form-control" placeholder="Nombre del lugar" name="nombrelugar" required>
-
-                            <br>
-
-                            <p>Introduce una imagen: </p>
-
-                            <input type="file" name="imagenVisita" required>
+                             <input type="text" class="form-control" placeholder="Nombre del lugar" id="nombrelugar" name="nombrelugar" required>
 
                             <br>
 
-				      	     <p> Introduzca una descripción acerca del mismo: </p>
+                            <label for="imagenVisita">Introduce una imagen: </label>
 
-				      	     <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion" required></textarea>
+                            <input type="file" id="imagenVisita" name="imagenVisita" required>
+
+                            <br>
+
+				      	     <label for="descripcion"> Introduzca una descripción acerca del mismo: </label>
+
+				      	     <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion" required></textarea>
 
 						      <br>
 

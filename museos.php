@@ -31,7 +31,7 @@
         <div class="container">
             <div class="contenido">           
 	            <h1 class="text-center">Museos</h1>
-	            <h3 class="text-center"> Conoce los museos madrileños </h3>
+	            <h2 class="text-center"> Conoce los museos madrileños </h2>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
@@ -42,6 +42,7 @@
 	            <div class="row">
 	            	<div>
 	            		<form action="buscar_lugar.php?tipo=museo" method="post" class="busqueda">
+	            			<label for="buscar" class="invisible">Buscar</label> <!--ESTO ES ASÍ PARA QUE NO DE ERROR EN EL VALIDADOR-->
 		            		<input type="text" placeholder="Búsqueda" id="buscar" name="buscar">
 		            		<input type="submit" value="Buscar">
 		            	</form>
@@ -78,57 +79,59 @@
                     </div>
                     <div class="modal-body">
                         <form action="function/insertar_lugar.php?lugar=museo" enctype="multipart/form-data" method="post" >
-				      	    <p> Introduce el nombre*: </p>
+				      	    <label for="nombre"> Introduce el nombre*: </label>
                              <input type="text" class="form-control" placeholder="Nombre del museo" id ="nombre" name="nombre" required>
                             <br>
-                            <p>Introduce una imagen*: </p>
+                            <label for="imagen">Introduce una imagen*: </label>
                             <input type="file" id="imagen" name="imagen" required class="file-loading">
                             <br>
-				      	     <p> Introduzca una descripción acerca del mismo: </p>
-				      	     <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+				      	     <label for="descripcion"> Introduzca una descripción acerca del mismo: </label>
+				      	     <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
 						    <br>
-						     <p> Introduce la dirección*: </p>
-						     <input type="text" class="form-control" placeholder="Calle, Nº" name="localizacion1" required>
-							 <input type="text" class="form-control" placeholder="Localidad, Provincia" name="localizacion2" required>
-							 <input type="text" class="form-control" placeholder="País" name="localizacion3" required>
+						     <label> Introduce la dirección*: </label>
+							     <label for="localizacion1" class="invisible">Calle y número </label><input type="text" class="form-control" placeholder="Calle, Nº" id="localizacion1" name="localizacion1"  required>
+								 <label for="localizacion2" class="invisible">Localidad y provincia</label><input type="text" class="form-control" placeholder="Localidad, Provincia" id="localizacion2" name="localizacion2"  required>
+								 <label for="localizacion3" class="invisible">País</label><input type="text" class="form-control" placeholder="País" id="localizacion3" name="localizacion3"  required>
+							 
 							<br>
-							 <p> Introduce el teléfono de contacto: </p>
-							 <input type="text" class="form-control" placeholder="Teléfono" name="telefono" >
+							 <label for="telefono"> Introduce el teléfono de contacto: </label>
+							 <input type="text" class="form-control" placeholder="Teléfono" id="telefono" name="telefono" >
 							<br>
 							<p> Introduce el horario*: (Primero la hora de apertura y después la de cierre</p>
 								<ul>
-								    <li><label> Lunes: </label> 
-								    	<input type="time" name="aperturaLunes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreLunes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    <li><label> Lunes: </label>
+								    	<label class="invisible" for="aperturaLunes">AL</label><input type="time" id="aperturaLunes" name="aperturaLunes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<label class="invisible" for="cierreLunes">CL</label><input type="time" id="cierreLunes" name="cierreLunes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
 								    </li>
-								    <li> <label> Martes: </label> 
-								    	<input type="time" name="aperturaMartes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreMartes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
+								    <li><label> Martes: </label>
+								    	<label class="invisible" for="aperturaMartes">AM</label><input type="time" id="aperturaMartes" name="aperturaMartes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<label class="invisible" for="cierreMartes">CM</label><input type="time" id="cierreMartes" name="cierreMartes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
-								    <li><label> Miércoles: </label> 
-								    	<input type="time" name="aperturaMiercoles" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreMiercoles" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
+								    <li><label> Miércoles: </label>
+								    	<label class="invisible" for="aperturaMiercoles">AX</label><input type="time" id="aperturaMiercoles" name="aperturaMiercoles" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<label class="invisible" for="cierreMiercoles">CX</label><input type="time" id="cierreMiercoles" name="cierreMiercoles" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
-								    <li><label> Jueves: 
-								    	</label> <input type="time" name="aperturaJueves" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreJueves" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
+								    <li><label> Jueves: </label>
+								    	<label class="invisible" for="aperturaJueves">AJ</label><input type="time" id="aperturaJueves" name="aperturaJueves" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<label class="invisible" for="cierreJueves">CJ</label><input type="time" id="cierreJueves" name="cierreJueves" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
-								    <li><label> Viernes: </label> 
-								    	<input type="time" name="aperturaViernes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreViernes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
+								    <li><label> Viernes: </label>
+								    	<label class="invisible" for="aperturaViernes">AV</label><input type="time" id="aperturaViernes" name="aperturaViernes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<label class="invisible" for="cierreViernes">CV</label><input type="time" id="cierreViernes" name="cierreViernes" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
-								    <li><label> Sábado: </label> 
-								    	<input type="time" name="aperturaSabado" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreSabado" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
+								    <li><label> Sábado: </label>
+								    	<label class="invisible" for="aperturaSabado">AS</label><input type="time" id="aperturaSabado" name="aperturaSabado" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<label class="invisible" for="cierreSabado">CS</label><input type="time" id="cierreSabado" name="cierreSabado" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
 								    </li>
-								    <li><label> Domingo: </label> 
-								    	<input type="time" name="aperturaDomingo" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
-								    	<input type="time" name="cierreDomingo" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> </li>
+								    <li><label> Domingo: </label>
+								    	<label class="invisible" for="aperturaDomingo">AD</label><input type="time" id="aperturaDomingo" name="aperturaDomingo" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required>
+								    	<label class="invisible" for="cierreDomingo">CD</label><input type="time" id="cierreDomingo" name="cierreDomingo" value="10:00:00" max="23:59:59" min="08:00:00" step="1" required> 
+								    </li>
 								</ul>
-							<p> Introduce cómo llegar: </p>
-							<textarea class="form-control" name="comoLlegar" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>
-							<p> Precio entradas: </p>
-							<textarea class="form-control" name="entradas" rows="3" placeholder="Escriba aquí la el tipo de entradas y sus respectivs precios"></textarea>
+							<label for="comoLlegar"> Introduce cómo llegar: </label>
+							<textarea class="form-control" id="comoLlegar" name="comoLlegar" rows="3" placeholder="Escriba aquí la cómo llegar"></textarea>
+							<label for="entradas"> Precio entradas: </label>
+							<textarea class="form-control" id="entradas" name="entradas" rows="3" placeholder="Escriba aquí la el tipo de entradas y sus respectivs precios"></textarea>
 
 					      	<button type="submit" class="btn btn-default centrado">Añadir</button>
 							<button type="reset" class="btn btn-default ">Borrar</button>

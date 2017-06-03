@@ -41,12 +41,12 @@
                         <td> <h3>Introducción</h3> </td>
                         <td>
                             <ul>
-                                <li><p>Permite a los usuarios disponer de un acceso rápido a los distintos "monumentos" de Madrid.</p></li>
-                                <li><p>Nuestra página proporciona información general acerca de: museos, teatros, estadios deportivos, parques temáticos... De todos estos se puede conocer: su horario de apertura, localización, precio de entrada, teléfono, e-mail... así como una breve descripción del mismo.</p></li>
-                                <li><p>Todos los usuarios registrados tienen la posibilidad de generar contenido en nuestra aplicación web, mientras que aquellos que no estén registrados están limitados a mínimas condiciones.</p></li>
-                                <li><p>Disponemos de una tienda, en la que los usuarios registrados dispondrán de una serie de puntos, los cuales irán incrementando a medida que se realicen compras en la misma. En función al número de puntos, recibirán mayores descuentos. Cualquier tipo de usuario puede acceder a la tienda, sin embargo, solo usuarios registrados tendrán la posibilidad de finalizar las respectivas compras.</p></li>
-                                <li><p>En función del rol asignado a cada usuario estos dispondrán de diferentes perspectivas.</p></li>
-                                <li><p>Existirán una serie de rutas para intervalos de tiempo determinados.</p></li>
+                                <li><p>Permite a los usuarios disponer de un acceso rápido a los distintos "monumentos" de Madrid, a través de la pagina visitas.</p></li>
+                                <li><p>Nuestra página proporciona información general acerca de: museos, teatros, parques temáticos y cines (con la posibilidad de añadir más tipos de lugares fácilmente). De todos estos se puede conocer: su horario de apertura, localización, precio de entrada, teléfono... así como una breve descripción del mismo.</p></li>
+                                <li><p>Todos los usuarios registrados tienen la posibilidad de generar contenido en nuestra aplicación web de tipo galería o experiencia (son lo mismo) donde podrán publicar una foto para contar sus experiencias; estas publicaciones solo se podrán ver desde otros usuarios autentificados. </p>
+                                <li><p>Aquellos que no están regisrados tendrán un uso más limitado de la aplicación. No podrán enterarse de las últimas noticias ni visitar la galería, por lo que tampoco podrán publicar en esta.</p></li>
+                                <li><p>Disponemos de una tienda. Cualquier tipo de usuario puede acceder a la tienda, sin embargo ninguno podrá comparar de verdad (los botones no hacen nada), debido a que es una actividad escolar y no verídica por lo que no tenemos realmente los productos a vender y esta página es sin ánimo de lucro.</p></li>
+                                <li><p>Existirán una serie de rutas para intervalos de tiempo determinados, con descripciones detalladas de las mismas.</p></li>
                             </ul>
                         </td>
                     </tr>
@@ -54,13 +54,23 @@
                         <td> <h3>Tipos de usuarios</h3> </td>
                         <td>
                             <ul>
-                                <li><div class="negrita">Administrador:</div><p class="apartados"> Seremos cada uno de los componentes del grupo, quienes nos dedicaremos a la creación y modelación de la página.</p></li>
-                                <li><div class="negrita">Usuario registrado:</div> <p class="apartados">Todos y cada uno de los usuarios que se den de alta en nuestra página.</p></li>
+                                <li><div class="negrita">Administrador:</div><p class="apartados"> Seremos cada uno de los componentes del grupo, quienes nos dedicaremos a la creación y modelación de la página. Son los únicos que pueden crear contenido de todos los tipos. Crearán contenido de:
                                     <ol>
-                                        <li><div class="negrita"> Residente:</div> <p class="apartados">Serán usuarios registrados que vivan en la ciudad de Madrid. Tendrán la opción de proporcionar contenido y dar sugerencias, las cuales se quedarán pendientes de aprobación por alguno de los administradores.</p></li>
-                                        <li><div class="negrita"> Visitante:</div><p class="apartados"> Seran usuarios registrados que no vivan en la ciudad de Madrid, es decir, que vengan de visita para un tiempo concreto.</p></li>
+                                        <li>Teatros</li>
+                                        <li>Museos</li>
+                                        <li>Parques</li>
+                                        <li>Cines</li>
+                                        <li>Visitas</li>
+                                        <li>Gastronomía</li>
+                                        <li>Rutas</li>
+                                        <li>Noticias</li>
+                                        <li>Productos de la tienda</li>
+                                        <li>Galería</li>
                                     </ol>
-                                <li><div class="negrita">Usuario anónimo:</div><p class="apartados"> Este tipo de usuario tiene la posibilidad de acceder a la tienda y visitar su contenido. Sin embargo, no podrá realizar ninguna compra de los articulos propuestos en la misma. Para ello deberá registrarse.</p></li>
+                                </p></li>
+                                <li><div class="negrita">Usuario registrado:</div> <p class="apartados">Todos y cada uno de los usuarios que se den de alta en nuestra página. Estos podrán crear contenido de tipo galería para compartir su experiencia con los demás turisteros, así como si funcionase, terminar sus compras en la tienda.</p></li>
+                                    
+                                <li><div class="negrita">Usuario anónimo:</div><p class="apartados"> Este tipo de usuario tiene la posibilidad de acceder a la tienda y visitar su contenido. Sin embargo, no podrá realizar ninguna compra de los articulos propuestos en la misma, ni crear ninguna clase de contenido. Para ello deberá registrarse.</p></li>
                             </ul>
                         </td>
                     </tr>

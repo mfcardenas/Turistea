@@ -45,7 +45,7 @@
         echo        $imagen . '" alt="' . $nombreSinEspacios . '"> </a>                 
                 </div>
                 <div class="col-lg-6">
-                    <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h2>'. $lugares->Nombre . '</h2> </a>
+                    <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h3>'. $lugares->Nombre . '</h3> </a>
                     <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion;?>
                     <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
                             <button type="button" onclick="eliminarLugar('<?php echo $lugares->id;?>')">Eliminar</button><?php }
@@ -56,7 +56,7 @@
       else {
         echo '<div class="row">
                 <div class="col-lg-6">
-                    <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h2>' . $lugares->Nombre . '</h2></a>
+                    <a href="'.$tipoDeLugar. '.php?id=' . $id . '"> <h3>' . $lugares->Nombre . '</h3></a>
                     <p class="subtitulo"> Dirección: </p>' . $lugares->Direccion;?>
                     <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
                             <button type="button" onclick="eliminarLugar('<?php echo $lugares->id;?>')">Eliminar</button><?php }
@@ -108,7 +108,7 @@
     }
 
     function mostrarProductos(){
-        include("config/conn.php"); $conn =mysqli_connect('localhost','root','','turistea');
+        include("config/conn.php");
         $sql = "SELECT * FROM tienda";
         $consulta = mysqli_query($conn, $sql);
         if($consulta != null){
@@ -131,7 +131,7 @@
                         echo '<p class="subtituloN">'; 
                         echo $productos->Nombre;
                         echo '</p>';
-                        ?><img src="<?php echo $imagen; ?>" alt="<?php echo $imagen; ?>" class="img-rounded" width="150px" height="150px"><?php                        
+                        ?><img src="<?php echo $imagen; ?>" alt="<?php echo $imagen; ?>" class="img-rounded imagenesTienda"><?php                        
                         echo '<p class="auxtable subtituloN"> Precio: <span class="auxColor">';
                         echo $productos->Precio;
                         echo '</span> € </p>';
