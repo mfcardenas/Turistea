@@ -41,7 +41,7 @@
   </head>
 
   <body class="idbody">
-    <div id="bg"><img src="img/bg_login.jpg"></div>
+    <div id="bg"><img src="img/bg_login.jpg" alt="Imagen de login"></div>
     
     <?php 
       include("navbar.php");
@@ -49,21 +49,28 @@
 
     <div class="container">
 
-      <form class="form-signin" action="login.php" method="POST">
+      <form class="form-signin" action="function/validaLogin.php" method="POST">
           <div class="sidebar-module sidebar-module-inset bloqueFondo " >
 
-                  <!-- Si el php de validacion dectecta algun error saltará este bloque de advertencia -->
+                  <!-- Si el php de validacion dectecta algun error saltará aluno de estos bloques de advertencia -->
             
-            <div <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="si"){ ?> class="panel panel-danger">
+            <?php if(isset($_GET["errorusuario"]) && $_GET["errorusuario"]=="si"){ ?>
+              <div class="panel panel-danger">
                 <div class="panel-heading">El nombre de usuario o contraseña no coinciden.</div>
-                <?php }else{ ?> > 
-                <?php } ?>
-            </div>
+              </div>
+            <?php } ?>
 
-            <label for="inputEmail" class="nameLogin">Email:</label>
+            <?php if(isset($_GET["errorcampos"]) && $_GET["errorcampos"]=="si"){ ?>
+              <div class="panel panel-danger auxbloq1">
+                <div class="panel-heading">Ha ocurrido un error al enviar el formulario, pruebe de nuevo.</div>
+              </div> 
+            <?php } ?>
+            
+
+            <label for="inputEmail" class="nameLogin">Id usuario:</label>
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="Tu correo electrónico" required autofocus>
+                <input type="text" id="inputUsuario" class="form-control" name="inputUsuario" placeholder="Id de usuario" required autofocus>
             </div>
             <br>
 

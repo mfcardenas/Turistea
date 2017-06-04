@@ -6,7 +6,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -17,7 +17,6 @@
 
 	    <link href="css/estilo.css" rel="stylesheet" type="text/css">
 
-	    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -29,7 +28,7 @@
             include("navbar.php");
             include("function/funciones.php");
             if(isset($_GET['id'])){
-            	$idTeatro = $_GET['id'];
+            	$idTeatro = htmlspecialchars(trim(strip_tags($_GET['id'])));
             }
             else{
             	header('Location: teatros.php?error=nohayid');

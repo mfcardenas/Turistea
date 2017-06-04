@@ -1,3 +1,14 @@
+    <?php session_start(); 
+      if(!isset($_SESSION['usuLogeado'])){
+        $_SESSION['usuLogeado'] = '';
+      }
+      if(!isset($_SESSION['autentificado'])){
+        $_SESSION['autentificado'] = 'NO';
+      }
+      if(!isset($_SESSION["tipoUsuarioLog"])){
+        $_SESSION["tipoUsuarioLog"] = '';
+      }
+    ?>
     <div class="navbar-wrapper">
       <div class="container">
         <nav class="navbar navbar-inverse navbar-static-top">
@@ -28,34 +39,40 @@
 
                  <!-- Logearse -->
 
-                  <li <?php if(!isset($_SESSION["autentificado"]) || $_SESSION["autentificado"] == "NO"){ ?> class="active">
-                    <a id href="index_login.php"> Logueate <span class="glyphicon glyphicon-log-in"></span> </a></li>
-                 <?php }else{ ?> ></li><?php }?>
+                <?php if(!isset($_SESSION["autentificado"]) || $_SESSION["autentificado"] == "NO"){ ?>
+                  <li class="active">
+                    <a href="index_login.php"> Logueate <span class="glyphicon glyphicon-log-in"></span> </a>
+                  </li>
+                <?php } ?>
 
                   <!-- crear una cuenta -->
 
-                  <li <?php if(!isset($_SESSION["autentificado"]) || $_SESSION["autentificado"] == "NO"){ ?> class="active">
-                    <a id href="index_registro.php"> Registrate <span class="glyphicon glyphicon-pencil"></span> </a> </li>
-                 <?php }else{ ?> ></li><?php }?>
+                <?php if(!isset($_SESSION["autentificado"]) || $_SESSION["autentificado"] == "NO"){ ?>
+                  <li class="active">
+                    <a href="index_registro.php"> Registrate <span class="glyphicon glyphicon-pencil"></span> </a>
+                  </li>
+                <?php } ?>
 
                  <!-- Acceso a tu cuenta -->
 
-                  <li <?php if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){ ?> class="active">
-                    <a id href="pag_usu.php"> <?php echo $_SESSION["usuLogeado"]; ?> <span class="glyphicon glyphicon-user"></span> </a></li>
-                     <?php }else{ ?> ></li><?php }?>
+                <?php if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){ ?>
+                  <li class="active">
+                    <a href="#"> <?php echo $_SESSION["usuLogeado"]; ?> <span class="glyphicon glyphicon-user"></span> </a>
+                  </li>
+                <?php } ?>
 
                   <!-- Cerrar sesion -->
 
-                  <li <?php if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){ ?>>
-                    <a id href="validaLogout.php"> Cerrar Sesion <span class="glyphicon glyphicon-log-out"></span> </a></li>
-                   <?php }else{ ?> ></li><?php }?>
+                <?php if(isset($_SESSION["autentificado"]) && $_SESSION["autentificado"] == "SI"){ ?>
+                  <li>
+                    <a href="function/validaLogout.php"> Cerrar Sesion <span class="glyphicon glyphicon-log-out"></span> </a>
+                  </li>
+                <?php }?>
 
               </ul>
               
             </div>
           </div>
         </nav>
-      </div>
-    </div>
-
-                 
+        </div>
+</div>

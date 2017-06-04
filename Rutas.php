@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
     <head> 
@@ -6,7 +7,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -23,8 +24,55 @@
         
         <title>Turistea | Rutas Turísticas</title>
 
+        <script type="text/javascript">
+		
+			function muestraRutas(){
+				
+				$.ajax({
+			        type: "POST",
+			        dataType: "html",
+			        url: "ajax/sqlRutas.php",
+			        data: {},
+			        success: function(data, textStatus) {
+						$("#rutas").html(data);
+					}
+			    }).done(function(msg) {
+			        
+			    });
+			};
+			
+			function muestraRuta(id_ruta){
+				$.ajax({
+			        type: "POST",
+			        dataType: "html",
+			        url: "ajax/MostrarRuta.php",
+			        data: {"id": id_ruta},
+			        success: function(data, textStatus) {
+			        	$(".contenido").html(data);
+			        	window.scrollTo(0,0);
+					}
+			    }).done(function(msg) {
+			 
+			        
+			    });
+			}
 
+			function borraRuta(id_ruta){
+				$.ajax({
+			        type: "POST",
+			        dataType: "html",
+			        url: "ajax/sqlBorraRuta.php",
+			        data: { "id": id_ruta},
+			        success: function(data, textStatus) {
+			               location.reload();
+			        }
+			    }).done(function(msg) {
+			 
+			        
+			    });
 
+			}
+		</script>
     </head> 
     <body onload="muestraRutas()"> 
         <?php 
@@ -32,7 +80,7 @@
         ?>
         <div class="container">
         	<div class="contenido"> 
-	        	<h1 class="text-center">Rutas turísticas</h1>
+	        	<h3 class="text-center">Rutas turísticas</h3>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
@@ -57,6 +105,31 @@
                     </div>
 	            </div>
 
+	            <!-- div que se mostrará solo cuando haya algun error relativo a la img en el formulario de crear una noticia  -->
+
+	            <div class="row">	            	
+	            	<div <?php if(isset($_GET["errorDatos"]) && $_GET["errorDatos"]=="si"){ ?> class="panel panel-danger">
+			            <div class="panel-heading">La imagen que has intentado subir para la ruta no cumple con alguno de los siguientes requisitos:
+			            	<ul>
+			            		<li>La imagen no puede superar los 5KB permitidos.</li>
+			            		<li>Debe ser una imagen que no exista.</li>
+			            		<li>Debe ser estrictamente una imagen de tipo PNG o JPG.</li>
+			            	</ul>
+			            </div>
+			            <?php }else{ ?> > 
+			            <?php } ?>
+			        </div>
+	            </div>
+
+	            <!-- div que se mostrará solo cuando haya algun error en los datos en el formulario de crear una noticia -->
+
+	            <div class="row">	            	
+	            	<div <?php if(isset($_GET["errorForm"]) && $_GET["errorForm"]=="si"){ ?> class="panel panel-danger">
+			            <div class="panel-heading">Los campos del formulario no son corretos.</div>
+			            <?php }else{ ?> > 
+			            <?php } ?>
+			        </div>
+	            </div>
 
      <!--                         Contenido de la página                         -->
 
@@ -68,6 +141,7 @@
 		    <?php
 		    	include("footer.html");
 		    ?>
+		    </div>
 		</div>
 
      <!-- Modal -->
@@ -81,39 +155,46 @@
                         <h4 class="modal-title text-center">Añadir Nueva Ruta</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="validaRuta.php" enctype="multipart/form-data" method="POST">
-				      	    <p>Nombre de la ruta: </p>
-                            <input type="text" class="form-control" placeholder="Nombre de la ruta" name="nombreruta" aria-describedby="basic-addon2">
+                        <form action="function/validaRuta.php" enctype="multipart/form-data" method="POST">
+				      	    <label for="nombreruta">Nombre de la ruta: </label>
+                            <input type="text" class="form-control" placeholder="Nombre de la ruta" id="nombreruta" name="nombreruta" required>
                             <br>
-                            <p>Mapa: </p>
-                            <input type="file" name="imagenMapa">
+                            <label for="imagenMapa">Mapa: </label>
+                            <input type="file" id="imagenMapa" name="imagenMapa" required>
                             <br>
-                        	<p>Duración </p>
-                            <input type="number" min="0" class="form-control" placeholder="Horas" name="duracion" aria-describedby="basic-addon2">
+                        	<label for="duracion">Duración </label>
+                            <input type="number" min="0" class="form-control" placeholder="Horas" id="duracion" name="duracion" required>
                             <br>
-                            <p>Punto de partida </p>
-                            <input type="text" class="form-control" placeholder="Punto de partida" name="inicio" aria-describedby="basic-addon2">
+                            <label for="inicio">Punto de partida </label>
+                            <input type="text" class="form-control" placeholder="Punto de partida" id="inicio" name="inicio" required>
                             <br>
-                            <p>Punto de destino </p>
-                            <input type="text" class="form-control" placeholder="Punto de destino" name="destino" aria-describedby="basic-addon2">
+                            <label for="destino">Punto de destino </label>
+                            <input type="text" class="form-control" placeholder="Punto de destino" id="destino" name="destino" required>
                             <br>
-				      	    <p>Descripción: </p>
-				      	    <textarea class="form-control" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion"></textarea>
+				      	    <label for="descripcion">Descripción: </label>
+				      	    <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Escriba aquí la descripcion" required></textarea>
 						    <br>
+                             <label for="parrafo1">Párrafo 1: </label>
+                             <textarea class="form-control" id="parrafo1" name="parrafo1" rows="10" placeholder="Escriba aquí el contenido" required></textarea>
+                             <br>
+                             <label for="foto1">Foto 1: </label>
+                             <input type="file" id="foto1" name="foto1" required>
+                             <br>
                             <?php
-                            for ($i=1; $i <= 5; $i++) {
-                                echo '<p>Párrafo ' .$i. ': </p>'; ?>
-                                <textarea class="form-control" name="<?php echo 'parrafo' .$i; ?>" rows="10" placeholder="Escriba aquí el contenido"></textarea>
+                            
+                            for ($i=2; $i <= 5; $i++) {
+                                echo '<label for="parrafo'.$i.'">Párrafo ' .$i. ': </label>'; ?>
+                                <textarea class="form-control" id="<?php echo 'parrafo' .$i; ?>" name="<?php echo 'parrafo' .$i; ?>" rows="10" placeholder="Escriba aquí el contenido"></textarea>
                                 <br>
-                                <?php echo '<p>Foto ' .$i. ': </p>'; ?>
-                                <input type="file" name="<?php echo 'imagen' .$i; ?>">
+                                <?php echo '<label for="foto'.$i.'">Foto ' .$i. ': </label>'; ?>
+                                <input type="file" id="<?php echo 'foto' .$i; ?>" name="<?php echo 'foto' .$i; ?>">
                                 <?php 
                                 echo '<br>';
                             }
                             ?>
 				      	    
 				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
-                            <button type="reset" class="btn btn-default ">Borrar</button></form>
+                        <button type="reset" class="btn btn-default ">Borrar</button></form>
 						
                     </div>
                 </div>
@@ -121,9 +202,6 @@
             </div>
         </div> 
         
-
-
-
 
 	    <!-- Bootstrap core JavaScript
 	    ================================================== -->
@@ -138,24 +216,4 @@
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 	</body>
-
-<script type="text/javascript">
-		
-	function muestraRutas(){
-		
-		$.ajax({
-	        type: "POST",
-	        dataType: "html",
-	        url: "ajax/sqlRutas.php",
-	        data: {},
-	        success: function(data, textStatus) {
-				$("#rutas").html(data);
-			}
-	    }).done(function(msg) {
-	 
-	        
-	    });
-	};
-	</script>
-
 </html>

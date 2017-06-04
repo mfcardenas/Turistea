@@ -1,3 +1,84 @@
+.imagenesTienda{
+  width: 150px;
+  height: 150px;
+}
+.invisible{
+  display: none;
+}
+.auxtable{
+  margin-top: 15px;
+}
+
+.auxColor{
+  color: blue;
+}
+
+.auxSub{
+  text-decoration: underline;
+}
+
+/* SAMPLE STYLES for modal window in HTML similar to instagram */
+.img-container {
+  -moz-box-align: stretch;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  align-items: stretch;
+  border: 0 solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.img-container#image-modal {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.imagenGaleria{
+    width: 180px;
+    height: 180px;
+}
+.imagenVisitas{
+    width: 100%;
+    height: 180px;
+}
+.negrita{
+    font-weight: bold;
+}
+.instagram {
+  margin: auto;
+  max-width: 935px;
+}
+
+.modal-instagram {
+  padding: 0;
+}
+
+.default {
+  padding: 10px;
+  margin: 10px;
+}
+
+.subtituloN{
+  font-family: 'Indie Flower', cursive;
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1024px) {
+  .long-size {
+    width: 1200px;
+  }
+
+    #image-modal {
+        height: 500px;
+        width: 750px;
+    }
+
+}
+
 .logo{
 	width: 100px;
 	height: 50px;
@@ -44,7 +125,9 @@
 
     border-spacing: 15px;
 }
-
+.modalNegro{
+   color: black;
+}
 
 /* carousel mini */
 .media-carousel 
@@ -124,7 +207,7 @@
 }
 
 .limpiar{
-    style="clear:both;
+    clear:both;
 }
 
 
@@ -342,4 +425,9 @@ div .jumbotron{
 
 .busqueda{
   text-align: right;
+}
+
+.imagenesLugares{
+  height: 300px;
+  width: 300px;
 }

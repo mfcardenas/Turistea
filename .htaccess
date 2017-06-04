@@ -1,0 +1,7 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.turistea.ichthus.es$ [NC]
+RewriteRule ^(.*)$ http://turistea.ichthus.es/awstats/$1 [R=301,L]
+
+ErrorDocument 404 http://turistea.ichthus.es/error404.php

@@ -5,7 +5,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <link rel="sstylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg320mUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
 
 	    <!-- Bootstrap core CSS-->
 	    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
@@ -16,11 +16,30 @@
 
 	    <link href="css/estilo.css" rel="stylesheet" type="text/css">
 
-	    <script src="js/bootstrap.min.js" crossorigin="anonymous"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <title>Turistea | Nuestra tienda</title>
+
+        <script type="text/javascript">
+	
+
+            function eliminarProducto(nombre){
+                $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: 'ajax/sqlBorraProducto.php',
+                    data: { "nombre": nombre},
+                    success: function(data, textStatus) {
+                           location.reload();
+                    }
+                }).done(function(msg) {
+
+
+               });
+
+	       }
+        </script>
 	</head>
 	<body>
 		 <?php 
@@ -28,9 +47,9 @@
         ?>
         <div class="container">
             <div class="contenido">     
-	            <h1 class="text-center">Nuestra tienda a un fácil acceso</h1>
-	            <h5 class="text-center">  Busca entre todos nuestros productos, el souvenir que más te gusta a un módico precio!! Seguro que no te arrepientes de comprarlo. </h5>
-	            <h5 class="text-center"> ¡¡ Encuentra todo tipo de souvenirs relacionado con los lugares que visites!! </h5>
+	            <h1 class="text-center">Nuestra tienda a un fácil acceso</h1><h2> </h2>
+                <h3 class="text-center">  Busca entre todos nuestros productos, el souvenir que más te gusta a un módico precio!! Seguro que no te arrepientes de comprarlo. </h3>
+	            <h4 class="text-center"> ¡¡ Encuentra todo tipo de souvenirs relacionado con los lugares que visites!! </h4>
 	            <div class="row">
 	            	<!--Ruta donde te encuentras -->
 	            	<ol class="breadcrumb">
@@ -39,11 +58,13 @@
 					</ol>
 	            </div>
                  <div class="row">
-                    <div class="aniadir">
-                        <a href="" onClick="$('#formularioTienda').modal()" data-toggle="modal">
-                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
-                        <div class="limpiar"></div> 
-                    </div>
+                      <?php if(isset($_SESSION['tipoUsuarioLog']) AND $_SESSION['tipoUsuarioLog'] == 'admin'){ ?>
+	                    <div class="aniadir">
+	                        <a href="" onClick="$('#formularioTienda').modal()" data-toggle="modal">
+	                        <span class="glyphicon glyphicon-plus"></span><h4>Añadir</h4> </a>
+	                        <div class="limpiar"></div> 
+	                    </div>
+                     <?php } ?>
 	            </div>
 	            <div class="row enMedio">
                     <!--TENGO QUE PONER Y DARLE FUNCIONALIDAD A ESTE BOTÓN<*/?php 
@@ -54,7 +75,7 @@
 	            </div>
 
 	            <div class="row">
-	            	<table class ="enMedio">
+	            	<table class ="table table-hover auxtable">
 	            		<tbody>
                         <?php 
                             include("function/funciones.php");
@@ -76,19 +97,21 @@
                         <h4 class="modal-title text-center">Introduce un nuevo producto</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="function/insertar_producto.php" method="post">
+                        <form action="function/insertar_producto.php" enctype="multipart/form-data" method="post">
 				      	     
                             <p> Introduce el nombre del producto:</p>
-                             <input type="text" class="form-control" placeholder="Nombre del producto" name="nombreproducto" aria-describedby="basic-addon2">
+                            <label class="invisible" for="nombreproducto">Nombre producto</label><input type="text" class="form-control" placeholder="Nombre del producto" name="nombreproducto" id="nombreproducto">
                             <br>
                             <p>Introduce una imagen: </p>
-                            <input type="file" name="imagenProducto">
+                             <label class="invisible" for="imagenProducto">Imagen producto</label><input type="file" name="imagenProducto" id="imagenProducto">
                             <br>
 				      	     <p> Introduce el precio: </p>
-				      	      <input type="text" class="form-control" placeholder="Precio del producto €" name="precioProducto" aria-describedby="basic-addon2">
+                             <label class="invisible" for="precioProducto">Precio producto</label>
+				      	      <input type="text" class="form-control" placeholder="Precio del producto €" name="precioProducto" id="precioProducto">
 						      <br>
-				      	<button type="submit" class="btn btn-default centrado">Añadir</button>
-						  		<button type="reset" class="btn btn-default ">Borrar</button></center>
+				      	     <button type="submit" class="btn btn-default centrado">Añadir</button>
+						  		<button type="reset" class="btn btn-default ">Borrar</button>
+                        </form>
                      
                     </div>
 
