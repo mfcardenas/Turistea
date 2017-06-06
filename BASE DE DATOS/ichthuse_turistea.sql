@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-06-2017 a las 23:37:10
+-- Tiempo de generación: 05-06-2017 a las 23:26:56
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -137,9 +137,9 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`Titulo`, `ID`, `Subtitulo`, `Resumen`, `Descripcion`, `Fuente`, `Fecha`, `Imagen`) VALUES
-('prueba 2', 3, '1', '1', '234', '1', '2017-05-18 10:24:28', 'imgNoticias/o.jpg'),
-('prueba 2', 4, '1', '1', '234', '1', '2017-05-18 20:09:50', 'imgNoticias/ALBARICOQUE-buena.jpg'),
-('Titulo', 13, 'Subtitulo', 'Resumen', 'Descripción', 'Fuente', '2017-06-03 18:00:05', 'imgNoticias/descarga.png');
+('El Velázquez ya cuelga en el Prado', 15, 'El boceto del artista en poder del museo', 'El boceto del retrato de Felipe III, trozo de un trabajo preparatorio de Velázquez donado en diciembre por un benefactor estadounidense, ya cuelga en las salas del Museo del Prado.', 'El boceto del retrato de Felipe III, trozo de un trabajo preparatorio de Velázquez donado en diciembre por un benefactor estadounidense, ya cuelga en las salas del Museo del Prado. Pintado en 1627 para La expulsión de los moriscos, pintura desaparecida durante el incendio del Alcázar de Madrid en 1734, llega a Madrid, con su modesto tamaño (62,6 por 52,9 centímetros), gracias a la obstinación y generosidad de William B. Jordan (Nashville, Tennessee, 1940), que donó la obra a través de la American Friends of the Prado Museum, entidad sin ánimo de lucro consagrada a difundir y beneficiar al museo español.\r\n\r\nEl boceto, limpio y restaurado, protagoniza una pequeña exposición en la antesala de la galería principal del edificio Villanueva. La obra se exhibe frente a Felipe II ofreciendo al cielo al infante don Fernando, de Tiziano, que también ha sido restaurada en los talleres del museo con patrocinio de Iberdrola. Esta obra colgaba en el mismo espacio del Alcázar que La expulsión de los moriscos, de Velázquez; era lo que se conoce como su pendant, su pareja artística. En octubre, el boceto pasará a la colección permanente en las salas que el museo dedica al pintor de Las Meninas.', 'El Pais', '2017-06-05 22:04:36', 'imgNoticias/foto1.jpg'),
+('Anatomía de un akelarre', 16, 'Una exposición fotográfica increible', '&quot;Tenemos el estereotipo de la bruja malvada, con sombrero picudo, grano en la nariz, subida en una escoba&quot;, dice Bego Antón, &quot;pero las brujas no eran así&quot;.', '&quot;Tenemos el estereotipo de la bruja malvada, con sombrero picudo, grano en la nariz, subida en una escoba&quot;, dice Bego Antón, &quot;pero las brujas no eran así&quot;. Las brujas no existieron, claro, solo fueron un delirio colectivo que llevó a miles de personas a la hoguera o a la horca por todo Occidente, de Zugarramurdi, Navarra, a Salem, Nueva Inglaterra. &quot;Muchas de las que tomaban por brujas eran herboleras, recolectaban hierbas para hacer remedios, decían ser adivinas, hacían de matronas y, por tanto, tenían poder sobre natalidad&quot;, continúa Antón. Eran figuras clave en el matriarcado pagano que, con la llegada del cristianismo, &quot;resultaron ser molestas y hubo que deshacerse de ellas&quot;. La caza de brujas, que acabó enmascarando vendetas familiares, envidias, peleas por lindes o el mero instinto de supervivencia, se fue de control y pudo, según algunos autores, llegar a convertirse en un Holocausto.', 'El Pais', '2017-06-05 22:18:07', 'imgNoticias/foto2.jpg'),
+('La lenta destrucción del tiempo', 17, 'David muestra desintegración de Berlín', 'Faltan pocos días para que Barcelona celebre el 25 aniversario de las Olimpiadas de 1992.', 'Faltan pocos días para que Barcelona celebre el 25º aniversario de las Olimpiadas de 1992. Sin embargo, no todos saben que la capital catalana ya estuvo a punto de conseguir los juegos en 1936, aunque finalmente se los llevó Berlín. El estadio que Werner March construyó para aquella ocasión en el distrito berlinés de Charlottenburg protagoniza Olympia, el vídeo que el belga David Claerbout (Kortrijk, 1969) presenta en el Museo Nacional de Arte de Cataluña (MNAC) hasta el 31 de diciembre. “Las Olimpiadas de 1936 deberían haberse celebrado en Barcelona. No se las concedieron porque regía la Segunda República. Por eso hemos querido traer esta obra aquí ahora”, explica Han Nefkens, mecenas, coleccionista y productor de la obra.', 'El Mundo', '2017-06-05 22:26:18', 'imgNoticias/foto3.jpg');
 
 -- --------------------------------------------------------
 
@@ -345,7 +345,7 @@ ALTER TABLE `lugares`
 -- AUTO_INCREMENT de la tabla `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `rutas`
 --

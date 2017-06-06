@@ -16,9 +16,8 @@
             <div class="row">
                 <div class="col-sd-11 col-md-11">
                     <div class="page-header default">
-                        <h1><?php echo $fila[0]; ?></h1>
-                        <h2>- <?php echo $fila[1]; ?></h2>
-
+                        <h4><?php echo $fila[0]; ?></h4>
+                        <p class="subtituloN"><?php echo $fila[1]; ?></p>
                     </div>
                     <div class="comments-list pre-scrollable default">
                         <div class="media">
